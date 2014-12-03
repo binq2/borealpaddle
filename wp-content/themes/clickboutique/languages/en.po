@@ -1,0 +1,2504 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ClickBoutique\n"
+"POT-Creation-Date: 2014-07-10 11:55+0100\n"
+"PO-Revision-Date: 2014-07-10 11:55+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:25
+msgid "Not found"
+msgstr ""
+
+#: 404.php:38
+msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr ""
+
+#: 404.php:42 content-none.php:27
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: archive.php:33
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: archive.php:35
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: archive.php:35
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: archive.php:37
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: archive.php:37
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: archive.php:39
+msgid "Archives"
+msgstr ""
+
+#: author.php:30
+#, php-format
+msgid "Author Archives: %s"
+msgstr ""
+
+#: author.php:67 content-aside.php:44 content-audio.php:58
+#: content-gallery.php:60 content-image.php:56 content-link.php:56
+#: content-quote.php:46 content-status.php:56 content-video.php:56
+#: content.php:98
+#, php-format
+msgid "About %s"
+msgstr ""
+
+#: author.php:71 content-aside.php:48 content-audio.php:62
+#: content-gallery.php:64 content-image.php:60 content-link.php:60
+#: content-quote.php:50 content-status.php:60 content-video.php:60
+#: content.php:102
+#, php-format
+msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: category.php:30
+#, php-format
+msgid "Category Archives: %s"
+msgstr ""
+
+#: comments.php:28
+#, php-format
+msgid "1 Comment"
+msgid_plural "%1$s Comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:38 comments.php:47
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:40 inc/pt-functions.php:423 inc/pt-woo-modification.php:461
+msgid "Prev"
+msgstr ""
+
+#: comments.php:41 inc/pt-functions.php:429 inc/pt-woo-modification.php:462
+msgid "Next"
+msgstr ""
+
+#: comments.php:48
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:49
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:59
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:64
+msgid "No comments yet."
+msgstr ""
+
+#: comments.php:73
+msgid "Leave a Comment"
+msgstr ""
+
+#: comments.php:74
+msgid "Cancel Reply"
+msgstr ""
+
+#: comments.php:75 woocommerce/single-product-reviews.php:69
+msgid "Submit"
+msgstr ""
+
+#: comments.php:79 comments.php:80
+msgid "Comment ..."
+msgstr ""
+
+#: comments.php:85
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: comments.php:90 woocommerce/checkout/form-checkout.php:39
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
+msgstr ""
+
+#: comments.php:101 comments.php:102 woocommerce/single-product-reviews.php:64
+msgid "Name"
+msgstr ""
+
+#: comments.php:101 comments.php:107
+msgid "(required)"
+msgstr ""
+
+#: comments.php:102 comments.php:108
+msgid " (required)"
+msgstr ""
+
+#: comments.php:107 comments.php:108
+msgid "E-mail"
+msgstr ""
+
+#: comments.php:113 comments.php:114
+msgid "Website"
+msgstr ""
+
+#: content-aside.php:28 content-audio.php:42 content-chat.php:41
+#: content-gallery.php:44 content-image.php:40 content-link.php:40
+#: content-quote.php:30 content-status.php:40 content-video.php:40
+#: content.php:82
+msgid "<i class=\"fa fa-pencil-square-o\"></i>"
+msgstr ""
+
+#: content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:20
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content-none.php:23
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with "
+"different keywords."
+msgstr ""
+
+#: content-status.php:17
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: content.php:25 content.php:38
+#, php-format
+msgid "Click to read more about %s"
+msgstr ""
+
+#: content.php:33
+msgid "Click here to read more"
+msgstr ""
+
+#: extensions/charts/charts.php:98 extensions/charts/charts.php:139
+#: extensions/charts/charts.php:169 extensions/charts/charts.php:209
+#: extensions/charts/charts.php:238 extensions/charts/charts.php:268
+msgid "There is no data for chart!"
+msgstr ""
+
+#: extensions/charts/charts.php:98 extensions/charts/charts.php:139
+#: extensions/charts/charts.php:169 extensions/charts/charts.php:209
+#: extensions/charts/charts.php:238 extensions/charts/charts.php:268
+msgid "You must have at least one dataset"
+msgstr ""
+
+#: extensions/charts/charts.php:103 extensions/charts/charts.php:174
+#: extensions/charts/charts.php:273
+msgid "Labels undefined!"
+msgstr ""
+
+#: extensions/charts/charts.php:103 extensions/charts/charts.php:174
+#: extensions/charts/charts.php:273
+msgid "You must have at least one chart label"
+msgstr ""
+
+#: functions.php:43
+msgid "Primary Menu (Aside Logo)"
+msgstr ""
+
+#: functions.php:45
+msgid "Mobile Menu"
+msgstr ""
+
+#: functions.php:47
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:142
+msgid "Blog Sidebar"
+msgstr ""
+
+#: functions.php:144
+msgid "Appears on single blog posts and on Blog Page"
+msgstr ""
+
+#: functions.php:152
+msgid "Front Page Sidebar"
+msgstr ""
+
+#: functions.php:154
+msgid ""
+"Appears when using the optional Front Page template with a page set as "
+"Static Front Page"
+msgstr ""
+
+#: functions.php:162
+msgid "Pages Sidebar"
+msgstr ""
+
+#: functions.php:164
+msgid "Appears on Pages"
+msgstr ""
+
+#: functions.php:172
+msgid "Shop Page Sidebar"
+msgstr ""
+
+#: functions.php:174
+msgid "Appears on Products page"
+msgstr ""
+
+#: functions.php:182
+msgid "Single Product Page Sidebar"
+msgstr ""
+
+#: functions.php:184
+msgid "Appears on Single Products page"
+msgstr ""
+
+#: functions.php:194
+msgid "Header (Logo group) sidebar"
+msgstr ""
+
+#: functions.php:196
+msgid "Located to the right from header"
+msgstr ""
+
+#: functions.php:207
+msgid "Front Page Widget section"
+msgstr ""
+
+#: functions.php:209
+msgid "Front Page Widget Area located at the bottom of site before footer"
+msgstr ""
+
+#: functions.php:217
+msgid "Product Cart Widget section"
+msgstr ""
+
+#: functions.php:219
+msgid "Product Cart Widget Area located at the right side of cart contents"
+msgstr ""
+
+#: functions.php:227
+msgid "Mobile Widget section"
+msgstr ""
+
+#: functions.php:229
+msgid "Widget Area located right to mobile menu on portable devices"
+msgstr ""
+
+#: functions.php:239
+msgid "Footer Sidebar Col#1"
+msgstr ""
+
+#: functions.php:241 functions.php:251 functions.php:261 functions.php:271
+msgid "Located in the footer of the site"
+msgstr ""
+
+#: functions.php:249
+msgid "Footer Sidebar Col#2"
+msgstr ""
+
+#: functions.php:259
+msgid "Footer Sidebar Col#3"
+msgstr ""
+
+#: functions.php:269
+msgid "Footer Sidebar Col#4"
+msgstr ""
+
+#: functions.php:290
+msgid "Add to Cart"
+msgstr ""
+
+#: functions.php:291
+msgid "View Details"
+msgstr ""
+
+#: functions.php:292
+msgid "Compare"
+msgstr ""
+
+#: functions.php:293
+msgid "Added"
+msgstr ""
+
+#: functions.php:294
+msgid "Add to wishlist"
+msgstr ""
+
+#: functions.php:295
+msgid "View wishlist"
+msgstr ""
+
+#: header.php:59 header.php:123 header.php:152
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:72
+msgid "Menu"
+msgstr ""
+
+#: image.php:30
+msgid "<i class=\"fa fa-angle-left\"></i>&nbsp;&nbsp;&nbsp;Prev"
+msgstr ""
+
+#: image.php:32
+msgid "Next&nbsp;&nbsp;&nbsp;<i class=\"fa fa-angle-right\"></i>"
+msgstr ""
+
+#: image.php:76
+msgid "Date:&nbsp;&nbsp;&nbsp;"
+msgstr ""
+
+#: image.php:78
+msgid "Tags:&nbsp;&nbsp;&nbsp;"
+msgstr ""
+
+#: image.php:80
+msgid "Comments:&nbsp;&nbsp;&nbsp;"
+msgstr ""
+
+#: image.php:81
+msgid "Source Image:&nbsp;&nbsp;&nbsp;"
+msgstr ""
+
+#: image.php:85
+msgid "Link to full-size image"
+msgstr ""
+
+#: image.php:86
+msgid "Full resolution"
+msgstr ""
+
+#: image.php:91
+msgid "Edit this Post"
+msgstr ""
+
+#: inc/pt-contacts.php:62
+#, php-format
+msgid "Connect Us on %s"
+msgstr ""
+
+#: inc/pt-functions.php:401 woocommerce/global/breadcrumb.php:203
+msgid "Page"
+msgstr ""
+
+#: inc/pt-functions.php:445
+msgid "Pingback:"
+msgstr ""
+
+#: inc/pt-functions.php:445
+msgid "(Edit)"
+msgstr ""
+
+#: inc/pt-functions.php:462
+msgid "Post author"
+msgstr ""
+
+#. translators: 1: date, 2: time
+#: inc/pt-functions.php:468
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: inc/pt-functions.php:471
+msgid "Edit this Comment"
+msgstr ""
+
+#: inc/pt-functions.php:475
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/pt-functions.php:483
+msgid "Reply"
+msgstr ""
+
+#: inc/pt-functions.php:517
+msgid "</span>, <span class=\"cat-name\">"
+msgstr ""
+
+#: inc/pt-functions.php:524
+msgid "</span>, <span class=\"tag-name\">"
+msgstr ""
+
+#: inc/pt-functions.php:533
+#, php-format
+msgid "View all posts by %s"
+msgstr ""
+
+#: inc/pt-functions.php:995
+msgid "Related Posts"
+msgstr ""
+
+#: inc/pt-functions.php:1041
+msgid "Home"
+msgstr ""
+
+#. translators: %s: title of menu item which is invalid
+#: inc/pt-menuform.php:75
+#, php-format
+msgid "%s (Invalid)"
+msgstr ""
+
+#. translators: %s: title of menu item in draft status
+#: inc/pt-menuform.php:79
+#, php-format
+msgid "%s (Pending)"
+msgstr ""
+
+#: inc/pt-menuform.php:92
+msgid "sub item"
+msgstr ""
+
+#: inc/pt-menuform.php:107
+msgid "Move up"
+msgstr ""
+
+#: inc/pt-menuform.php:120
+msgid "Move down"
+msgstr ""
+
+#: inc/pt-menuform.php:122 inc/pt-menuform.php:124
+msgid "Edit Menu Item"
+msgstr ""
+
+#: inc/pt-menuform.php:133 shortcodes/builder_shortcodes/banner/banner.php:146
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:102
+#: shortcodes/builder_shortcodes/pricing/pricing.php:109
+msgid "URL"
+msgstr ""
+
+#: inc/pt-menuform.php:140
+msgid "Navigation Label"
+msgstr ""
+
+#: inc/pt-menuform.php:146
+msgid "Title Attribute"
+msgstr ""
+
+#: inc/pt-menuform.php:153
+msgid "Open link in a new window/tab"
+msgstr ""
+
+#: inc/pt-menuform.php:158
+msgid "CSS Classes (optional)"
+msgstr ""
+
+#: inc/pt-menuform.php:164
+msgid "Link Relationship (XFN)"
+msgstr ""
+
+#: inc/pt-menuform.php:170
+msgid "Description"
+msgstr ""
+
+#: inc/pt-menuform.php:172
+msgid ""
+"The description will be displayed in the menu if the current theme supports "
+"it."
+msgstr ""
+
+#: inc/pt-menuform.php:178 inc/pt-self-install.php:1264
+msgid "Type"
+msgstr ""
+
+#: inc/pt-menuform.php:180
+msgid "Check the checkbox if the menu item is going to contain MegaMenu"
+msgstr ""
+
+#: inc/pt-menuform.php:186
+msgid "Link"
+msgstr ""
+
+#: inc/pt-menuform.php:193
+msgid "Link Text"
+msgstr ""
+
+#: inc/pt-menuform.php:200
+msgid "Background Banner Offset (in pixels)"
+msgstr ""
+
+#: inc/pt-menuform.php:208
+msgid "Background for mega menu"
+msgstr ""
+
+#: inc/pt-menuform.php:208 ptpanel/ptpanel.php:306
+msgid "Upload"
+msgstr ""
+
+#: inc/pt-menuform.php:245
+msgid "Move"
+msgstr ""
+
+#: inc/pt-menuform.php:246
+msgid "Up one"
+msgstr ""
+
+#: inc/pt-menuform.php:247
+msgid "Down one"
+msgstr ""
+
+#: inc/pt-menuform.php:250
+msgid "To the top"
+msgstr ""
+
+#: inc/pt-menuform.php:257
+#, php-format
+msgid "Original: %s"
+msgstr ""
+
+#: inc/pt-menuform.php:270
+msgid "Remove"
+msgstr ""
+
+#: inc/pt-menuform.php:271
+msgid "Cancel"
+msgstr ""
+
+#: inc/pt-menuwalker.php:188
+msgid "back"
+msgstr ""
+
+#: inc/pt-posts-shortcode.php:58
+#: shortcodes/builder_shortcodes/recent_posts/recent_posts.php:153
+#: woocommerce/loop/add-to-cart.php:20 woocommerce/loop/add-to-cart.php:44
+#: woocommerce/loop/add-to-cart.php:53
+msgid "Read More"
+msgstr ""
+
+#: inc/pt-self-install.php:126 inc/pt-self-install.php:2266
+msgid "Install Required Plugins"
+msgstr ""
+
+#: inc/pt-self-install.php:127 inc/pt-self-install.php:2267
+msgid "Install Plugins"
+msgstr ""
+
+#: inc/pt-self-install.php:128 inc/pt-self-install.php:2268
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: inc/pt-self-install.php:129
+msgid "Something went wrong."
+msgstr ""
+
+#: inc/pt-self-install.php:130 inc/pt-self-install.php:2270
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/pt-self-install.php:131 inc/pt-self-install.php:2271
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/pt-self-install.php:132 inc/pt-self-install.php:2272
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"installed."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins installed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/pt-self-install.php:133 inc/pt-self-install.php:2273
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/pt-self-install.php:134 inc/pt-self-install.php:2274
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/pt-self-install.php:135 inc/pt-self-install.php:2275
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugin. Contact the administrator of this site for help on getting the "
+"plugin activated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins activated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/pt-self-install.php:136 inc/pt-self-install.php:2276
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/pt-self-install.php:137 inc/pt-self-install.php:2277
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"updated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %s plugins. "
+"Contact the administrator of this site for help on getting the plugins "
+"updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/pt-self-install.php:138 inc/pt-self-install.php:2278
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/pt-self-install.php:139 inc/pt-self-install.php:2279
+msgid "Activate installed plugin"
+msgid_plural "Activate installed plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/pt-self-install.php:140 inc/pt-self-install.php:2280
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: inc/pt-self-install.php:141
+msgid "Return to the dashboard"
+msgstr ""
+
+#: inc/pt-self-install.php:142 inc/pt-self-install.php:1811
+#: inc/pt-self-install.php:2281
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: inc/pt-self-install.php:143 inc/pt-self-install.php:1509
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/pt-self-install.php:144
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: inc/pt-self-install.php:145
+msgid "Dismiss this notice"
+msgstr ""
+
+#: inc/pt-self-install.php:1056
+msgid "External Link"
+msgstr ""
+
+#: inc/pt-self-install.php:1061
+msgid "Private Repository"
+msgstr ""
+
+#: inc/pt-self-install.php:1064
+msgid "Pre-Packaged"
+msgstr ""
+
+#: inc/pt-self-install.php:1068
+msgid "WordPress Repository"
+msgstr ""
+
+#: inc/pt-self-install.php:1071
+msgid "Required"
+msgstr ""
+
+#: inc/pt-self-install.php:1071
+msgid "Recommended"
+msgstr ""
+
+#: inc/pt-self-install.php:1074
+msgid "Not Installed"
+msgstr ""
+
+#: inc/pt-self-install.php:1076
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: inc/pt-self-install.php:1246
+#, php-format
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+
+#: inc/pt-self-install.php:1262
+msgid "Plugin"
+msgstr ""
+
+#: inc/pt-self-install.php:1263
+msgid "Source"
+msgstr ""
+
+#: inc/pt-self-install.php:1265
+msgid "Status"
+msgstr ""
+
+#: inc/pt-self-install.php:1283
+msgid "Install"
+msgstr ""
+
+#: inc/pt-self-install.php:1284
+msgid "Activate"
+msgstr ""
+
+#: inc/pt-self-install.php:1794
+msgid "Install package not available."
+msgstr ""
+
+#: inc/pt-self-install.php:1795
+#, php-format
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+#: inc/pt-self-install.php:1796
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: inc/pt-self-install.php:1797
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: inc/pt-self-install.php:1798
+msgid "Plugin install failed."
+msgstr ""
+
+#: inc/pt-self-install.php:1799
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: inc/pt-self-install.php:1810
+msgid "Plugin activation failed."
+msgstr ""
+
+#: inc/pt-self-install.php:1920
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: inc/pt-self-install.php:1921
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: inc/pt-self-install.php:1921 inc/pt-self-install.php:1930
+msgid "Show Details"
+msgstr ""
+
+#: inc/pt-self-install.php:1921 inc/pt-self-install.php:1930
+msgid "Hide Details"
+msgstr ""
+
+#: inc/pt-self-install.php:1922
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: inc/pt-self-install.php:1923
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/pt-self-install.php:1927
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: inc/pt-self-install.php:1928
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: inc/pt-self-install.php:1929
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: inc/pt-self-install.php:1930
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: inc/pt-self-install.php:1931
+msgid "All installations have been completed."
+msgstr ""
+
+#: inc/pt-self-install.php:1932
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/pt-self-install.php:2023
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: inc/pt-self-install.php:2269
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: inc/pt-self-install.php:2282
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: inc/pt-theme-layouts.php:12
+msgid "Layout Settings"
+msgstr ""
+
+#: inc/pt-theme-layouts.php:30
+msgid "Specify a custom page layout for this content."
+msgstr ""
+
+#: inc/pt-theme-layouts.php:32
+msgid "Default Set in Plumtree Theme Options"
+msgstr ""
+
+#: inc/pt-theme-layouts.php:75
+msgid "Specify some layouts first!"
+msgstr ""
+
+#: inc/pt-woo-modification.php:217
+msgid "Checkout Progress"
+msgstr ""
+
+#: inc/pt-woo-modification.php:220 woocommerce/global/form-login.php:23
+#: woocommerce/global/form-login.php:49
+msgid "Login"
+msgstr ""
+
+#: inc/pt-woo-modification.php:221 woocommerce/checkout/form-billing.php:19
+#: woocommerce/order/order-details.php:118
+msgid "Billing Address"
+msgstr ""
+
+#: inc/pt-woo-modification.php:222 woocommerce/checkout/form-shipping.php:28
+#: woocommerce/order/order-details.php:133
+msgid "Shipping Address"
+msgstr ""
+
+#: inc/pt-woo-modification.php:223 woocommerce/checkout/form-checkout.php:88
+msgid "Payment Method"
+msgstr ""
+
+#: inc/pt-woo-modification.php:224
+msgid "Order Review"
+msgstr ""
+
+#: inc/pt-woo-modification.php:238
+msgid "First Name"
+msgstr ""
+
+#: inc/pt-woo-modification.php:243
+msgid "Last Name"
+msgstr ""
+
+#: inc/pt-woo-modification.php:249
+msgid "Company Name"
+msgstr ""
+
+#: inc/pt-woo-modification.php:253
+msgid "Address"
+msgstr ""
+
+#: inc/pt-woo-modification.php:254
+msgctxt "placeholder"
+msgid "Street address"
+msgstr ""
+
+#: inc/pt-woo-modification.php:259
+msgid "Additional address info"
+msgstr ""
+
+#: inc/pt-woo-modification.php:260
+msgctxt "placeholder"
+msgid "Apartment, suite, unit etc. (optional)"
+msgstr ""
+
+#: inc/pt-woo-modification.php:267
+msgid "Country"
+msgstr ""
+
+#: inc/pt-woo-modification.php:272 inc/pt-woo-modification.php:273
+msgid "Town / City"
+msgstr ""
+
+#: inc/pt-woo-modification.php:279 inc/pt-woo-modification.php:280
+msgid "State / County"
+msgstr ""
+
+#: inc/pt-woo-modification.php:286 inc/pt-woo-modification.php:287
+#: woocommerce/cart/shipping-calculator.php:80
+msgid "Postcode / Zip"
+msgstr ""
+
+#: inc/pt-woo-modification.php:342
+msgid "Product Data"
+msgstr ""
+
+#: inc/pt-woo-modification.php:358
+msgid "Sale!"
+msgstr ""
+
+#: inc/pt-woo-modification.php:409
+msgid "Shop"
+msgstr ""
+
+#: inc/pt-woo-modification.php:425
+msgid "<i class=\"fa fa-search\"></i>"
+msgstr ""
+
+#: inc/pt-woo-modification.php:430
+msgid "<i class=\"fa fa-shopping-cart\"></i>"
+msgstr ""
+
+#: inc/pt-woo-modification.php:526
+msgid "Use flip animation for this product"
+msgstr ""
+
+#: inc/pt-woo-modification.php:527
+msgid ""
+"Check the checkbox if you want to use flip animation for this product. The "
+"first image of the product gallery is going to be used for back."
+msgstr ""
+
+#: inc/pt-woo-modification.php:572
+msgid "New"
+msgstr ""
+
+#: index.php:18
+#: shortcodes/builder_shortcodes/recent_comments/recent_comments.php:16
+#: shortcodes/builder_shortcodes/recent_posts/recent_posts.php:16
+msgid "Blog"
+msgstr ""
+
+#: index.php:51
+msgid "Show More Posts"
+msgstr ""
+
+#: page-templates/gallery-page.php:131 page-templates/portfolio-page.php:119
+msgid "All"
+msgstr ""
+
+#: ptpanel/ptpanel.php:271
+msgid "Must be HEX color value"
+msgstr ""
+
+#: ptpanel/ptpanel.php:554
+#, php-format
+msgid "Option with name: %s already exists"
+msgstr ""
+
+#: ptpanel/ptpanel.php:685
+#, php-format
+msgid "Sections with ID: %s already exists"
+msgstr ""
+
+#: ptpanel/ptpanel.php:1030
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: ptpanel/ptpanel.php:1075
+msgid "Save Changes"
+msgstr ""
+
+#: search.php:25
+msgid "SEARCH"
+msgstr ""
+
+#: search.php:42
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:23
+#: shortcodes/builder_shortcodes/banner/banner.php:65
+msgid "Banner"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:61
+#: shortcodes/builder_shortcodes/carousel/carousel.php:54
+#: shortcodes/builder_shortcodes/category_items/category_items.php:30
+#: shortcodes/builder_shortcodes/contact/contact.php:65
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:30
+#: shortcodes/builder_shortcodes/pricing/pricing.php:30
+#: shortcodes/builder_shortcodes/recent_comments/recent_comments.php:30
+#: shortcodes/builder_shortcodes/recent_posts/recent_posts.php:30
+#: shortcodes/builder_shortcodes/spacer/spacer.php:65
+#: shortcodes/builder_shortcodes/testimonials/testimonials.php:31
+#: shortcodes/builder_shortcodes/ti_text/ti_text.php:41
+msgid "Element Title"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:67
+#: shortcodes/builder_shortcodes/carousel/carousel.php:60
+#: shortcodes/builder_shortcodes/category_items/category_items.php:36
+#: shortcodes/builder_shortcodes/contact/contact.php:71
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:36
+#: shortcodes/builder_shortcodes/pricing/pricing.php:36
+#: shortcodes/builder_shortcodes/recent_comments/recent_comments.php:36
+#: shortcodes/builder_shortcodes/recent_posts/recent_posts.php:36
+#: shortcodes/builder_shortcodes/spacer/spacer.php:70
+#: shortcodes/builder_shortcodes/testimonials/testimonials.php:37
+#: shortcodes/builder_shortcodes/ti_text/ti_text.php:47
+msgid "Set title for current element for identifying easily"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:70
+#: shortcodes/builder_shortcodes/contact/contact.php:74
+#: shortcodes/builder_shortcodes/testimonials/item/testimonials.php:49
+msgid "Image File"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:75
+#: shortcodes/builder_shortcodes/contact/contact.php:79
+msgid "Choose image"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:78
+#: shortcodes/builder_shortcodes/contact/contact.php:82
+msgid "Image Size"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:81
+#: shortcodes/builder_shortcodes/contact/contact.php:85
+msgid "Set image size"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:84
+#: shortcodes/builder_shortcodes/contact/contact.php:88
+msgid "Alt Text"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:89
+#: shortcodes/builder_shortcodes/banner/banner.php:101
+#: shortcodes/builder_shortcodes/contact/contact.php:93
+#: shortcodes/builder_shortcodes/ti_text/ti_text.php:59
+msgid "Set alt text for image"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:92
+#: shortcodes/builder_shortcodes/ti_text/ti_text.php:50
+msgid "Image Type"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:106
+msgid "Banner Image Text"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:111
+msgid "Set banner text for image"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:117
+msgid "Welcome Text"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:118
+msgid "Enter some content for the welcome block"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:124
+#: shortcodes/builder_shortcodes/carousel/item/carousel.php:59
+#: shortcodes/builder_shortcodes/testimonials/item/testimonials.php:63
+#: shortcodes/builder_shortcodes/testimonials/testimonials.php:48
+#: shortcodes/builder_shortcodes/ti_text/ti_text.php:71
+msgid "Set content of element"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:130
+msgid "Link Type"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:135
+msgid "Set link type of image"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:139
+msgid "Large Image Size"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:142
+msgid "Choose image size"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:152
+msgid "Url of link when click on image"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:171
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:126
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:131
+#: shortcodes/builder_shortcodes/pricing/pricing.php:133
+#: shortcodes/builder_shortcodes/pricing/pricing.php:138
+msgid "Open in"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:177
+msgid "Select type of opening action when click on element"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:183
+#: shortcodes/builder_shortcodes/contact/contact.php:163
+msgid "Container Style"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:188
+#: shortcodes/builder_shortcodes/contact/contact.php:169
+msgid "Set Container Style"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:191
+#: shortcodes/builder_shortcodes/carousel/carousel.php:78
+#: shortcodes/builder_shortcodes/contact/contact.php:172
+msgid "Alignment"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:196
+#: shortcodes/builder_shortcodes/carousel/carousel.php:83
+#: shortcodes/builder_shortcodes/contact/contact.php:178
+msgid "Setting position: right, left, center, inherit parent style"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:199
+#: shortcodes/builder_shortcodes/contact/contact.php:181
+msgid "Margin"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:204
+#: shortcodes/builder_shortcodes/contact/contact.php:188
+msgid "Set margin size"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:207
+#: shortcodes/builder_shortcodes/contact/contact.php:191
+msgid "Fade in Animations"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:211
+#: shortcodes/builder_shortcodes/carousel/carousel.php:120
+#: shortcodes/builder_shortcodes/contact/contact.php:195
+#: shortcodes/builder_shortcodes/testimonials/testimonials.php:73
+#: shortcodes/builder_shortcodes/testimonials/testimonials.php:100
+#: shortcodes/builder_shortcodes/ti_text/ti_text.php:84
+msgid "Yes"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/banner/banner.php:211
+#: shortcodes/builder_shortcodes/carousel/carousel.php:120
+#: shortcodes/builder_shortcodes/contact/contact.php:195
+#: shortcodes/builder_shortcodes/testimonials/testimonials.php:73
+#: shortcodes/builder_shortcodes/testimonials/testimonials.php:100
+#: shortcodes/builder_shortcodes/ti_text/ti_text.php:84
+msgid "No"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/carousel/carousel.php:16
+#: shortcodes/builder_shortcodes/carousel/carousel.php:58
+msgid "Carousel"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/carousel/carousel.php:17
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:16
+#: shortcodes/builder_shortcodes/pricing/pricing.php:16
+#: shortcodes/builder_shortcodes/testimonials/testimonials.php:17
+#: shortcodes/builder_shortcodes/ti_text/ti_text.php:23
+msgid "Typography"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/carousel/carousel.php:86
+msgid "Dimension"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/carousel/carousel.php:97
+msgid "Set width and height of element"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/carousel/carousel.php:116
+#: shortcodes/builder_shortcodes/testimonials/testimonials.php:69
+msgid "Autoplay"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/carousel/carousel.php:122
+#: shortcodes/builder_shortcodes/testimonials/testimonials.php:75
+msgid "Whether to running your carousel automatically or not"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/carousel/carousel.php:126
+msgid " Type"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/carousel/carousel.php:131
+msgid "Set the carousel mode"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/carousel/item/carousel.php:26
+msgid "Carousel Item"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/carousel/item/carousel.php:45
+#: shortcodes/builder_shortcodes/contact/item/contact.php:34
+#: shortcodes/builder_shortcodes/testimonials/item/testimonials.php:39
+msgid "Heading"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/carousel/item/carousel.php:51
+#: shortcodes/builder_shortcodes/testimonials/item/testimonials.php:45
+msgid "Set the text of your heading items"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/carousel/item/carousel.php:54
+#: shortcodes/builder_shortcodes/testimonials/item/testimonials.php:58
+msgid "Body"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/carousel/item/carousel.php:62
+msgid "Icon"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/carousel/item/carousel.php:68
+msgid "Select an icon"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/category_items/category_items.php:15
+#: shortcodes/builder_shortcodes/category_items/category_items.php:19
+#: shortcodes/builder_shortcodes/category_items/category_items.php:21
+#: shortcodes/builder_shortcodes/category_items/category_items.php:34
+msgid "Category Items"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/category_items/category_items.php:16
+msgid "WooCommerce"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/category_items/category_items.php:40
+#: shortcodes/builder_shortcodes/recent_comments/recent_comments.php:40
+#: shortcodes/builder_shortcodes/recent_posts/recent_posts.php:40
+msgid "Items Order"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/category_items/category_items.php:45
+#: shortcodes/builder_shortcodes/pricing/pricing.php:52
+#: shortcodes/builder_shortcodes/recent_comments/recent_comments.php:45
+#: shortcodes/builder_shortcodes/recent_posts/recent_posts.php:45
+msgid "Set the box type"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/category_items/category_items.php:49
+msgid "Items Selection"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/category_items/category_items.php:61
+#: shortcodes/builder_shortcodes/category_items/category_items.php:71
+#: shortcodes/builder_shortcodes/recent_comments/recent_comments.php:57
+#: shortcodes/builder_shortcodes/recent_posts/recent_posts.php:57
+msgid "Set the items selection type"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/category_items/category_items.php:65
+#: shortcodes/builder_shortcodes/recent_comments/recent_comments.php:51
+#: shortcodes/builder_shortcodes/recent_posts/recent_posts.php:51
+msgid "Number of Items"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/category_items/category_items.php:75
+msgid "Category Items Mode"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/category_items/category_items.php:84
+msgid "Set the items display mode"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/category_items/category_items.php:97
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:142
+#: shortcodes/builder_shortcodes/pricing/pricing.php:149
+#: shortcodes/builder_shortcodes/recent_comments/recent_comments.php:70
+#: shortcodes/builder_shortcodes/recent_posts/recent_posts.php:71
+msgid "Elements"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/category_items/category_items.php:102
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:43
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:147
+#: shortcodes/builder_shortcodes/pricing/pricing.php:43
+#: shortcodes/builder_shortcodes/pricing/pricing.php:154
+#: shortcodes/builder_shortcodes/recent_comments/recent_comments.php:75
+#: shortcodes/builder_shortcodes/recent_posts/recent_posts.php:76
+msgid "Title"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/category_items/category_items.php:103
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:78
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:148
+#: shortcodes/builder_shortcodes/pricing/pricing.php:85
+#: shortcodes/builder_shortcodes/pricing/pricing.php:155
+#: shortcodes/builder_shortcodes/recent_comments/recent_comments.php:76
+#: shortcodes/builder_shortcodes/recent_posts/recent_posts.php:77
+msgid "Content"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/category_items/category_items.php:104
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:149
+#: shortcodes/builder_shortcodes/pricing/pricing.php:156
+#: shortcodes/builder_shortcodes/recent_comments/recent_comments.php:77
+#: shortcodes/builder_shortcodes/recent_posts/recent_posts.php:78
+msgid "Button"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/category_items/category_items.php:108
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:153
+#: shortcodes/builder_shortcodes/pricing/pricing.php:160
+#: shortcodes/builder_shortcodes/recent_comments/recent_comments.php:81
+#: shortcodes/builder_shortcodes/recent_posts/recent_posts.php:82
+msgid "Select elements which you want to display in the promotion box"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/category_items/category_items.php:322
+msgid "View"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/contact/contact.php:19
+msgid "Advanced Contacts Image"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/contact/contact.php:20
+#: shortcodes/builder_shortcodes/spacer/spacer.php:39
+msgid "Extra"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/contact/contact.php:69
+msgid "Contacts"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/contact/contact.php:146
+msgid "Buttons"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/contact/item/contact.php:22
+msgid "Contacts Image Item"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/contact/item/contact.php:40
+msgid "Set heading text of item"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/contact/item/contact.php:43
+msgid "URL for button"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/contact/item/contact.php:48
+msgid "http://"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/contact/item/contact.php:49
+msgid "Enter an url"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/contact/item/contact.php:52
+msgid "Icon for button"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/contact/item/contact.php:57
+msgid "Example: facebook, twitter, gplus"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/contact/item/contact.php:58
+msgid "Enter name of icon according to FontAwesome icons"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:15
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:19
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:21
+msgid "Portfolio Item"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:34
+msgid "Portfolio"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:40
+#: shortcodes/builder_shortcodes/pricing/pricing.php:40
+msgid "Pricing Title"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:44
+#: shortcodes/builder_shortcodes/pricing/pricing.php:44
+msgid "Set the title"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:50
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:53
+#: shortcodes/builder_shortcodes/pricing/pricing.php:57
+#: shortcodes/builder_shortcodes/pricing/pricing.php:60
+#: woocommerce/cart/cart.php:34
+msgid "Price"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:54
+#: shortcodes/builder_shortcodes/pricing/pricing.php:61
+msgid "Set the price"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:59
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:62
+#: shortcodes/builder_shortcodes/pricing/pricing.php:66
+#: shortcodes/builder_shortcodes/pricing/pricing.php:69
+msgid "Currency Sign"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:63
+#: shortcodes/builder_shortcodes/pricing/pricing.php:70
+msgid "Set the currency sign"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:68
+#: shortcodes/builder_shortcodes/pricing/pricing.php:75
+msgid "Pricing Info"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:71
+#: shortcodes/builder_shortcodes/pricing/pricing.php:78
+msgid "Pricing Table Info"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:72
+#: shortcodes/builder_shortcodes/pricing/pricing.php:79
+msgid "Set the pricing table info"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:82
+#: shortcodes/builder_shortcodes/pricing/pricing.php:89
+msgid "Set Content"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:85
+#: shortcodes/builder_shortcodes/pricing/pricing.php:92
+msgid "Button Title"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:90
+#: shortcodes/builder_shortcodes/pricing/pricing.php:97
+msgid "Set Button Title"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:93
+#: shortcodes/builder_shortcodes/pricing/pricing.php:100
+msgid "Button Link"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:98
+#: shortcodes/builder_shortcodes/pricing/pricing.php:105
+msgid "Set the link to access"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/portfolio/portfolio.php:107
+#: shortcodes/builder_shortcodes/pricing/pricing.php:114
+msgid "URL of button link"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/pricing/pricing.php:15
+#: shortcodes/builder_shortcodes/pricing/pricing.php:19
+#: shortcodes/builder_shortcodes/pricing/pricing.php:21
+msgid "Pricing Table"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/pricing/pricing.php:34
+msgid "Pricing"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/pricing/pricing.php:47
+msgid "Pricing Table Type"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/recent_comments/recent_comments.php:15
+#: shortcodes/builder_shortcodes/recent_comments/recent_comments.php:19
+#: shortcodes/builder_shortcodes/recent_comments/recent_comments.php:20
+#: shortcodes/builder_shortcodes/recent_comments/recent_comments.php:34
+msgid "Recent Comments"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/recent_comments/recent_comments.php:142
+msgid "on"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/recent_posts/recent_posts.php:15
+#: shortcodes/builder_shortcodes/recent_posts/recent_posts.php:19
+#: shortcodes/builder_shortcodes/recent_posts/recent_posts.php:20
+#: shortcodes/builder_shortcodes/recent_posts/recent_posts.php:34
+msgid "Recent Posts"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/recent_posts/recent_posts.php:154
+msgid ", "
+msgstr ""
+
+#: shortcodes/builder_shortcodes/spacer/spacer.php:38
+#: shortcodes/builder_shortcodes/spacer/spacer.php:68
+msgid "Spacer"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/testimonials/item/testimonials.php:26
+msgid "Testimonials Item"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/testimonials/item/testimonials.php:54
+msgid "Select background image for item"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/testimonials/item/testimonials.php:67
+msgid "Signature"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/testimonials/item/testimonials.php:73
+msgid "Set the text items"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/testimonials/testimonials.php:16
+#: shortcodes/builder_shortcodes/testimonials/testimonials.php:35
+msgid "Testimonials"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/testimonials/testimonials.php:41
+msgid "Testimonials Text"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/testimonials/testimonials.php:42
+msgid "Enter testimonials title"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/testimonials/testimonials.php:80
+msgid "Cycling Interval"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/testimonials/testimonials.php:93
+msgid "Set interval for each cycling"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/testimonials/testimonials.php:96
+msgid "Pause on mouse over"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/testimonials/testimonials.php:102
+msgid "Pause cycling on mouse over"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/ti_text/ti_text.php:22
+msgid "TI Text"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/ti_text/ti_text.php:27
+msgid "Text"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/ti_text/ti_text.php:45
+msgid "No Markup Text"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/ti_text/ti_text.php:63
+msgid "Text Content"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/ti_text/ti_text.php:64
+msgid "Enter some content for this textblock"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/ti_text/ti_text.php:80
+#: shortcodes/builder_shortcodes/ti_text/ti_text.php:85
+msgid "Enable Dropcap"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/ti_text/ti_text.php:89
+msgid "Font Face"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/ti_text/ti_text.php:110
+msgid "Set Font Face"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/ti_text/ti_text.php:114
+msgid "Font Attributes"
+msgstr ""
+
+#: shortcodes/builder_shortcodes/ti_text/ti_text.php:142
+msgid "Set Font Attribute"
+msgstr ""
+
+#: tag.php:30
+#, php-format
+msgid "Tag Archives: %s"
+msgstr ""
+
+#: taxonomy-post_format.php:25
+#, php-format
+msgid "%s Archives"
+msgstr ""
+
+#: widgets/class-pt-widget-cart.php:33
+msgid "Display the user's Cart in the sidebar."
+msgstr ""
+
+#: widgets/class-pt-widget-cart.php:35
+msgid "WooCommerce Cart (PlumTree Themed)"
+msgstr ""
+
+#: widgets/class-pt-widget-cart.php:63
+msgid "Cart"
+msgstr ""
+
+#: widgets/class-pt-widget-cart.php:124
+#: widgets/class-pt-widget-contacts.php:43
+#: widgets/class-pt-widget-custom-menu.php:64
+#: widgets/class-pt-widget-pay-icons.php:47
+#: widgets/class-pt-widget-promo.php:58 widgets/class-pt-widget-socials.php:54
+msgid "Title:"
+msgstr ""
+
+#: widgets/class-pt-widget-cart.php:128
+msgid "Hide if cart is empty"
+msgstr ""
+
+#: widgets/class-pt-widget-contacts.php:22
+msgid "PT Contacts Widget"
+msgstr ""
+
+#: widgets/class-pt-widget-contacts.php:23
+msgid "Plum Tree special widget. An Address Widget with Google map"
+msgstr ""
+
+#: widgets/class-pt-widget-contacts.php:47
+#: widgets/class-pt-widget-pay-icons.php:51
+msgid "Pre-Content"
+msgstr ""
+
+#: widgets/class-pt-widget-contacts.php:51
+#: widgets/class-pt-widget-pay-icons.php:76
+msgid "Post-Content"
+msgstr ""
+
+#: widgets/class-pt-widget-contacts.php:55
+msgid "Phone:"
+msgstr ""
+
+#: widgets/class-pt-widget-contacts.php:59
+msgid "Fax:"
+msgstr ""
+
+#: widgets/class-pt-widget-contacts.php:63
+msgid "Skype:"
+msgstr ""
+
+#: widgets/class-pt-widget-contacts.php:67
+#: woocommerce/order/order-details.php:101
+msgid "Email:"
+msgstr ""
+
+#: widgets/class-pt-widget-contacts.php:71
+msgid "Address:"
+msgstr ""
+
+#: widgets/class-pt-widget-custom-menu.php:21
+msgid ""
+"Plum Tree special widget. Use this widget to add one of your custom menus as "
+"a widget."
+msgstr ""
+
+#: widgets/class-pt-widget-custom-menu.php:22
+msgid "Custom Menu (Responsive)"
+msgstr ""
+
+#: widgets/class-pt-widget-custom-menu.php:59
+#, php-format
+msgid "No menus have been created yet. <a href=\"%s\">Create some</a>."
+msgstr ""
+
+#: widgets/class-pt-widget-custom-menu.php:68
+msgid "Select Menu:"
+msgstr ""
+
+#: widgets/class-pt-widget-most-viewed-posts.php:22
+msgid "PT Most Viewed Posts"
+msgstr ""
+
+#: widgets/class-pt-widget-most-viewed-posts.php:23
+msgid ""
+"Plum Tree special widget. Displaying number of most viewed posts on your "
+"site."
+msgstr ""
+
+#: widgets/class-pt-widget-most-viewed-posts.php:47
+#: widgets/class-pt-widget-recent-posts.php:46
+#: widgets/class-pt-widget-search.php:36
+#: widgets/class-pt-widget-shop-filters.php:36
+msgid "Title: "
+msgstr ""
+
+#: widgets/class-pt-widget-most-viewed-posts.php:51
+#: widgets/class-pt-widget-recent-posts.php:50
+msgid "How many posts to display: "
+msgstr ""
+
+#: widgets/class-pt-widget-most-viewed-posts.php:55
+#: widgets/class-pt-widget-recent-posts.php:54
+msgid "Show Posts for next Post Type:"
+msgstr ""
+
+#: widgets/class-pt-widget-most-viewed-posts.php:69
+#: widgets/class-pt-widget-recent-posts.php:79
+msgid "Reverse sort order (ascending)?"
+msgstr ""
+
+#: widgets/class-pt-widget-most-viewed-posts.php:73
+#: widgets/class-pt-widget-recent-posts.php:83
+msgid "Show publish date?"
+msgstr ""
+
+#: widgets/class-pt-widget-most-viewed-posts.php:77
+#: widgets/class-pt-widget-recent-posts.php:87
+msgid "Show number of comments?"
+msgstr ""
+
+#: widgets/class-pt-widget-most-viewed-posts.php:80
+#: widgets/class-pt-widget-recent-posts.php:90
+msgid "Specify ID of category (categories) to show: "
+msgstr ""
+
+#: widgets/class-pt-widget-most-viewed-posts.php:85
+#: widgets/class-pt-widget-recent-posts.php:95
+msgid "Show post thumbnail?"
+msgstr ""
+
+#: widgets/class-pt-widget-most-viewed-posts.php:88
+msgid "Thumbnail dimensions:"
+msgstr ""
+
+#: widgets/class-pt-widget-most-viewed-posts.php:89
+msgid "Width: "
+msgstr ""
+
+#: widgets/class-pt-widget-most-viewed-posts.php:91
+msgid "Height: "
+msgstr ""
+
+#: widgets/class-pt-widget-most-viewed-posts.php:97
+#: widgets/class-pt-widget-recent-posts.php:99
+msgid "Show post excerpt?"
+msgstr ""
+
+#: widgets/class-pt-widget-most-viewed-posts.php:100
+#: widgets/class-pt-widget-recent-posts.php:102
+msgid "Excerpt length (in words):"
+msgstr ""
+
+#: widgets/class-pt-widget-most-viewed-posts.php:104
+#: widgets/class-pt-widget-recent-posts.php:106
+msgid "Excerpt read more text:"
+msgstr ""
+
+#: widgets/class-pt-widget-most-viewed-posts.php:109
+#: widgets/class-pt-widget-recent-posts.php:111
+msgid "Show price? (products only)"
+msgstr ""
+
+#: widgets/class-pt-widget-pay-icons.php:22
+msgid "PT Payment Icons"
+msgstr ""
+
+#: widgets/class-pt-widget-pay-icons.php:23
+msgid "Plum Tree special widget. Add payment methods icons"
+msgstr ""
+
+#: widgets/class-pt-widget-pay-icons.php:57
+#: widgets/class-pt-widget-pay-icons.php:133
+msgid "American Express"
+msgstr ""
+
+#: widgets/class-pt-widget-pay-icons.php:58
+#: widgets/class-pt-widget-pay-icons.php:138
+msgid "Discover"
+msgstr ""
+
+#: widgets/class-pt-widget-pay-icons.php:59
+#: widgets/class-pt-widget-pay-icons.php:143
+msgid "Maestro"
+msgstr ""
+
+#: widgets/class-pt-widget-pay-icons.php:60
+msgid "Mastercard"
+msgstr ""
+
+#: widgets/class-pt-widget-pay-icons.php:61
+#: widgets/class-pt-widget-pay-icons.php:153
+msgid "PayPal"
+msgstr ""
+
+#: widgets/class-pt-widget-pay-icons.php:62
+#: widgets/class-pt-widget-pay-icons.php:158
+msgid "Visa"
+msgstr ""
+
+#: widgets/class-pt-widget-pay-icons.php:63
+#: widgets/class-pt-widget-pay-icons.php:163
+msgid "Western Union"
+msgstr ""
+
+#: widgets/class-pt-widget-pay-icons.php:64
+#: widgets/class-pt-widget-pay-icons.php:168
+msgid "Gift Cards"
+msgstr ""
+
+#: widgets/class-pt-widget-pay-icons.php:65
+#: widgets/class-pt-widget-pay-icons.php:173
+msgid "Cash"
+msgstr ""
+
+#: widgets/class-pt-widget-pay-icons.php:148
+msgid "MasterCard"
+msgstr ""
+
+#: widgets/class-pt-widget-promo.php:22
+msgid "PT Promo Box"
+msgstr ""
+
+#: widgets/class-pt-widget-promo.php:23
+msgid "Plum Tree special widget. Add promotion box to widget areas"
+msgstr ""
+
+#: widgets/class-pt-widget-promo.php:63
+msgid "Background Image:"
+msgstr ""
+
+#: widgets/class-pt-widget-promo.php:100
+msgid "Promo Image:"
+msgstr ""
+
+#: widgets/class-pt-widget-promo.php:138
+msgid "Promo Text"
+msgstr ""
+
+#: widgets/class-pt-widget-promo.php:143
+msgid "Promo Button url:"
+msgstr ""
+
+#: widgets/class-pt-widget-promo.php:147
+msgid "Select Promo elements position"
+msgstr ""
+
+#: widgets/class-pt-widget-promo.php:150
+msgid "Image/Text"
+msgstr ""
+
+#: widgets/class-pt-widget-promo.php:151
+msgid "Text/Image"
+msgstr ""
+
+#: widgets/class-pt-widget-promo.php:193
+msgid "Click to Learn More"
+msgstr ""
+
+#: widgets/class-pt-widget-recent-posts.php:22
+msgid "PT Recent Posts"
+msgstr ""
+
+#: widgets/class-pt-widget-recent-posts.php:23
+msgid ""
+"Plum Tree special widget. Displaying number of recent posts on your site."
+msgstr ""
+
+#: widgets/class-pt-widget-recent-posts.php:67
+msgid "Sort by:"
+msgstr ""
+
+#: widgets/class-pt-widget-search.php:22
+msgid "PT Search"
+msgstr ""
+
+#: widgets/class-pt-widget-search.php:23
+msgid "Plum Tree special widget. A search form for your site."
+msgstr ""
+
+#: widgets/class-pt-widget-search.php:40
+msgid "Input Text: "
+msgstr ""
+
+#: widgets/class-pt-widget-search.php:44
+msgid "Button Title Text: "
+msgstr ""
+
+#: widgets/class-pt-widget-shop-filters.php:22
+msgid "PT Shop Filters"
+msgstr ""
+
+#: widgets/class-pt-widget-shop-filters.php:23
+msgid ""
+"Plum Tree special widget. Woocommerce shop filters based on attributes of "
+"your products."
+msgstr ""
+
+#: widgets/class-pt-widget-shop-filters.php:41
+msgid "Attribute:"
+msgstr ""
+
+#: widgets/class-pt-widget-shop-filters.php:55
+msgid "Show products count?"
+msgstr ""
+
+#: widgets/class-pt-widget-shop-filters.php:99
+msgid "No attributes specified"
+msgstr ""
+
+#: widgets/class-pt-widget-shop-filters.php:109
+msgid "Shop by "
+msgstr ""
+
+#: widgets/class-pt-widget-socials.php:22
+msgid "PT Socials Icons"
+msgstr ""
+
+#: widgets/class-pt-widget-socials.php:23
+msgid "Plum Tree special widget. Add links to Your social networks"
+msgstr ""
+
+#: widgets/class-pt-widget-socials.php:45
+msgid ""
+"Fill in the links for the Social Media tabs you wish to activate, please "
+"include <strong>http://</strong> on all links except Twitter."
+msgstr ""
+
+#: widgets/class-pt-widget-socials.php:49
+msgid "Check for colour hover effect"
+msgstr ""
+
+#: widgets/class-pt-widget-socials.php:55
+msgid "Twitter username:"
+msgstr ""
+
+#: widgets/class-pt-widget-socials.php:56
+msgid "Facebook:"
+msgstr ""
+
+#: widgets/class-pt-widget-socials.php:57
+msgid "Google+:"
+msgstr ""
+
+#: widgets/class-pt-widget-socials.php:58
+msgid "YouTube:"
+msgstr ""
+
+#: widgets/class-pt-widget-socials.php:59
+msgid "Flickr:"
+msgstr ""
+
+#: widgets/class-pt-widget-socials.php:60
+msgid "LinkedIn:"
+msgstr ""
+
+#: widgets/class-pt-widget-socials.php:61
+msgid "Tumblr:"
+msgstr ""
+
+#: widgets/class-pt-widget-socials.php:62
+msgid "Pinterest:"
+msgstr ""
+
+#: widgets/class-pt-widget-socials.php:63
+msgid "Instagram:"
+msgstr ""
+
+#: widgets/class-pt-widget-socials.php:128
+msgid "Connect us on Twitter"
+msgstr ""
+
+#: widgets/class-pt-widget-socials.php:135
+msgid "Connect us on Facebook"
+msgstr ""
+
+#: widgets/class-pt-widget-socials.php:142
+msgid "Connect us on Google+"
+msgstr ""
+
+#: widgets/class-pt-widget-socials.php:149
+msgid "Connect us on Youtube"
+msgstr ""
+
+#: widgets/class-pt-widget-socials.php:156
+msgid "Connect us on Flickr"
+msgstr ""
+
+#: widgets/class-pt-widget-socials.php:163
+msgid "Connect us on LinkedIn"
+msgstr ""
+
+#: widgets/class-pt-widget-socials.php:170
+msgid "Connect us on Tumblr"
+msgstr ""
+
+#: widgets/class-pt-widget-socials.php:177
+msgid "Connect us on Pinterest"
+msgstr ""
+
+#: widgets/class-pt-widget-socials.php:184
+msgid "Connect us on Instagram"
+msgstr ""
+
+#: woocommerce/cart/cart.php:33
+msgid "Item Description"
+msgstr ""
+
+#: woocommerce/cart/cart.php:35
+msgid "Quantity"
+msgstr ""
+
+#: woocommerce/cart/cart.php:36 woocommerce/cart/mini-cart.php:73
+msgid "Subtotal"
+msgstr ""
+
+#: woocommerce/cart/cart.php:78
+msgid "Available on backorder"
+msgstr ""
+
+#: woocommerce/cart/cart.php:89 woocommerce/cart/mini-cart.php:57
+msgid "Remove this item"
+msgstr ""
+
+#: woocommerce/cart/cart.php:118 woocommerce/global/quantity-input.php:12
+msgctxt "Product quantity input tooltip"
+msgid "Qty"
+msgstr ""
+
+#: woocommerce/cart/cart.php:147
+msgid "Coupon Code"
+msgstr ""
+
+#: woocommerce/cart/cart.php:147
+msgid "Apply Coupon"
+msgstr ""
+
+#: woocommerce/cart/cart.php:154
+msgid "Continue Shopping"
+msgstr ""
+
+#: woocommerce/cart/cart.php:173
+msgid "Update Cart"
+msgstr ""
+
+#: woocommerce/cart/cart.php:174
+msgid "Proceed to Checkout"
+msgstr ""
+
+#: woocommerce/cart/mini-cart.php:65
+msgid "No products in the cart."
+msgstr ""
+
+#: woocommerce/cart/mini-cart.php:78
+msgid "Checkout"
+msgstr ""
+
+#: woocommerce/cart/mini-cart.php:79
+msgid "Edit Cart"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:22
+msgid "Calculate Shipping"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:28
+msgid "Select a country&hellip;"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:45
+#: woocommerce/cart/shipping-calculator.php:51
+#: woocommerce/cart/shipping-calculator.php:63
+msgid "State / county"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:52
+msgid "Select a state&hellip;"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:72
+msgid "City"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:85
+msgid "Update Totals"
+msgstr ""
+
+#: woocommerce/checkout/form-billing.php:15
+msgid "Billing &amp; Shipping"
+msgstr ""
+
+#: woocommerce/checkout/form-billing.php:38
+msgid "Create an account?"
+msgstr ""
+
+#: woocommerce/checkout/form-billing.php:49
+msgid ""
+"Create an account by entering the information below. If you are a returning "
+"customer please login."
+msgstr ""
+
+#: woocommerce/checkout/form-billing.php:69
+#: woocommerce/checkout/form-checkout.php:133
+#: woocommerce/checkout/form-shipping.php:72
+msgid "Back"
+msgstr ""
+
+#: woocommerce/checkout/form-billing.php:72
+msgid "Continue to Shipping Address"
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:22
+msgid "You must be logged in to checkout."
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:37
+msgid "Welcome Back"
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:42
+#: woocommerce/checkout/form-checkout.php:57
+#: woocommerce/global/form-login.php:69
+msgid "Continue to Billing Address"
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:53
+msgid "fill in the required fields"
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:54
+msgid "You may checkout as guest"
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:123
+msgid "Please fill in your details above to see available payment methods."
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:125
+msgid ""
+"Sorry, it seems that there are no available payment methods for your state. "
+"Please contact us if you require assistance or wish to make alternate "
+"arrangements."
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:136
+msgid "Continue to Order Review"
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:143
+msgid "Your order"
+msgstr ""
+
+#: woocommerce/checkout/form-shipping.php:31
+msgid "Ship to a different address?"
+msgstr ""
+
+#: woocommerce/checkout/form-shipping.php:56
+msgid "Additional Information"
+msgstr ""
+
+#: woocommerce/checkout/form-shipping.php:75
+msgid "Continue to Payment Method"
+msgstr ""
+
+#: woocommerce/checkout/review-order.php:23
+#: woocommerce/order/order-details.php:20
+msgid "Product"
+msgstr ""
+
+#: woocommerce/checkout/review-order.php:24
+#: woocommerce/order/order-details.php:21
+msgid "Total"
+msgstr ""
+
+#: woocommerce/checkout/review-order.php:28
+msgid "Cart Totals"
+msgstr ""
+
+#: woocommerce/checkout/review-order.php:30
+msgid "Cart Subtotal"
+msgstr ""
+
+#: woocommerce/checkout/review-order.php:37
+msgid "Cart Discount"
+msgstr ""
+
+#: woocommerce/checkout/review-order.php:48
+msgid "Shipping"
+msgstr ""
+
+#: woocommerce/checkout/review-order.php:89
+msgid "Order Discount"
+msgstr ""
+
+#: woocommerce/checkout/review-order.php:98
+msgid "Order Total"
+msgstr ""
+
+#: woocommerce/checkout/review-order.php:111
+#, php-format
+msgid "(Includes %s)"
+msgstr ""
+
+#: woocommerce/checkout/review-order.php:149
+msgid ""
+"Since your browser does not support JavaScript, or it is disabled, please "
+"ensure you click the <em>Update Totals</em> button before placing your "
+"order. You may be charged more than the amount stated above if you fail to "
+"do so."
+msgstr ""
+
+#: woocommerce/checkout/review-order.php:149
+msgid "Update totals"
+msgstr ""
+
+#: woocommerce/checkout/review-order.php:156
+msgid "Place order"
+msgstr ""
+
+#: woocommerce/checkout/review-order.php:163
+msgid "I have read and accept the"
+msgstr ""
+
+#: woocommerce/checkout/review-order.php:163
+msgid "terms &amp; conditions"
+msgstr ""
+
+#: woocommerce/global/breadcrumb.php:63
+msgid "Products tagged &ldquo;"
+msgstr ""
+
+#: woocommerce/global/breadcrumb.php:91 woocommerce/global/breadcrumb.php:189
+msgid "Search results for &ldquo;"
+msgstr ""
+
+#: woocommerce/global/breadcrumb.php:147
+msgid "Error 404"
+msgstr ""
+
+#: woocommerce/global/breadcrumb.php:193
+msgid "Posts tagged &ldquo;"
+msgstr ""
+
+#: woocommerce/global/breadcrumb.php:198
+msgid "Author:"
+msgstr ""
+
+#: woocommerce/global/form-login.php:32
+msgid "Username or email"
+msgstr ""
+
+#: woocommerce/global/form-login.php:37
+msgid "Password"
+msgstr ""
+
+#: woocommerce/global/form-login.php:43
+msgid "* Required Fields"
+msgstr ""
+
+#: woocommerce/global/form-login.php:52
+msgid "Remember me"
+msgstr ""
+
+#: woocommerce/global/form-login.php:57
+msgid "Lost your password?"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:12
+msgid "Qty"
+msgstr ""
+
+#: woocommerce/loop/add-to-cart.php:36
+msgid "Select options"
+msgstr ""
+
+#: woocommerce/loop/add-to-cart.php:40
+msgid "View options"
+msgstr ""
+
+#: woocommerce/loop/add-to-cart.php:49
+msgid "Add to cart"
+msgstr ""
+
+#: woocommerce/myaccount_/my-account.php:19
+#, php-format
+msgid ""
+"Hello, <strong>%s</strong>. From your account dashboard you can view your "
+"recent orders, manage your shipping and billing addresses and <a href=\"%s"
+"\">change your password</a>."
+msgstr ""
+
+#: woocommerce/order/order-details.php:16
+msgid "Order Details"
+msgstr ""
+
+#: woocommerce/order/order-details.php:66
+#, php-format
+msgid "Download file%s"
+msgstr ""
+
+#: woocommerce/order/order-details.php:97
+msgid "Customer details"
+msgstr ""
+
+#: woocommerce/order/order-details.php:102
+msgid "Telephone:"
+msgstr ""
+
+#: woocommerce/order/order-details.php:122
+#: woocommerce/order/order-details.php:137
+msgid "N/A"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:23
+#, php-format
+msgid "%s review for %s"
+msgid_plural "%s reviews for %s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/single-product-reviews.php:25
+msgid "Reviews"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:46
+msgid "There are no reviews yet."
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:59
+msgid "Add a review"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:59
+msgid "Be the first to review"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:60
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:66
+msgid "Email"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:75
+msgid "Your Rating"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:76
+msgid "Rate&hellip;"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:77
+msgid "Perfect"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:78
+msgid "Good"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:79
+msgid "Average"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:80
+msgid "Not that bad"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:81
+msgid "Very Poor"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:85
+msgid "Your Review"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:94
+msgid ""
+"Only logged in customers who have purchased this product may leave a review."
+msgstr ""
+
+#: woocommerce/single-product/price.php:16
+msgid "Price:"
+msgstr ""
+
+#: woocommerce/single-product/rating.php:23
+#, php-format
+msgid "Rated %s out of 5"
+msgstr ""
+
+#: woocommerce/single-product/rating.php:25
+#: woocommerce/single-product/review.php:27
+msgid "out of 5"
+msgstr ""
+
+#: woocommerce/single-product/rating.php:28
+#, php-format
+msgid "%s Review"
+msgid_plural "%s Reviews"
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/single-product/rating.php:29
+msgid "Add Your Review"
+msgstr ""
+
+#: woocommerce/single-product/review.php:26
+#, php-format
+msgid "Rated %d out of 5"
+msgstr ""
+
+#: woocommerce/single-product/review.php:33
+msgid "Your comment is awaiting approval"
+msgstr ""
+
+#: woocommerce/single-product/review.php:40
+msgid "verified owner"
+msgstr ""

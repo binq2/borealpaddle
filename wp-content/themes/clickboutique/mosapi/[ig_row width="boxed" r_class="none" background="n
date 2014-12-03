@@ -1,0 +1,115 @@
+[ig_row width="boxed" r_class="none" background="none" solid_color_value="#FFFFFF" solid_color_color="#ffffff" gradient_color="0% #FFFFFF,100% #000000" gradient_direction="vertical" repeat="full" stretch="none" position="center center" paralax="no" border_width_value_="0" border_style="solid" border_color="#000" div_padding_top="10" div_padding_bottom="10" div_padding_right="10" div_padding_left="10" ]
+[ig_column span="span12"]
+[rev_slider main]
+[/ig_column]
+[/ig_row]
+
+[ig_row width="boxed" r_class="none" background="none" solid_color_value="#FFFFFF" solid_color_color="#ffffff" gradient_color="0% #FFFFFF,100% #000000" gradient_direction="vertical" repeat="full" stretch="none" position="center center" paralax="no" border_width_value_="0" border_style="solid" border_color="#000" div_padding_top="10" div_padding_bottom="10" div_padding_right="10" div_padding_left="10" ]
+[ig_column span="span12"]
+[ig_spacer el_title="Spacer" disabled_el="no" ][/ig_spacer]
+[ig_spacer div_margin_top="10" div_margin_bottom="10" disabled_el="no" el_title="Spacer" copy_style_from="0" ][/ig_spacer]
+[/ig_column]
+[/ig_row]
+
+[ig_row width="boxed" r_class="none" background="none" solid_color_value="#FFFFFF" solid_color_color="#ffffff" gradient_color="0% #FFFFFF,100% #000000" gradient_direction="vertical" repeat="full" stretch="none" position="center center" paralax="no" border_width_value_="0" border_style="solid" border_color="#000" div_padding_top="10" div_padding_bottom="10" div_padding_right="10" div_padding_left="10" ]
+[ig_column span="span6"][ig_banner el_title="Paddle" image_file="http://borealpaddle/wp-content/uploads/2014/11/paddle.jpg" image_alt="Paddle" image_type="normal" link_type="no_link" image_container_style="no-styling" image_alignment="right" image_effect="no" ][/ig_banner][/ig_column][ig_column span="span6"][ig_banner el_title="Apparel" image_file="http://borealpaddle/wp-content/uploads/2014/11/apparel.jpg" image_alt="Apparel" image_type="normal" link_type="no_link" image_container_style="no-styling" image_alignment="inherit" image_effect="no" ][/ig_banner][/ig_column]
+[/ig_row]
+
+[ig_row width="boxed" r_class="none" background="none" solid_color_value="#FFFFFF" solid_color_color="#ffffff" gradient_color="0% #FFFFFF,100% #000000" gradient_direction="vertical" repeat="full" stretch="none" position="center center" paralax="no" border_width_value_="0" border_style="solid" border_color="#000" div_padding_top="10" div_padding_bottom="10" div_padding_right="10" div_padding_left="10" ]
+[ig_column span="span12"]
+[ig_ti_text el_title="Welcome" text_type="welc" enable_dropcap="no" disabled_el="no" ]
+Boreal Paddle + Apparel is a new lifestyle retail store offering a wicked selection of SUP boards and some cool gear
+to go with you. We have comfortable clothes for you to wear on your new board, or while practicing yoga, maybe
+walking your favourite trail, plus they're so cool you might just wear them out on the town and some so comfy that
+you might not want to take them off. You decide. We have you covered.
+[/ig_ti_text]
+[/ig_column]
+[/ig_row]
+
+[ig_row width="boxed" r_class="none" background="none" solid_color_value="#FFFFFF" solid_color_color="#ffffff" gradient_color="0% #FFFFFF,100% #000000" gradient_direction="vertical" repeat="full" stretch="none" position="center center" paralax="no" border_width_value_="0" border_style="solid" border_color="#000" div_padding_top="10" div_padding_bottom="10" div_padding_right="10" div_padding_left="10" ]
+[ig_column span="span12"]
+[ig_text el_title="New Products" enable_dropcap="no" disabled_el="no" ]
+<div class="shortcode-with-slider">
+<div class="head-wrap">
+<div class="cell">
+<h3 class="pt-shortcode-title"><span style="color: #91a9c7;">New</span> Products</h3>
+<div class="sep"></div>
+</div>
+</div>
+[recent_products per_page="6" columns="4" orderby="date"]
+
+</div>
+[/ig_text]
+[ig_spacer div_margin_top="10" div_margin_bottom="10" disabled_el="no" el_title="Spacer" copy_style_from="0" ][/ig_spacer]
+[/ig_column]
+[/ig_row]
+
+
+
+[ig_row width="boxed" r_class="none" background="none" solid_color_value="#FFFFFF" solid_color_color="#ffffff" gradient_color="0% #FFFFFF,100% #000000" gradient_direction="vertical" repeat="full" stretch="none" position="center center" paralax="no" border_width_value_="0" border_style="solid" border_color="#000" div_padding_top="10" div_padding_bottom="10" div_padding_right="10" div_padding_left="10" ]
+[ig_column span="span12"]
+[ig_text el_title="New Products" enable_dropcap="no" disabled_el="no" ]
+<div class="shortcode-with-slider">
+<div class="head-wrap">
+<div class="cell">
+<h3 class="pt-shortcode-title"><span style="color: #91a9c7;">Featured</span> Products</h3>
+<div class="sep"></div>
+</div>
+</div>
+[featured_products_lightspeed]
+
+</div>
+[/ig_text]
+[ig_spacer div_margin_top="10" div_margin_bottom="10" disabled_el="no" el_title="Spacer" copy_style_from="0" ][/ig_spacer]
+[/ig_column]
+[/ig_row]
+
+
+
+
+[ig_row width="boxed" r_class="none" background="none" solid_color_value="#FFFFFF" solid_color_color="#ffffff" gradient_color="0% #FFFFFF,100% #000000" gradient_direction="vertical" repeat="full" stretch="none" position="center center" paralax="no" border_width_value_="0" border_style="solid" border_color="#000" div_padding_top="10" div_padding_bottom="10" div_padding_right="10" div_padding_left="10" ]
+[ig_column span="span12"]
+[ig_text el_title="Our Brands" enable_dropcap="no" disabled_el="no" ]
+<div class="shortcode-with-slider">
+<div class="head-wrap">
+<div class="cell">
+<h3 class="pt-shortcode-title"><span style="color: #898989;">Our</span> Brands</h3>
+<div class="sep"></div>
+</div>
+</div>
+[product_categories orderby="name" columns="7" hide_empty="0" parent="14"]
+
+</div>
+[/ig_text]
+[/ig_column]
+[/ig_row]
+
+[ig_row width="boxed" r_class="none" background="none" solid_color_value="#FFFFFF" solid_color_color="#ffffff" gradient_color="0% #FFFFFF,100% #000000" gradient_direction="vertical" repeat="full" stretch="none" position="center center" paralax="no" border_width_value_="0" border_style="solid" border_color="#000" div_padding_top="10" div_padding_bottom="10" div_padding_right="10" div_padding_left="10" ]
+[ig_column span="span12"]
+[ig_text el_title="Instagram" enable_dropcap="no" disabled_el="no" ]
+<div class="shortcode-with-slider">
+<div class="head-wrap">
+<div class="cell">
+<h3 class="pt-shortcode-title"><span style="color: #898989;">Instagram</span></h3>
+<div class="sep"></div>
+</div>
+</div>
+[si_feed]
+
+</div>
+[/ig_text]
+[/ig_column]
+[/ig_row]
+
+[ig_row width="boxed" r_class="stripe" background="image" image="http://borealpaddle/wp-content/uploads/2014/11/quote-of-the-week-bg.jpg" position="left top" paralax="yes" border_width_value_="0" border_style="solid" border_color="#000" ]
+[ig_column span="span12"]
+[ig_testimonials el_title="Testimonials 1" test_text="QUOTE
+<i>OF THE WEEK</i>" autoplay="false" cycling_interval="-1"]
+
+[ig_item_testimonials heading="Testimonials Item 1" image_file="http://borealpaddle/wp-content/uploads/2014/11/joseph-campbell.png" sign="Joseph Campbell" disabled_el="no" ]
+"Follow your bliss and the universe will open doors where there were only walls."
+[/ig_item_testimonials]
+
+[/ig_testimonials]
+[/ig_column]
+[/ig_row]
