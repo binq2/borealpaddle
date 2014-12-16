@@ -98,5 +98,3 @@ function api_call() {
 add_shortcode( 'web_store', 'api_call' );
 
 ?>
-
-

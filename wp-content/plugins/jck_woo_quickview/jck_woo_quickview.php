@@ -165,37 +165,64 @@ class jckqv {
 	public function quickviewModal(){
 		check_ajax_referer( 'jckqv', 'nonce' );
 		
-		global $post, $product, $woocommerce;
-		
-		$post = get_post($_REQUEST['pid']); setup_postdata($post);
-		$product = get_product( $_REQUEST['pid'] );
+		global $post, $product, $woocommerce, $items, $pid;
 		
 		$theSettings = $this->settings->__getSettings();
 		
-		echo '<div id="'.$this->slug.'" class="cf">';
+		$post_status = (false === get_post_status($_REQUEST['pid']))? false : true;
 		
-			include($this->plugin_path.'/inc/qv-images.php');
+		$pid = $_REQUEST['pid'];
+		
+		if($post_status) :
+				
+			$post = get_post($_REQUEST['pid']); setup_postdata($post);
+			$product = get_product( $_REQUEST['pid'] );
+		
+			echo '<div id="'.$this->slug.'" class="cf">';
+		
+				include($this->plugin_path.'/inc/qv-images.php');
 			
-			echo '<div id="'.$this->slug.'_summary">';
+				echo '<div id="'.$this->slug.'_summary">';
 			
-				if($theSettings['popup_content_showbanner']) include($this->plugin_path.'/inc/qv-sale-flash.php');			
-				if($theSettings['popup_content_showtitle']) include($this->plugin_path.'/inc/qv-title.php');		
-				if($theSettings['popup_content_showrating']) include($this->plugin_path.'/inc/qv-rating.php');		
-				if($theSettings['popup_content_showprice']) include($this->plugin_path.'/inc/qv-price.php');
-				if($theSettings['popup_content_showdesc'] != 'no') include($this->plugin_path.'/inc/qv-desc.php');
-				if($theSettings['popup_content_showatc'] && $this->woo_version >= 2.1) include($this->plugin_path.'/inc/qv-add-to-cart.php');
-				if($theSettings['popup_content_showatc'] && $this->woo_version < 2.1) include($this->plugin_path.'/inc/qv-add-to-cart-old.php');					
-				if($theSettings['popup_content_showmeta']) include($this->plugin_path.'/inc/qv-meta.php');
+					if($theSettings['popup_content_showbanner']) include($this->plugin_path.'/inc/qv-sale-flash.php');			
+					if($theSettings['popup_content_showtitle']) include($this->plugin_path.'/inc/qv-title.php');		
+					if($theSettings['popup_content_showrating']) include($this->plugin_path.'/inc/qv-rating.php');		
+					if($theSettings['popup_content_showprice']) include($this->plugin_path.'/inc/qv-price.php');
+					if($theSettings['popup_content_showdesc'] != 'no') include($this->plugin_path.'/inc/qv-desc.php');
+					if($theSettings['popup_content_showatc'] && $this->woo_version >= 2.1) include($this->plugin_path.'/inc/qv-add-to-cart.php');
+					if($theSettings['popup_content_showatc'] && $this->woo_version < 2.1) include($this->plugin_path.'/inc/qv-add-to-cart-old.php');					
+					if($theSettings['popup_content_showmeta']) include($this->plugin_path.'/inc/qv-meta.php');
 			
+				echo '</div>';
+			
+				echo '<button title="Close (Esc)" type="button" class="mfp-close">×</button>';
+			
+				echo '<div id="addingToCart"><div><i class="jckqv-icon-cw animate-spin"></i> <span>'.__('Adding to Cart...', $this->slug).'</span></div></div>';
+			echo '</div>';
+		
+			wp_reset_postdata();		
+			
+		else :
+			echo '<div id="'.$this->slug.'" class="cf">';
+				include($this->plugin_path.'/inc/ls-images.php');
+				echo '<div id="'.$this->slug.'_summary">';
+		
+					/*if($theSettings['popup_content_showbanner']) include($this->plugin_path.'/inc/ls-sale-flash.php');			
+					if($theSettings['popup_content_showtitle']) include($this->plugin_path.'/inc/ls-title.php');		
+					if($theSettings['popup_content_showrating']) include($this->plugin_path.'/inc/ls-rating.php');		
+					if($theSettings['popup_content_showprice']) include($this->plugin_path.'/inc/ls-price.php');
+					if($theSettings['popup_content_showdesc'] != 'no') include($this->plugin_path.'/inc/ls-desc.php');
+					if($theSettings['popup_content_showatc'] && $this->woo_version >= 2.1) include($this->plugin_path.'/inc/ls-add-to-cart.php');
+					if($theSettings['popup_content_showmeta']) include($this->plugin_path.'/inc/ls-meta.php');*/
+		
+				echo '</div>';
+		
+				echo '<button title="Close (Esc)" type="button" class="mfp-close">×</button>';
+		
+				echo '<div id="addingToCart"><div><i class="jckqv-icon-cw animate-spin"></i> <span>'.__('Adding to Cart...', $this->slug).'</span></div></div>';
 			echo '</div>';
 			
-			echo '<button title="Close (Esc)" type="button" class="mfp-close">×</button>';
-			
-			echo '<div id="addingToCart"><div><i class="jckqv-icon-cw animate-spin"></i> <span>'.__('Adding to Cart...', $this->slug).'</span></div></div>';
-		echo '</div>';
-		
-		wp_reset_postdata();
-		
+		endif;
 		die;
 	}
 	

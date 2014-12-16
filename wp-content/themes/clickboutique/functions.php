@@ -395,11 +395,11 @@ $terms = get_terms('product_tag', $args);
 
 /*---------Lightspeed API Shortcodes-----------*/
 require_once('mosapi/featured_products.php');
-require_once('mosapi/categories.php');
+//require_once('mosapi/categories.php');
 
 
 function webstore() {
-	api_call();
+	//api_call();
 }
 
 add_shortcode( 'web_store', 'webstore' );
