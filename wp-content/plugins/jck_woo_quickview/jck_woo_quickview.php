@@ -149,8 +149,8 @@ class jckqv {
 	// !Display the Button
 
 	public function displayBtn($prodId = false){
-		global $post;
-		$prodId = ($prodId) ? $prodId : $post->ID;
+		global $post, $pid;
+		$prodId = ($prodId) ? $prodId : $pid;
 		
 		$theSettings = $this->settings->__getSettings();
 		
@@ -165,13 +165,15 @@ class jckqv {
 	public function quickviewModal(){
 		check_ajax_referer( 'jckqv', 'nonce' );
 		
-		global $post, $product, $woocommerce, $items, $pid;
+		global $post, $product, $woocommerce, $products, $pid;
 		
 		$theSettings = $this->settings->__getSettings();
 		
 		$post_status = (false === get_post_status($_REQUEST['pid']))? false : true;
 		
 		$pid = $_REQUEST['pid'];
+		
+		
 		
 		if($post_status) :
 				
@@ -204,16 +206,19 @@ class jckqv {
 			
 		else :
 			echo '<div id="'.$this->slug.'" class="cf">';
+				
+				echo $product->itemMatrixID."<br />";
+				
 				include($this->plugin_path.'/inc/ls-images.php');
 				echo '<div id="'.$this->slug.'_summary">';
 		
-					/*if($theSettings['popup_content_showbanner']) include($this->plugin_path.'/inc/ls-sale-flash.php');			
-					if($theSettings['popup_content_showtitle']) include($this->plugin_path.'/inc/ls-title.php');		
-					if($theSettings['popup_content_showrating']) include($this->plugin_path.'/inc/ls-rating.php');		
-					if($theSettings['popup_content_showprice']) include($this->plugin_path.'/inc/ls-price.php');
-					if($theSettings['popup_content_showdesc'] != 'no') include($this->plugin_path.'/inc/ls-desc.php');
-					if($theSettings['popup_content_showatc'] && $this->woo_version >= 2.1) include($this->plugin_path.'/inc/ls-add-to-cart.php');
-					if($theSettings['popup_content_showmeta']) include($this->plugin_path.'/inc/ls-meta.php');*/
+					/*if($theSettings['popup_content_showbanner']) include($this->plugin_path.'inc/ls-sale-flash.php');			
+					if($theSettings['popup_content_showtitle']) include($this->plugin_path.'inc/ls-title.php');		
+					if($theSettings['popup_content_showrating']) include($this->plugin_path.'inc/ls-rating.php');		
+					if($theSettings['popup_content_showprice']) include($this->plugin_path.'inc/ls-price.php');
+					if($theSettings['popup_content_showdesc'] != 'no') include($this->plugin_path.'inc/ls-desc.php');
+					if($theSettings['popup_content_showatc'] && $this->woo_version >= 2.1) include($this->plugin_path.'inc/ls-add-to-cart.php');
+					if($theSettings['popup_content_showmeta']) include($this->plugin_path.'inc/ls-meta.php');*/
 		
 				echo '</div>';
 		
@@ -258,6 +263,7 @@ class jckqv {
    	============================= */
    	
 	public function register_scripts_and_styles() {
+		global $products;
 		$theSettings = $this->settings->__getSettings();
 		
 		if ( is_admin() ) {

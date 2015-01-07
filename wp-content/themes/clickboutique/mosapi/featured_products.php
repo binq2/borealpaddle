@@ -1,9 +1,31 @@
 <?php
 
-// include our handy API wrapper that makes it easy to call the API, it also depends on MOScURL to make the cURL call
-require_once("MOSAPICall.class.php");
 
-	global $items;
+	
+	
+function featured_products_lightspeed($atts){
+	/**
+	 * Featured Products shortcode
+	 *
+	 * @param array $atts
+	 * @return string
+	 */
+	
+	global $woocommerce_loop, $products, $product;
+
+	// include our handy API wrapper that makes it easy to call the API, it also depends on MOScURL to make the cURL call
+	require_once("MOSAPICall.class.php");
+	
+	extract( shortcode_atts( array(
+		'per_page' 	=> '12',
+		'columns' 	=> '4',
+		'orderby' 	=> 'date',
+		'order' 	=> 'desc'
+	), $atts ) );
+	
+	$woocommerce_loop['columns'] = $columns;
+
+	ob_start();
 
 	$mosapi = new MOSAPICall("992e498dfa5ab5245f5bd5afee4ee1ce6ac6e0a1ee7d11e36480694a9b5282e7","83442");
 
@@ -11,10 +33,30 @@ require_once("MOSAPICall.class.php");
 	
 	$xml_query_string = 'tag=beyondyoga&load_relations=["ItemECommerce","Tags","Images"]';
 	
-	$items = $mosapi->makeAPICall("Account.ItemMatrix","Read",null,null,$emitter, $xml_query_string);
+	$products = $mosapi->makeAPICall("Account.ItemMatrix","Read",null,null,$emitter, $xml_query_string);
 
-function featured_products_lightspeed( $atts ) {
-	global $items, $mosapi;
+	
+
+	if ( $products->children() ) : ?>
+
+		<?php woocommerce_product_loop_start(); ?>
+
+			<?php foreach($products->children() as $product) : ?>
+
+				<?php wc_get_template_part( 'content', 'lightspeedproduct' ); ?>
+
+			<?php endforeach; // end of the loop. ?>
+
+		<?php woocommerce_product_loop_end(); ?>
+
+	<?php endif;
+
+	return '<div class="woocommerce columns-' . $columns . '">' . ob_get_clean() . '</div>';
+}	
+	
+
+/*function featured_products_lightspeed( $atts ) {
+	global $products, $mosapi;
 	//print_r($items);
 	$html = '<div class="woocommerce columns-4">';
 		$html .= '<ul class="products grid-layout">';
@@ -88,7 +130,7 @@ function featured_products_lightspeed( $atts ) {
 							$html .= '</div>';
 						$html .= '</div>';
 						$html .= '<button title="Close (Esc)" type="button" class="mfp-close">×</button>';
-					$html .= '</div>';*/
+					$html .= '</div>';
 				$html .= '</li>';
 			}
 		}
@@ -98,5 +140,5 @@ function featured_products_lightspeed( $atts ) {
 
 return $html;
 }
-
+*/
 add_shortcode( 'featured_products_lightspeed', 'featured_products_lightspeed' ); ?>

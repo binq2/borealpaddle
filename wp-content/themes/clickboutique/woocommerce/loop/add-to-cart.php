@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 global $product;
 
 $mode = get_option('catalog_mode');
-
+if($product->id):
 ?>
 
 <?php if ( !$product->is_in_stock() || $mode == 'on' ) : ?>
@@ -59,4 +59,5 @@ $mode = get_option('catalog_mode');
 
 	?>
 
+<?php endif; ?>
 <?php endif; ?>

@@ -1,4 +1,4 @@
-<?php global $post, $product, $woocommerce, $items, $pid; ?>
+<?php global $post, $product, $woocommerce, $products, $pid; ?>
 
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <div id="<?php echo $this->slug.'_images_wrap'; ?>">
@@ -7,15 +7,28 @@
 		<?php
 		
 			$prodImgs = array();
-
-			//$nodes = $items->xpath('//ItemMatrix/itemMatrixID[.="'.$_REQUEST['pid'].'"]/parent::*');
-			//$result = $nodes[0];
+			/*$theme_root = get_theme_root();
+			require_once($theme_root."/mosapi/MOSAPICall.class.php");
 			
-			foreach($items->children() as $item){
+			ob_start();
+
+			$mosapi = new MOSAPICall("992e498dfa5ab5245f5bd5afee4ee1ce6ac6e0a1ee7d11e36480694a9b5282e7","83442");
+
+			$emitter = 'https://api.merchantos.com/API/Account/83442/ItemMatrix';
+	
+			$xml_query_string = 'tag=beyondyoga&load_relations=["ItemECommerce","Tags","Images"]';
+	
+			$products = $mosapi->makeAPICall("Account.ItemMatrix","Read",null,null,$emitter, $xml_query_string);
+			
+			ob_end_flush();
+			
+			$pid = $_REQUEST['pid'];*/
+			
+			foreach($products->children() as $product){
 				
-				if ($item->itemMatrixID == $pid){
+				if ($product->itemMatrixID == $pid){
 					
-					print_r($item->Images);
+					//print_r($item->Images);
 					$imgId = $item->Images->Image[0]->imageID;
 					$has_image = (!empty($item->Images))? true : false;
 					$image_base = $item->Images->Image[0]->baseImageURL;
@@ -48,8 +61,7 @@
 						endforeach;
 					endif;*/
 				}
-			}	
-			
+			}
 			
 			if(!empty($prodImgs)):
 				$i = 0; foreach($prodImgs as $imgId => $imgData):
