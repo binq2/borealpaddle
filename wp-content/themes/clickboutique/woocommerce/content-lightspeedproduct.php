@@ -49,16 +49,16 @@ if ($attributes) {
 
 // Adding extra featured img if exists
 $attr = '';
-$slug = sanitize_title($product->description);
-$id = $product->itemMatrixID;
-$lightspeed_id = '1000000000' + $product->itemMatrixID;
+$slug = sanitize_title($product['description']);
+$id = $product['itemMatrixID'];
+$lightspeed_id = '1000000000' + $product['itemMatrixID'];
 $link = "http://borealpaddle.lightspeedwebstore.com/". $slug ."/dp/". $lightspeed_id ;
-$has_image = (!empty($product->Images))? true : false;
-$images = $product->Images->Image;
-$image_base = $product->Images->Image[0]->baseImageURL;
-$image_id = $product->Images->Image[0]->publicID;
-$image_url = $image_base .'c_pad,h_400,q_75,w_400/'. $image_id;
-$price = $product->Prices->ItemPrice[0]->amount;
+$has_image = (!empty($product['Images']))? true : false;
+$images = $product['Images'][0]['Image'];
+$image_base = $product['Images'][0]['Image'][0]['baseImageURL'];
+$image_id = $product['Images'][0]['Image'][0]['publicID'];
+$image_url = $image_base .'c_fill,h_220,w_220/'. $image_id;
+$price = $product['Prices'][0]['ItemPrice'][0]['amount'];
 $pid = $id;
 $flip_class = 'flip-enabled';
 
@@ -77,11 +77,11 @@ if($has_image){
 				<div class="flipper">
 
 					<div class="front img-wrap">
-						<?php echo '<img src="'. $image_url .'" alt="'. $product->Images->Image[0]->description .'" />'; ?>
+						<?php echo '<img src="'. $image_url .'" alt="'. $product['Images'][0]['Image'][0]['description'] .'" />'; ?>
 					</div>					
 
 						<div class="back img-wrap">
-							<?php echo '<img src="'. $image_url .'" alt="'. $product->Images->Image[0]->description .'" />'; ?>
+							<?php echo '<img src="'. $image_url .'" alt="'. $product['Images'][0]['Image'][0]['description'] .'" />'; ?>
 						</div>
 
 				</div>
@@ -119,15 +119,15 @@ if($has_image){
 
 		<div class="product-description-wrapper">
 
-			<?php $product_title = strip_tags( $product->description ); ?>
+			<?php $product_title = strip_tags( $product['description'] ); ?>
 
 			<a class="product-title" href="<?php echo $link; ?>" title="Click to learn more about <?php echo $product_title; ?>">
 				<h3><?php echo $product_title; ?></h3>
 			</a>
 
-			<?php if ( !empty($product->shortDescription )) : ?>
+			<?php if ( !empty($product['shortDescription'] )) : ?>
 				<div itemprop="description" class="entry-content">
-					<?php echo apply_filters( 'woocommerce_short_description', $product->shortDescription ); ?>
+					<?php echo apply_filters( 'woocommerce_short_description', $product['shortDescription'] ); ?>
 				</div>
 			<?php endif; ?>
 

@@ -165,15 +165,15 @@ class jckqv {
 	public function quickviewModal(){
 		check_ajax_referer( 'jckqv', 'nonce' );
 		
-		global $post, $product, $woocommerce, $products, $pid;
-		
+		global $post, $product, $woocommerce, $products, $pid, $prodImgs;
+				
 		$theSettings = $this->settings->__getSettings();
 		
 		$post_status = (false === get_post_status($_REQUEST['pid']))? false : true;
 		
 		$pid = $_REQUEST['pid'];
 		
-		
+		$prodImgs = array();
 		
 		if($post_status) :
 				
@@ -207,7 +207,48 @@ class jckqv {
 		else :
 			echo '<div id="'.$this->slug.'" class="cf">';
 				
-				echo $product->itemMatrixID."<br />";
+				$wp_session = WP_Session::get_instance();
+				$products = $wp_session['products'];
+				
+				foreach($products as $prod){
+				
+					foreach($prod as $product){
+						echo $product['itemMatrixID']."<br />";
+						if ($product['itemMatrixID'] == $pid){
+						
+							$image_base = $product['Images'][0]['Image'][0]['baseImageURL'];
+							$image_id = $product['Images'][0]['Image'][0]['publicID'];
+							$image_url = $image_base .'c_pad,h_400,q_75,w_400/'. $image_id;
+							$thumb_url = $image_base .'c_fill,h_220,w_220/'. $image_id;
+
+							$prodImgs[$pid]['slideId'][] = '-0-';
+							$prodImgs[$pid]['imgSrc'] = $image_url;
+							$prodImgs[$pid]['imgThumbSrc'] = $thumb_url;
+						
+							//echo '<img src="'.$image_url.'" data-jckqv="-0-" class="jckqv_image rsImg rsMainSlideImage" data-rsTmb="'.$thumb_url.'">';
+						
+							// Additional Images
+			
+							/*$attachment_count = count( $item->Images );
+			
+							if(!empty($attachment_count) && $attachment_count > 1):
+								foreach($item->Images as $image):
+					
+									m = $items->xpath('//ItemMatrix/itemMatrixID[.="'.$_REQUEST['pid'].'"]/Images/Image/imageID[.="'.$attachId.'"]/parent::*');
+									$image_id = $image->publicID;
+									$image_url = $image_base .'c_pad,h_400,q_75,w_400/'. $image_id;
+									$thumb_url = $image_base .'c_fill,h_220,w_220/'. $image_id;
+					
+									$prodImgs[$attachId]['slideId'][] = '-0-';
+									$prodImgs[$attachId]['imgSrc'] = $image_url;
+									$prodImgs[$attachId]['imgThumbSrc'] = $thumb_url;
+					
+								endforeach;
+							endif;*/
+						}
+					}
+				}
+
 				
 				include($this->plugin_path.'/inc/ls-images.php');
 				echo '<div id="'.$this->slug.'_summary">';
@@ -263,7 +304,7 @@ class jckqv {
    	============================= */
    	
 	public function register_scripts_and_styles() {
-		global $products;
+
 		$theSettings = $this->settings->__getSettings();
 		
 		if ( is_admin() ) {

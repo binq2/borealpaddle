@@ -1,6 +1,38 @@
 <?php
 
+function xml2array($xml)
 
+      {
+
+          $arr = array();
+
+          foreach ($xml->children() as $r)
+
+         {
+
+              $t = array();
+
+              if (count($r->children()) == 0)
+
+             {
+
+                  $arr[$r->getName()] = strval($r);
+
+             }
+
+             else
+
+             {
+
+                 $arr[$r->getName()][] = xml2array($r);
+
+             } 
+
+         }
+
+         return $arr;
+
+    }
 	
 	
 function featured_products_lightspeed($atts){
@@ -24,6 +56,8 @@ function featured_products_lightspeed($atts){
 	), $atts ) );
 	
 	$woocommerce_loop['columns'] = $columns;
+	
+	
 
 	ob_start();
 
@@ -35,21 +69,33 @@ function featured_products_lightspeed($atts){
 	
 	$products = $mosapi->makeAPICall("Account.ItemMatrix","Read",null,null,$emitter, $xml_query_string);
 
+	$wp_session = WP_Session::get_instance();
 	
+	$products = xml2array($products);
+	
+	$wp_session['products'] = $products;
+	
+	//var_dump($wp_session['products']);
+	
+	$i=0;
 
-	if ( $products->children() ) : ?>
+	//if ( $products->children() ) : ?>
 
 		<?php woocommerce_product_loop_start(); ?>
 
-			<?php foreach($products->children() as $product) : ?>
+			<?php foreach($products as $prod) :
 
-				<?php wc_get_template_part( 'content', 'lightspeedproduct' ); ?>
-
-			<?php endforeach; // end of the loop. ?>
+				foreach($prod as $product) :
+				
+					wc_get_template_part( 'content', 'lightspeedproduct' );
+					
+				endforeach;
+				
+			endforeach; // end of the loop. ?>
 
 		<?php woocommerce_product_loop_end(); ?>
 
-	<?php endif;
+	<?php //endif;
 
 	return '<div class="woocommerce columns-' . $columns . '">' . ob_get_clean() . '</div>';
 }	
