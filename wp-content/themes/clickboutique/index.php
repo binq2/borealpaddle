@@ -27,7 +27,7 @@ get_header(); ?>
 	<div class="spacer" <?php echo $spacer_bg; ?> data-stellar-background-ratio="0.5">
 		<div class="container-fluid">
 			<div class="row-fluid">
-				<h1 class="spacer-title" data-stellar-ratio="0.93"><?php echo $blog_title; ?></h1>
+				<h1 class="spacer-title" data-stellar-ratio="1.3"><?php echo $blog_title; ?></h1>
 			</div>
 		</div>
 	</div>

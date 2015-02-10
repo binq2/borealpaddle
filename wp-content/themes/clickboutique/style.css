@@ -1180,7 +1180,7 @@ header.stuck .site-logo img{
 .spacer {
     position: relative;
     overflow: hidden;
-    height: 60px;
+    height: 80px;
 
 }
 .single-post .spacer {
@@ -1194,7 +1194,7 @@ header.stuck .site-logo img{
 
 .spacer .container-fluid .row-fluid{
     position: relative;
-    height: 60px;
+    height: 80px;
 }
 
 .spacer .container-fluid .row-fluid .span12:after{
@@ -1220,7 +1220,7 @@ header.stuck .site-logo img{
     color: #FFFFFF;
     display: block;
     font-size: 110px;
-    font-size: 11rem;
+    font-size: 7rem;
     margin-top: -55px;
     opacity: 0.4;
     padding: 0;
