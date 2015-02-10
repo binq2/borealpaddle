@@ -358,58 +358,6 @@ add_filter('protected_title_format','remove_protected_text');
 
 
 
-
-
-
-
-
-function custom_tag_cloud(){
-
-$args = array(
-    'orderby'           => 'name', 
-    'order'             => 'ASC',
-    'hide_empty'        => false, 
-); 
-
-$terms = get_terms('product_tag', $args);
-?>
-<div id="tag_cloud-3" class="widget widget_tag_cloud">
-	<h3 class="widget-title">Tags</h3>
-	<div class="tagcloud">
-		<?php
-		foreach ($terms as $term) {
-			$slug = $term->slug;
-			$tag = $term->name;
-			?>
-			<a href="http://borealpaddle.lightspeedwebstore.com/<?php echo $slug; ?>" target="_black"><?php echo $tag; ?></a>
-			<?php
-		} ?>
-	</div>
-</div>
-
-<?php
-}
-
-
-
-
 /*---------Lightspeed API Shortcodes-----------*/
-require_once('mosapi/featured_products.php');
-//require_once('mosapi/categories.php');
-
-
-function webstore() {
-	//api_call();
-}
-
-add_shortcode( 'web_store', 'webstore' );
-
-
-
-
-
-
-
-
-
-
+// API Caching
+//include_once('cache/Yp_cache.php');

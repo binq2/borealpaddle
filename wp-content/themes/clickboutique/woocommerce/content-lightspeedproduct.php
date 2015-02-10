@@ -54,7 +54,6 @@ $id = $product['itemMatrixID'];
 $lightspeed_id = '1000000000' + $product['itemMatrixID'];
 $link = "http://borealpaddle.lightspeedwebstore.com/". $slug ."/dp/". $lightspeed_id ;
 $has_image = (!empty($product['Images']))? true : false;
-$images = $product['Images'][0]['Image'];
 $image_base = $product['Images'][0]['Image'][0]['baseImageURL'];
 $image_id = $product['Images'][0]['Image'][0]['publicID'];
 $image_url = $image_base .'c_fill,h_220,w_220/'. $image_id;

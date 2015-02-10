@@ -29,8 +29,7 @@
 
                 <?php if ( is_active_sidebar( 'footer-sidebar-2' ) ) : ?>
                     <div class="<?php echo $span; ?>">
-                        <?php //dynamic_sidebar( 'footer-sidebar-2' ); ?>
-                        <?php custom_tag_cloud(); ?>
+                        <?php dynamic_sidebar( 'footer-sidebar-2' ); ?>
                     </div>
                 <?php endif; ?>
 

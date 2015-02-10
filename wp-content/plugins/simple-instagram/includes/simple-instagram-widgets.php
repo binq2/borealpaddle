@@ -48,13 +48,13 @@ class SI_Feed_Widget extends WP_Widget {
        foreach($feed->data as $image){
          
          $url = $image->images->standard_resolution->url;
-
+		
          // Fix https
          $url = str_replace('http://', '//', $url);
 
          $return .= '<li class="si_item">';
          
-         $return .= '<a href="'.$image->link.'" target="_blank">';
+         $return .= '<a href="'.$image->link.'" rel="lightbox['.$image->link.']">';
          $return .= '<img src="'.$url.'">';
          $return .= '</a>';
          $return .= '</li>';
@@ -176,7 +176,7 @@ class SI_Tag_Widget extends WP_Widget {
 
        $return .= '<li class="si_item">';
        
-       $return .= '<a href="'.$image->link.'" target="_blank">';
+       $return .= '<a href="'.$image->link.'" rel="lightbox[colorbox]">';
        $return .= '<img src="'.$url.'">';
        $return .= '</a>';
        $return .= '</li>';
@@ -294,7 +294,7 @@ class SI_Popular_Widget extends WP_Widget {
 
          $return .= '<li class="si_item">';
          
-         $return .= '<a href="'.$feed->data[$i]->link.'" target="_blank">';
+         $return .= '<a href="'.$feed->data[$i]->link.'" rel="lightbox[colorbox]">';
          $return .= '<img src="'.$url.'">';
          
        $return .= '</a>';

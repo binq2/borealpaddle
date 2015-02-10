@@ -47,16 +47,22 @@ require_once('instagram.class.php');
 	       $return .= '<ul class="si_feed_list">';
 	     }
 	     
+	     $L_url ='';
+	     
 	     foreach($feed->data as $image){
 	       switch($size){
+	         case 'lightbox':
+	           $L_url = $image->images->standard_resolution->url;
+	           $url = $image->images->thumbnail->url;
+	           break;
 	         case 'full':
-	           $url = $image->images->standard_resolution->url;
+	           $L_url = $url = $image->images->standard_resolution->url;
 	           break;
 	         case 'medium':
-	           $url = $image->images->low_resolution->url;
+	           $L_url =  $url = $image->images->low_resolution->url;
 	           break;
 	         case 'small':
-	           $url = $image->images->thumbnail->url;
+	           $L_url =  $url = $image->images->thumbnail->url;
 	           break;
 	       }
 
@@ -69,7 +75,7 @@ require_once('instagram.class.php');
 	       }
 	       
 	       if($link == 'true'){
-	         $return .= '<a href="'.$image->link.'" target="_blank">';
+	         $return .= '<a href="'.$L_url.'" rel="lightbox[colorbox]">';
 	       }
 	       $return .= '<img src="'.$url.'" '.$w_param.' >';
 	       if($link == 'true'){

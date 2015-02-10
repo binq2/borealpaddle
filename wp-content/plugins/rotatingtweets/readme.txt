@@ -3,8 +3,8 @@ Contributors: mpntod
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9XCNM4QSVHYT8
 Tags: shortcode,widget,twitter,rotating,rotate,rotator,tweet,tweets,animation,jquery,jquery cycle,cycle,multilingual,responsive
 Requires at least: 2.6
-Tested up to: 4.0
-Stable tag: 1.7.4
+Tested up to: 4.1
+Stable tag: 1.7.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,7 @@ Twitter widget and shortcode to show your latest tweets one at a time an animate
 * Replaces [t.co](http://t.co) links with the original link
 * Caches the most recent data from Twitter to avoid problems with rate limiting
 * Uses [jQuery](http://jquery.com/), [jQuery.Cycle](http://jquery.malsup.com/cycle/) and [jQuery.Cycle2](http://jquery.malsup.com/cycle2/) to produce a nice smooth result.
+* Compatible with [W3 Total Cache](https://wordpress.org/plugins/w3-total-cache/).
 * **Multi-lingual** - now set up to be multi-lingual. The Twitter 'follow' button is automatically translated to match your site's language setting [if Twitter has made the appropriate language available](https://dev.twitter.com/docs/api/1.1/get/help/languages). Also uses [Wordpress's multi-lingual capability](http://codex.wordpress.org/I18n_for_WordPress_Developers) to enable translation of all the other text used by the plug-in via language packs.
 
 Currently the following languages are available:
@@ -30,7 +31,7 @@ Currently the following languages are available:
 * Brazilian Portuguese *(complete - many thanks to Wilmerson Felipe for his help on this)*
 * German *(almost complete - many thanks to Nils Kroneberg for his help on this)*
 * Spanish *(basic tweet display only)*
-* Italian *(basic tweet display only)*
+* Italian *(complete - many thanks to [Mattia Migliorini](https://profiles.wordpress.org/deshack/) at [deshack](http://deshack.net/) for his help on this)*
 * Dutch *(public facing translation complete - many thanks to Natasja Weijer for her help on this)*
 * French *(almost complete - many thanks to [Alexandre Trudel](http://wordpress.org/support/profile/alexandretrudel) for his help on this)*
 * Serbian *(complete - many thanks to Borisa Djuraskovic at [Web Hosting Hub](http://www.webhostinghub.com/) for his help on this)*
@@ -60,7 +61,7 @@ Options include:
 Possible variables for the shortcode include:
 
 * **Required settings** - at least one of the following three settings is required for the short-code to function:
-	* `screen_name` = Twitter user name
+	* `screen_name` = one or more Twitter user names e.g. `[rotatingtweets screen_name="mpntod"]` or `[rotatingtweets screen_name="mpntod twitter"]`
 	* `url` = Twitter user URL. If `screen_name` is empty and this link is valid, `screen_name` will be set to the user name included in `url`
 	* `search` = a term to search for. There's a useful guide to using Twitter's search function at https://support.twitter.com/articles/71577-using-advanced-search
 * **Twitter options**
@@ -90,11 +91,15 @@ Possible variables for the shortcode include:
 		* `prev` = content for the prev button (default `'prev'`)
 		* `next` = content for the next button (default `'next'`)
 		* `middot` = content for the space between the buttons (default `' &middot; '`)
-		* `np_pos` = position for 'next' and 'prev' buttons - `'top'`, `'bottom'`, `'insidebottom'` or `'tweets'` (default `'top'`)
+		* `np_pos` = position for 'next' and 'prev' buttons - `'top'`, `'bottom'`, `'insidebottom'`, `'beforeafter'` or `'tweets'` (default `'top'`)
 	* `show_media` = `'0'` or `'1'` - experimental option that shows images with the tweet - default is `'0'`
 	* `screen_name_plural` = `'0'` or `'1'` - experimental option that allows you to have a plural possessive in the default display format (e.g. *British Lions' Twitter*) - default is `'0'`
 	* `tweet_length` = maximum number of characters to show in tweet - default is `'0'` which allows whole tweet to be shown
 	* `no_emoji` = `'0'` or `'1'` - experimental option that removes emoji from the feed - default is `'0'`
+	* `official_format_override` = `'0'` or `'1'` - enables you to change the settings for `show_meta_reply_retweet_favorite` and `show_meta_timestamp` on the 'official formats'.
+
+* **Caching**
+	* `w3tc_render_to` = 'your_choice_of_random_string' - used to support 'fragment caching' by [W3 Total Cache](https://wordpress.org/plugins/w3-total-cache/).  For this to work, you also need to ensure that `W3TC_DYNAMIC_SECURITY` is defined in your `wp-config.php` file and that you not using 'HTTP Compression' on the 'Browser Cache' settings page or 'Enhanced Disk caching' on the 'Page Cache' settings page.
 	
 * **Twitter follow button**
 	* `show_follow` = `'0'` or `'1'` - show follow button - default is `'0'`
@@ -120,7 +125,7 @@ Try something like:
 `<?php echo do_shortcode( "[rotatingtweets screen_name='your_twitter']" ) ?>`
 
 = How can I pull information from two accounts into one widget =
-The easiest way is to list more than one account in the 'Twitter name' box in the widget or use something like `screen_name = 'account1 account2'` in the shortcode.
+The easiest way is to list more than one account in the 'Twitter name' box in the widget or use something like `screen_name='account1 account2'` in the shortcode.
 
 = How often does the plug-in call Twitter =
 In most cases, each use (or "instance") of this plug-in gets data from Twitter every 2 minutes. The exception is when two or more instances share the same settings (screen name etc.), in which case they share the same data rather than each calling it separately.
@@ -174,10 +179,26 @@ into your CSS - changing `123px;` to the width you're aiming at - either via put
 You can do this by going to the `rotatingtweets/css` directory and renaming `rotatingtweets-sample.css` to `rotatingtweets.css` and putting it in the `wp-content/uploads/` directory.  This displays a Twitter bird to the left of your tweets.  Any CSS you put into `rotatingtweets.css` won't be overwritten when the plug-in is upgraded to the latest version.
 
 == Upgrade notice ==
-= 1.7.4 =
-* Ensures all images use `https://` link for compatibility with SSL-secured sites
+= 1.7.8 =
+* Important upgrade that fixes caching bug. Also addition of Italian!
 
 == Changelog ==
+= 1.7.8 =
+* Solves bug when Base64 tries to decode an array
+
+= 1.7.7 =
+* Better handling transients on transition from old version to new
+
+= 1.7.6 =
+* Addition of Italian language
+* Fixes transient-based caching - many thanks to to [jensnilsson](https://wordpress.org/support/profile/jensnilsson) and [Moondrop](https://wordpress.org/support/profile/moondrop) for highlighting the solution [here](https://wordpress.org/support/topic/no-tweets-available-mostly?replies=30).
+
+= 1.7.5 =
+* Much faster and more reliable caching. 
+* Compatibility with W3 Total Cache.
+* New `scrollLeftGap` transition 
+* Ability to put 'prev' and 'next' buttons before and after the main rotating tweets
+
 = 1.7.4 =
 * Ensures all images use `https://` link for compatibility with SSL-secured sites
 

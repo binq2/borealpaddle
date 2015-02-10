@@ -165,7 +165,7 @@ class jckqv {
 	public function quickviewModal(){
 		check_ajax_referer( 'jckqv', 'nonce' );
 		
-		global $post, $product, $woocommerce, $products, $pid, $prodImgs;
+		global $post, $product, $woocommerce, $products, $pid, $item;
 				
 		$theSettings = $this->settings->__getSettings();
 		
@@ -173,7 +173,6 @@ class jckqv {
 		
 		$pid = $_REQUEST['pid'];
 		
-		$prodImgs = array();
 		
 		if($post_status) :
 				
@@ -207,59 +206,28 @@ class jckqv {
 		else :
 			echo '<div id="'.$this->slug.'" class="cf">';
 				
-				$wp_session = WP_Session::get_instance();
-				$products = $wp_session['products'];
+				$featured_products = LI()->LI_cache->get("lightspeed_featured_products");
+				$recent_products = LI()->LI_cache->get("lightspeed_recent_products");
 				
-				foreach($products as $prod){
-				
-					foreach($prod as $product){
-						echo $product['itemMatrixID']."<br />";
-						if ($product['itemMatrixID'] == $pid){
-						
-							$image_base = $product['Images'][0]['Image'][0]['baseImageURL'];
-							$image_id = $product['Images'][0]['Image'][0]['publicID'];
-							$image_url = $image_base .'c_pad,h_400,q_75,w_400/'. $image_id;
-							$thumb_url = $image_base .'c_fill,h_220,w_220/'. $image_id;
-
-							$prodImgs[$pid]['slideId'][] = '-0-';
-							$prodImgs[$pid]['imgSrc'] = $image_url;
-							$prodImgs[$pid]['imgThumbSrc'] = $thumb_url;
-						
-							//echo '<img src="'.$image_url.'" data-jckqv="-0-" class="jckqv_image rsImg rsMainSlideImage" data-rsTmb="'.$thumb_url.'">';
-						
-							// Additional Images
-			
-							/*$attachment_count = count( $item->Images );
-			
-							if(!empty($attachment_count) && $attachment_count > 1):
-								foreach($item->Images as $image):
-					
-									m = $items->xpath('//ItemMatrix/itemMatrixID[.="'.$_REQUEST['pid'].'"]/Images/Image/imageID[.="'.$attachId.'"]/parent::*');
-									$image_id = $image->publicID;
-									$image_url = $image_base .'c_pad,h_400,q_75,w_400/'. $image_id;
-									$thumb_url = $image_base .'c_fill,h_220,w_220/'. $image_id;
-					
-									$prodImgs[$attachId]['slideId'][] = '-0-';
-									$prodImgs[$attachId]['imgSrc'] = $image_url;
-									$prodImgs[$attachId]['imgThumbSrc'] = $thumb_url;
-					
-								endforeach;
-							endif;*/
-						}
-					}
-				}
+				$product = search($featured_products, 'itemMatrixID', $pid);
+				if(empty($product))
+					$product = search($recent_products, 'itemMatrixID', $pid);
 
 				
-				include($this->plugin_path.'/inc/ls-images.php');
+
+				
+				
+				include(LSI_DIR_PATH.'/includes/mosapi/inc/ls-images.php');
+				
 				echo '<div id="'.$this->slug.'_summary">';
 		
-					/*if($theSettings['popup_content_showbanner']) include($this->plugin_path.'inc/ls-sale-flash.php');			
-					if($theSettings['popup_content_showtitle']) include($this->plugin_path.'inc/ls-title.php');		
-					if($theSettings['popup_content_showrating']) include($this->plugin_path.'inc/ls-rating.php');		
-					if($theSettings['popup_content_showprice']) include($this->plugin_path.'inc/ls-price.php');
-					if($theSettings['popup_content_showdesc'] != 'no') include($this->plugin_path.'inc/ls-desc.php');
-					if($theSettings['popup_content_showatc'] && $this->woo_version >= 2.1) include($this->plugin_path.'inc/ls-add-to-cart.php');
-					if($theSettings['popup_content_showmeta']) include($this->plugin_path.'inc/ls-meta.php');*/
+					//if($theSettings['popup_content_showbanner']) include(LSI_DIR_PATH.'/includes/mosapi/inc/ls-sale-flash.php');			
+					if($theSettings['popup_content_showtitle']) include(LSI_DIR_PATH.'/includes/mosapi/inc/ls-title.php');		
+					//if($theSettings['popup_content_showrating']) include(LSI_DIR_PATH.'/includes/mosapi/inc/ls-rating.php');		
+					if($theSettings['popup_content_showprice']) include(LSI_DIR_PATH.'/includes/mosapi/inc/ls-price.php');
+					if($theSettings['popup_content_showdesc'] != 'no') include(LSI_DIR_PATH.'/includes/mosapi/inc/ls-desc.php');
+					if($theSettings['popup_content_showatc'] && $this->woo_version >= 2.1) include(LSI_DIR_PATH.'/includes/mosapi/inc/ls-add-to-cart.php');
+					if($theSettings['popup_content_showmeta']) include(LSI_DIR_PATH.'/includes/mosapi/inc/ls-meta.php');
 		
 				echo '</div>';
 		
