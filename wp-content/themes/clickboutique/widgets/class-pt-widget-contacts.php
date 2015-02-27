@@ -35,7 +35,6 @@ class pt_contacts_widget extends WP_Widget {
 			'skype' 		=> '',
 			'email' 		=> '', 
 			'address' 		=> '',
-			'hours'			=> '',
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults ); 
@@ -72,10 +71,6 @@ class pt_contacts_widget extends WP_Widget {
 			<label for="<?php echo $this->get_field_id( 'address' ); ?>"><?php _e( 'Address:', 'plumtree' ); ?></label> 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'address' ); ?>" name="<?php echo $this->get_field_name( 'address' ); ?>" type="text" value="<?php echo $instance['address']; ?>" />
 		</p>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'hours' ); ?>"><?php _e( 'Store Hours:', 'plumtree' ); ?></label> 
-			<input class="widefat" id="<?php echo $this->get_field_id( 'hours' ); ?>" name="<?php echo $this->get_field_name( 'hours' ); ?>" type="text" value="<?php echo $instance['hours']; ?>" />
-		</p>
 		<?php 
 	}
 
@@ -91,7 +86,6 @@ class pt_contacts_widget extends WP_Widget {
 		$instance['skype'] = ( $new_instance['skype'] );
 		$instance['email'] = ( $new_instance['email'] );
 		$instance['address'] = ( $new_instance['address'] );
-		$instance['hours'] = ( $new_instance['hours'] );
 
 		return $instance;
 	}
@@ -110,7 +104,6 @@ class pt_contacts_widget extends WP_Widget {
 		$skype = (isset($instance['skype']) ? $instance['skype'] : '' );
 		$email = (isset($instance['email']) ? $instance['email'] : '' );
 		$address = (isset($instance['address']) ? $instance['address'] : '' );
-		$hours = (isset($instance['hours']) ? $instance['hours'] : '' );
 
 		echo $before_widget;
 		if ( ! empty( $title ) )
@@ -122,12 +115,11 @@ class pt_contacts_widget extends WP_Widget {
 		} ?>
 
 			<ul class="pt-widget-contacts">
-				<?php if($address != '' ) : ?><li class="option-title a-address"><span class="address"><?php echo $address; ?></span></li><?php endif; ?>
 				<?php if($phone != '' ) : ?><li class="option-title a-phone"><span class="phone"><?php echo $phone; ?></span></li><?php endif; ?>
 				<?php if($fax != '' ) : ?><li class="option-title a-fx"><span class="fax"><?php echo $fax; ?></span></li><?php endif; ?>
 				<?php if($skype != '' ) : ?><li class="option-title a-skype"><span class="skype"><?php echo $skype; ?></span></li><?php endif; ?>
-				<?php if($email != '' ) : ?><li class="option-title a-email"><span class="email"><a title="Email us" href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></span></li><?php endif; ?>
-				<?php if($hours != '' ) : ?><li class="option-title a-clock-o"><span class="hours"><?php echo $hours; ?></span></li><?php endif; ?>
+				<?php if($email != '' ) : ?><li class="option-title a-email"><span class="email"><a title="<?php _e('Email us', 'plumtree');?>" href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></span></li><?php endif; ?>
+				<?php if($address != '' ) : ?><li class="option-title a-address"><span class="address"><?php echo $address; ?></span></li><?php endif; ?>
 			</ul>
 
 		<?php 

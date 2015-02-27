@@ -727,14 +727,25 @@
 		<div class="clear"></div>					
 
 		<p class="form-field wpallimport-radio-field">
-			<input type="radio" id="set_default_yes" name="is_default_attributes" value="1" <?php echo $post['is_default_attributes'] ? 'checked="checked"': '' ?>/>
-			<label for="set_default_yes" style="width: 400px;"><?php _e("Set first variation as the default selection in the attributes dropdowns.", 'pmxi_plugin'); ?></label>
+			<input type="radio" id="set_default_yes" class="switcher" name="is_default_attributes" value="1" <?php echo $post['is_default_attributes'] ? 'checked="checked"': '' ?>/>
+			<label for="set_default_yes" style="width: 400px;"><?php _e("Set the default selection in the attributes dropdowns.", 'pmxi_plugin'); ?></label>
 			<a href="#help" class="wpallimport-help" title="<?php _e('The attributes for the first variation will be automatically selected on the frontend.', 'pmxi_plugin') ?>" style="position:relative; top:2px;">?</a>
 		</p>
+		<div class="switcher-target-set_default_yes set_with_xpath" style="padding-left:17px;">
+			<p class="form-field wpallimport-radio-field">
+				<input type="radio" id="set_default_first" name="default_attributes_type" value="first" <?php echo ($post['default_attributes_type'] == 'first') ? 'checked="checked"': '' ?>/>
+				<label for="set_default_first" style="width: 90%;"><?php _e("Set first variation as the default selection.", "pmxi_plugin"); ?></label>
+			</p>
+			<p class="form-field wpallimport-radio-field">
+				<input type="radio" id="set_default_instock" name="default_attributes_type" value="instock" <?php echo ($post['default_attributes_type'] == 'instock') ? 'checked="checked"': '' ?>/>
+				<label for="set_default_instock" style="width: 90%;"><?php _e("Set first in stock variation as the default selection.", "pmxi_plugin"); ?></label>
+			</p>	
+		</div>
 		<p class="form-field wpallimport-radio-field">
-			<input type="radio" id="set_default_no" name="is_default_attributes" value="0" <?php echo ! $post['is_default_attributes'] ? 'checked="checked"': '' ?>/>
+			<input type="radio" id="set_default_no" class="switcher" name="is_default_attributes" value="0" <?php echo ! $post['is_default_attributes'] ? 'checked="checked"': '' ?>/>
 			<label for="set_default_no" style="width: 90%;"><?php _e("Do not set default selections for the dropdowns.", "pmxi_plugin"); ?></label>
 		</p>
+
 		<p class="form-field wpallimport-radio-field">
 			<input type="hidden" name="make_simple_product" value="0" />
 			<input type="checkbox" id="make_simple_product" name="make_simple_product" value="1" <?php echo $post['make_simple_product'] ? 'checked="checked"' : '' ?> />

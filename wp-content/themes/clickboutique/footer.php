@@ -7,43 +7,30 @@
 
             <div class="container-fluid">
                 <div class="row-fluid">
-                    
-                <?php if ( is_active_sidebar( 'footer-sidebar-1' ) && is_active_sidebar( 'footer-sidebar-2' ) && is_active_sidebar( 'footer-sidebar-3' ) && is_active_sidebar( 'footer-sidebar-4' ) ) {
-                    $span = 'span3';
-                } elseif ( is_active_sidebar( 'footer-sidebar-1' ) && is_active_sidebar( 'footer-sidebar-2' ) && is_active_sidebar( 'footer-sidebar-3' ) ) {
-                    $span = 'span4';
-                } elseif ( is_active_sidebar( 'footer-sidebar-1' ) && is_active_sidebar( 'footer-sidebar-2' ) ) {
-                    $span = 'span6';
-                } elseif ( is_active_sidebar( 'footer-sidebar-1' ) ) {
-                    $span = 'span12';
-                } else {
-                    $span = 'span3';
-                }?>
 
-
-                <?php if ( is_active_sidebar( 'footer-sidebar-1' ) ) : ?>
-                    <div class="<?php echo $span; ?>">
-                        <?php dynamic_sidebar( 'footer-sidebar-1' ); ?>
+                    <div class="span3">
+                        <?php if ( is_active_sidebar( 'footer-sidebar-1' ) ) : ?>
+                            <?php dynamic_sidebar( 'footer-sidebar-1' ); ?>
+                        <?php endif; ?>
                     </div>
-                <?php endif; ?>
 
-                <?php if ( is_active_sidebar( 'footer-sidebar-2' ) ) : ?>
-                    <div class="<?php echo $span; ?>">
-                        <?php dynamic_sidebar( 'footer-sidebar-2' ); ?>
+                    <div class="span3">
+                        <?php if ( is_active_sidebar( 'footer-sidebar-2' ) ) : ?>
+                            <?php dynamic_sidebar( 'footer-sidebar-2' ); ?>
+                        <?php endif; ?>
                     </div>
-                <?php endif; ?>
 
-                <?php if ( is_active_sidebar( 'footer-sidebar-3' ) ) : ?>
-                    <div class="<?php echo $span; ?>">
-                        <?php dynamic_sidebar( 'footer-sidebar-3' ); ?>
+                    <div class="span3">
+                        <?php if ( is_active_sidebar( 'footer-sidebar-3' ) ) : ?>
+                            <?php dynamic_sidebar( 'footer-sidebar-3' ); ?>
+                        <?php endif; ?>
                     </div>
-                <?php endif; ?>
 
-                <?php if ( is_active_sidebar( 'footer-sidebar-4' ) ) : ?>
-                    <div class="<?php echo $span; ?>">
-                        <?php dynamic_sidebar( 'footer-sidebar-4' ); ?>
+                    <div class="span3">
+                        <?php if ( is_active_sidebar( 'footer-sidebar-4' ) ) : ?>
+                            <?php dynamic_sidebar( 'footer-sidebar-4' ); ?>
+                        <?php endif; ?>
                     </div>
-                <?php endif; ?>
 
                 </div>
             </div>

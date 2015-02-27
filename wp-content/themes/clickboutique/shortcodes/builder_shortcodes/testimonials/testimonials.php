@@ -121,7 +121,8 @@ if ( ! class_exists( 'IG_Testimonials' ) ) {
 			$interval      = @( $automatic_cycling == 'yes' ) ? $interval_time : 'false';
 			$pause         = @( $pause_mouseover == 'yes' ) ? 'pause : "hover"' : '';
 			$script        = "";
-
+			
+			
 
 			$testimonials_indicators   = array();
 			$testimonials_indicators[] = '<ol class="testimonials-indicators">';
@@ -144,7 +145,7 @@ if ( ! class_exists( 'IG_Testimonials' ) ) {
 
 			$html = "<div class=\"testimonials\"><div class=\"test-welcome\"><div class=\"cont\">".$test_text."</div></div>
 				    <div class=\"test-cont\">
-				        <ul data-slider=\"ios\" data-infinite=\"true\" data-drag=\"false\" data-autoplay=\"false\" data-info=\"false\" data-height=\"100\" id=\"$testimonials_id\" class=\"v-slider\">
+				        <ul data-slider=\"ios\" data-infinite=\"true\" data-drag=\"true\" data-autoplay=\"$autoplay\" data-info=\"false\" data-height=\"100\" id=\"$testimonials_id\" class=\"v-slider\">
 				            $testimonials_content
 				        </ul>
 				    </div>

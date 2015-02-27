@@ -33,7 +33,7 @@ if ( function_exists( 'add_image_size' ) ) {
 // ----- Theme supports
 function plumtree_setup() {
 
-	load_theme_textdomain( 'plumtree', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'plumtree', get_template_directory() . '/languages/' );
 
 	add_theme_support( 'automatic-feed-links' );
 
@@ -108,6 +108,10 @@ function plumtree_scripts_styles() {
 	
 	//----Shop Tooltips---------------------
 	wp_enqueue_script( 'plumtree-shop-tooltips', get_template_directory_uri() . '/js/shop-tooltips.js', array('jquery'), '1.0'. true);
+
+	//----WooCommerce Checkout with form styler fix-----------
+	//wp_enqueue_script('checkout-fix', get_template_directory_uri().'/js/country-select.js', array('jquery'), '1.0', true);
+	
 
 	//----Load CSS--------------------------------
 	wp_enqueue_style( 'plumtree-bootstrap', get_template_directory_uri(). '/css/bootstrap.min.css' );
@@ -214,11 +218,21 @@ function plumtree_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 
+	/*register_sidebar( array(
+		'name' => __( 'Top Store Page Widget section', 'plumtree' ),
+		'id' => 'top-store-page-widgets',
+		'description' => __( 'Store Page Widget Area located at the top of site before main content', 'plumtree' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s span3">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );*/
+
 	register_sidebar( array(
 		'name' => __( 'Product Cart Widget section', 'plumtree' ),
 		'id' => 'cart-widgets',
 		'description' => __( 'Product Cart Widget Area located at the right side of cart contents', 'plumtree' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s span6">',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
@@ -308,15 +322,12 @@ require_once('ptpanel/ptpanel.php');
 require_once('inc/pt-admin.php');
 
 /*-----Including widgets, special functions--------*/
-require_once('widgets/class-pt-widget-cart.php');
 require_once('widgets/class-pt-widget-contacts.php');
 require_once('widgets/class-pt-widget-socials.php');
 require_once('widgets/class-pt-widget-search.php');
 require_once('widgets/class-pt-widget-most-viewed-posts.php');
 require_once('widgets/class-pt-widget-recent-posts.php');
-require_once('widgets/class-pt-widget-shop-filters.php');
 require_once('widgets/class-pt-widget-pay-icons.php');
-require_once('widgets/class-pt-widget-promo.php');
 require_once('inc/pt-theme-layouts.php');
 require_once('inc/pt-contacts.php');
 require_once('inc/pt-get-more.php');
@@ -324,8 +335,13 @@ require_once('inc/pt-posts-shortcode.php');
 require_once('inc/pt-functions.php');
 require_once('inc/pt-woo-modification.php');
 
+if (class_exists('Woocommerce')) {
+	require_once('widgets/class-pt-widget-cart.php');
+	require_once('widgets/class-pt-widget-shop-filters.php');
+}
+
 /*-----Including addons--------*/
-require_once('extensions/formstyler/formstyler.php');
+//require_once('extensions/formstyler/formstyler.php');
 require_once('extensions/iosslider/iosslider.php');
 require_once('extensions/isotope/isotope.php');
 require_once('extensions/magnific/magnific.php');
@@ -334,6 +350,7 @@ require_once('extensions/resmenu/resmenu.php');
 require_once('extensions/superfish/superfish.php');
 require_once('extensions/tooltipster/tooltipster.php');
 require_once('extensions/totop/totop.php');
+require_once('extensions/mosaic/mosaic.php');
 require_once('extensions/stellar/stellar.php');
 
 /*---------Content Builder-----------*/
@@ -358,6 +375,15 @@ add_filter('protected_title_format','remove_protected_text');
 
 
 
-/*---------Lightspeed API Shortcodes-----------*/
-// API Caching
-//include_once('cache/Yp_cache.php');
+
+
+
+
+
+
+
+
+
+
+
+

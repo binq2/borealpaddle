@@ -95,6 +95,16 @@ add_action('woocommerce_before_main_content', 'pt_theme_wrapper_start', 10);
 add_action('woocommerce_after_main_content', 'pt_theme_wrapper_end', 10);
 
 
+// ----- Woocommerce Adding top sidebar to product listing
+function pt_top_store_sidebar() {    
+    if ( is_active_sidebar( 'top-store-page-widgets' ) ) : ?>
+        <div class="row-fluid top-store-page-widgets">
+            <?php dynamic_sidebar( 'top-store-page-widgets' ); ?>
+        </div>
+    <?php endif;
+}
+add_action('woocommerce_before_main_content', 'pt_top_store_sidebar', 5);
+
 
 // ----- Modifying shop output
 //remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
@@ -227,8 +237,7 @@ if (get_option('checkout_steps') === "on") {
 				<li class="active"><a href="#authorization" ><span>1</span>'.__("Login", "plumtree").'</a></li>
 				<li><a href="#billing" ><span>2</span>'.__('Billing Address', 'plumtree').'</a></li>
 				<li><a href="#shipping" ><span>3</span>'.__('Shipping Address', 'plumtree').'</a></li>
-				<li><a href="#payment" ><span>4</span>'.__('Payment Method', 'plumtree').'</a></li>
-				<li><a href="#order_review_container" ><span>5</span>'.__('Order Review', 'plumtree').'</a></li>
+				<li><a href="#order_review" ><span>4</span>'.__('Order Review', 'plumtree').'</a></li>
 			</ul>';
 			
 		echo '<div class="tab-content login-register">';
@@ -345,8 +354,6 @@ if ( ! function_exists( 'pt_custom_product_tabs' ) ) {
 		} else {
 			unset( $tabs['additional_information'] );
 		}
-
-		$tabs['reviews']['priority'] = 30; 
 	 
 		return $tabs;
 

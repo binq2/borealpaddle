@@ -951,10 +951,6 @@ i.title{
     content: "\f041";
 }
 
-.widget .pt-widget-contacts li.a-clock-o:before{
-    content: "\f017";
-}
-
 .widget .pt-widget-contacts li:hover {
     background: none;
     list-style: none;

@@ -149,8 +149,8 @@ class jckqv {
 	// !Display the Button
 
 	public function displayBtn($prodId = false){
-		global $post, $pid;
-		$prodId = ($prodId) ? $prodId : $pid;
+		global $post;
+		$prodId = ($prodId) ? $prodId : $post->ID;
 		
 		$theSettings = $this->settings->__getSettings();
 		
@@ -165,78 +165,37 @@ class jckqv {
 	public function quickviewModal(){
 		check_ajax_referer( 'jckqv', 'nonce' );
 		
-		global $post, $product, $woocommerce, $products, $pid, $item;
-				
+		global $post, $product, $woocommerce;
+		
+		$post = get_post($_REQUEST['pid']); setup_postdata($post);
+		$product = get_product( $_REQUEST['pid'] );
+		
 		$theSettings = $this->settings->__getSettings();
 		
-		$post_status = (false === get_post_status($_REQUEST['pid']))? false : true;
+		echo '<div id="'.$this->slug.'" class="cf">';
 		
-		$pid = $_REQUEST['pid'];
-		
-		
-		if($post_status) :
-				
-			$post = get_post($_REQUEST['pid']); setup_postdata($post);
-			$product = get_product( $_REQUEST['pid'] );
-		
-			echo '<div id="'.$this->slug.'" class="cf">';
-		
-				include($this->plugin_path.'/inc/qv-images.php');
+			include($this->plugin_path.'/inc/qv-images.php');
 			
-				echo '<div id="'.$this->slug.'_summary">';
+			echo '<div id="'.$this->slug.'_summary">';
 			
-					if($theSettings['popup_content_showbanner']) include($this->plugin_path.'/inc/qv-sale-flash.php');			
-					if($theSettings['popup_content_showtitle']) include($this->plugin_path.'/inc/qv-title.php');		
-					if($theSettings['popup_content_showrating']) include($this->plugin_path.'/inc/qv-rating.php');		
-					if($theSettings['popup_content_showprice']) include($this->plugin_path.'/inc/qv-price.php');
-					if($theSettings['popup_content_showdesc'] != 'no') include($this->plugin_path.'/inc/qv-desc.php');
-					if($theSettings['popup_content_showatc'] && $this->woo_version >= 2.1) include($this->plugin_path.'/inc/qv-add-to-cart.php');
-					if($theSettings['popup_content_showatc'] && $this->woo_version < 2.1) include($this->plugin_path.'/inc/qv-add-to-cart-old.php');					
-					if($theSettings['popup_content_showmeta']) include($this->plugin_path.'/inc/qv-meta.php');
+				if($theSettings['popup_content_showbanner']) include($this->plugin_path.'/inc/qv-sale-flash.php');			
+				if($theSettings['popup_content_showtitle']) include($this->plugin_path.'/inc/qv-title.php');		
+				if($theSettings['popup_content_showrating']) include($this->plugin_path.'/inc/qv-rating.php');		
+				if($theSettings['popup_content_showprice']) include($this->plugin_path.'/inc/qv-price.php');
+				if($theSettings['popup_content_showdesc'] != 'no') include($this->plugin_path.'/inc/qv-desc.php');
+				if($theSettings['popup_content_showatc'] && $this->woo_version >= 2.1) include($this->plugin_path.'/inc/qv-add-to-cart.php');
+				if($theSettings['popup_content_showatc'] && $this->woo_version < 2.1) include($this->plugin_path.'/inc/qv-add-to-cart-old.php');					
+				if($theSettings['popup_content_showmeta']) include($this->plugin_path.'/inc/qv-meta.php');
 			
-				echo '</div>';
-			
-				echo '<button title="Close (Esc)" type="button" class="mfp-close">×</button>';
-			
-				echo '<div id="addingToCart"><div><i class="jckqv-icon-cw animate-spin"></i> <span>'.__('Adding to Cart...', $this->slug).'</span></div></div>';
-			echo '</div>';
-		
-			wp_reset_postdata();		
-			
-		else :
-			echo '<div id="'.$this->slug.'" class="cf">';
-				
-				$featured_products = LI()->LI_cache->get("lightspeed_featured_products");
-				$recent_products = LI()->LI_cache->get("lightspeed_recent_products");
-				
-				$product = search($featured_products, 'itemMatrixID', $pid);
-				if(empty($product))
-					$product = search($recent_products, 'itemMatrixID', $pid);
-
-				
-
-				
-				
-				include(LSI_DIR_PATH.'/includes/mosapi/inc/ls-images.php');
-				
-				echo '<div id="'.$this->slug.'_summary">';
-		
-					//if($theSettings['popup_content_showbanner']) include(LSI_DIR_PATH.'/includes/mosapi/inc/ls-sale-flash.php');			
-					if($theSettings['popup_content_showtitle']) include(LSI_DIR_PATH.'/includes/mosapi/inc/ls-title.php');		
-					//if($theSettings['popup_content_showrating']) include(LSI_DIR_PATH.'/includes/mosapi/inc/ls-rating.php');		
-					if($theSettings['popup_content_showprice']) include(LSI_DIR_PATH.'/includes/mosapi/inc/ls-price.php');
-					if($theSettings['popup_content_showdesc'] != 'no') include(LSI_DIR_PATH.'/includes/mosapi/inc/ls-desc.php');
-					if($theSettings['popup_content_showatc'] && $this->woo_version >= 2.1) include(LSI_DIR_PATH.'/includes/mosapi/inc/ls-add-to-cart.php');
-					if($theSettings['popup_content_showmeta']) include(LSI_DIR_PATH.'/includes/mosapi/inc/ls-meta.php');
-		
-				echo '</div>';
-		
-				echo '<button title="Close (Esc)" type="button" class="mfp-close">×</button>';
-		
-				echo '<div id="addingToCart"><div><i class="jckqv-icon-cw animate-spin"></i> <span>'.__('Adding to Cart...', $this->slug).'</span></div></div>';
 			echo '</div>';
 			
-		endif;
+			echo '<button title="Close (Esc)" type="button" class="mfp-close">×</button>';
+			
+			echo '<div id="addingToCart"><div><i class="jckqv-icon-cw animate-spin"></i> <span>'.__('Adding to Cart...', $this->slug).'</span></div></div>';
+		echo '</div>';
+		
+		wp_reset_postdata();
+		
 		die;
 	}
 	
@@ -272,7 +231,6 @@ class jckqv {
    	============================= */
    	
 	public function register_scripts_and_styles() {
-
 		$theSettings = $this->settings->__getSettings();
 		
 		if ( is_admin() ) {

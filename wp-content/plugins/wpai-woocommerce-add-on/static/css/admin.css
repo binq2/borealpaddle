@@ -90,9 +90,9 @@
 	float: left;
 }
 .wpallimport-plugin #woocommerce_attributes{
-	padding-left: 2%;
+	float: right !important;
 	padding-top: 10px;
-	width:98% !important;
+	width:75% !important;
 }
 .wpallimport-plugin .variations_tree{
 	font-family: sans-serif;

@@ -12,7 +12,11 @@
 ?>
 
 	<?php
+		
+		
+		
 		$current_layout = pt_get_post_layout( $post->ID );
+
 		if ($current_layout === 'default') {
 			if ( is_home() ) { $current_layout = get_option('blog_layout'); } 
 			if ( is_single() ) { $current_layout = get_option('single_layout'); } 

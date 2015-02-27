@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<Error><httpCode>401</httpCode><httpMessage>Unauthorized</httpMessage><message>Invalid username/password or API key.</message><errorClass>AuthError</errorClass></Error>

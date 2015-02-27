@@ -515,20 +515,20 @@ if ( ! function_exists( 'pt_entry_comments_counter' ) ) {
 if ( ! function_exists( 'pt_entry_post_cats' ) ) {
 	function pt_entry_post_cats() {
 		$categories_list = get_the_category_list( __( '</span>, <span class="cat-name">', 'plumtree' ) );
-		if ( $categories_list ) { echo '<div class="post-cats">Categories: '.$categories_list.'</div>'; }
+		if ( $categories_list ) { echo '<div class="post-cats">'.__('Categories: ', 'plumtree').$categories_list.'</div>'; }
 	}
 }
 
 if ( ! function_exists( 'pt_entry_post_tags' ) ) {
 	function pt_entry_post_tags() {
 		$tag_list = get_the_tag_list( '', __( '</span>, <span class="tag-name">', 'plumtree' ) );
-		if ( $tag_list ) { echo '<div class="post-tags">Tags: '.$tag_list.'</div>';	}
+		if ( $tag_list ) { echo '<div class="post-tags">'.__('Tags: ', 'plumtree').$tag_list.'</div>';	}
 	}
 }
 
 if ( ! function_exists( 'pt_entry_author' ) ) {
 	function pt_entry_author() {
-		$author = sprintf( '<div class="post-author">Author: <a href="%1$s" title="%2$s" rel="author">%3$s</a></div>',
+		$author = sprintf( '<div class="post-author">'.__('Author: ', 'plumtree').'<a href="%1$s" title="%2$s" rel="author">%3$s</a></div>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_attr( sprintf( __( 'View all posts by %s', 'plumtree' ), get_the_author() ) ),
 			get_the_author()
@@ -542,8 +542,8 @@ if ( ! function_exists( 'pt_entry_post_views' ) ) {
 		global $post;
 		$views = get_post_meta ($post->ID,'views',true);
 		if ($views) {
-			echo '<div class="post-views" title="Total Views"><i class="fa fa-eye"></i>'.$views.'</div>';
-		} else { echo '<div class="post-views" title="Total Views"><i class="fa fa-eye"></i>0</div>'; }
+			echo '<div class="post-views" title="'.__('Total Views', 'plumtree').'"><i class="fa fa-eye"></i>'.$views.'</div>';
+		} else { echo '<div class="post-views" title="'.__('Total Views', 'plumtree').'"><i class="fa fa-eye"></i>0</div>'; }
 	}
 }
 
@@ -642,6 +642,10 @@ if ( ! function_exists( 'pt_body_class' ) ) {
 
 		if ( ! is_multi_author() )
 			$classes[] = 'single-author';
+			
+		if (get_option('checkout_steps') == 'on') {
+			$classes[] = 'multistep-checkout';
+		}
 
 		return $classes;
 	}

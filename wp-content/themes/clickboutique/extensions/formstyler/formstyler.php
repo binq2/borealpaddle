@@ -23,7 +23,6 @@ class PT_Formstyler{
 	
 	function print_scripts_styles(){
 		wp_enqueue_script( 'formstyler', get_template_directory_uri() .'/extensions/formstyler/js/jquery.formstyler.min.js', array('jquery'), true);
-		wp_enqueue_script( 'nicescroll', get_template_directory_uri() .'/extensions/formstyler/js/jquery.nicescroll.min.js', array('jquery'), true);
 		wp_enqueue_script( 'formstyler-helper', get_template_directory_uri() .'/extensions/formstyler/js/helper.js', array('jquery'), '1.0', true);
 		wp_enqueue_style( 'formstyler', get_template_directory_uri() .'/extensions/formstyler/css/jquery.formstyler.css', true);
 	}	

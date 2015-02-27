@@ -19,7 +19,6 @@ jQuery(document).ready(function($){
 	});
 });
 
-
 // Categories widget accordion animation
 jQuery(document).ready(function($){
 	$(window).load(function(){
@@ -106,11 +105,11 @@ jQuery(document).ready(function($){
 
 jQuery(document).ready(function($){
 
-    $('.validate-required').each(function(){
+    $('.multistep-checkout .validate-required').each(function(){
         $(this).find('input, textarea, select').attr('required','true');
     });
 
-    $('[data-toggle="tab"]').on('click', function(e){
+    $('.multistep-checkout [data-toggle="tab"]').on('click', function(e){
         e.preventDefault();
         var _self = this;
         var error = false;
@@ -122,16 +121,18 @@ jQuery(document).ready(function($){
                 if ( $(el).attr('id') == 'account_password' && !($('#createaccount').prop('checked')) ) return true;
 
                 if ( ($(_self).parents('.tab-pane').attr('id') != 'shipping') ) {
-                 $('form#customer_details').validate().element($(this));
+                 $('form.woocommerce-checkout').validate().element($(this));
                     if ( ! $(el).valid() ){
                        error = true;
                     }
                 } else {
                     if ( ( $('#ship-to-different-address-checkbox').prop('checked'))) {
-                        $('form#customer_details').validate().element($(this));
+                        $('form.woocommerce-checkout').validate().element($(this));
                         if ( ! $(el).valid() ){
                             error = true;
                         }
+                    } else {
+	                    error = false;
                     }
                 }
             });
@@ -203,27 +204,75 @@ jQuery(document).ready(function($){
 
 		$('p.stars span').replaceWith( '<span><a href="#" class="star-5">5</a><a href="#" class="star-4">4</a><a href="#" class="star-3">3</a><a href="#" class="star-2">2</a><a href="#" class="star-1">1</a></span>' );
 
-	});
-});
+		function getEnhancedSelectFormatString() {
+			var formatString = {
+				formatMatches: function( matches ) {
+					if ( 1 === matches ) {
+						return wc_select_params.i18n_matches_1;
+					}
 
+					return wc_select_params.i18n_matches_n.replace( '%qty%', matches );
+				},
+				formatNoMatches: function() {
+					return wc_select_params.i18n_no_matches;
+				},
+				formatAjaxError: function( jqXHR, textStatus, errorThrown ) {
+					return wc_select_params.i18n_ajax_error;
+				},
+				formatInputTooShort: function( input, min ) {
+					var number = min - input.length;
 
-/* Payment option selection */
-jQuery(document).ready(function($){
-	$(window).load(function(){
+					if ( 1 === number ) {
+						return wc_select_params.i18n_input_too_short_1
+					}
 
-		$('.payment_methods label').on( 'click', function() {
-			var input = $(this).parent().find('input');
-            input.prop('checked', true);
-			var target_payment_box = $( 'div.payment_box.' + input.attr( 'ID' ) );
+					return wc_select_params.i18n_input_too_short_n.replace( '%qty%', number );
+				},
+				formatInputTooLong: function( input, max ) {
+					var number = input.length - max;
 
-			if ( input.is( ':checked' ) && ! target_payment_box.is( ':visible' ) ) {
-				$( 'div.payment_box' ).filter( ':visible' ).slideUp( 250 );
+					if ( 1 === number ) {
+						return wc_select_params.i18n_input_too_long_1
+					}
 
-				if ( input.is( ':checked' ) ) {
-					$( 'div.payment_box.' + input.attr( 'ID' ) ).slideDown( 250 );
+					return wc_select_params.i18n_input_too_long_n.replace( '%qty%', number );
+				},
+				formatSelectionTooBig: function( limit ) {
+					if ( 1 === limit ) {
+						return wc_select_params.i18n_selection_too_long_1;
+					}
+
+					return wc_select_params.i18n_selection_too_long_n.replace( '%qty%', number );
+				},
+				formatLoadMore: function( pageNumber ) {
+					return wc_select_params.i18n_load_more;
+				},
+				formatSearching: function() {
+					return wc_select_params.i18n_searching;
 				}
-			}
-		});
+			};
+
+			return formatString;
+		}
+
+		if ( $().select2 ) {
+			console.log($( 'select.country_to_state' ));
+			var pt_country_select_select2 = function() {
+				$( 'select.country_select, select.state_select, select.country_to_state' ).each( function() {
+					var select2_args = $.extend({
+						minimumResultsForSearch: 10,
+						placeholder: $( this ).attr( 'placeholder' ),
+						placeholderOption: 'first',
+						width: '100%',
+					}, getEnhancedSelectFormatString() );
+
+					$( this ).select2( select2_args );
+				});
+			};
+
+			pt_country_select_select2();
+
+		}
 
 	});
 });
@@ -293,55 +342,3 @@ jQuery(document).ready(function($){
     });
 
 });
-
-
-
-
-/* Simple slider for lightspeed popup */
-
-/*jQuery(document).ready(function ($) {
-  
-	jQuery('.lightspeed-popup').click(function(e){
-		var sliderID = jQuery(this).parent().parent().parent().parent().parent().find('.slider').attr("id");
-		alert(sliderID);
-		var slideCount = $('#slider ul li').length;
-		var slideWidth = $('#slider ul li').width();
-		var slideHeight = $('#slider ul li').height();
-		var sliderUlWidth = slideCount * slideWidth;
-	
-		$('#slider').css({ width: slideWidth, height: slideHeight });
-	
-		$('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
-	
-		$('#slider ul li:last-child').prependTo('#slider ul');
-
-		function moveLeft() {
-			$('#slider ul').animate({
-				left: + slideWidth
-			}, 200, function () {
-				$('#slider ul li:last-child').prependTo('#slider ul');
-				$('#slider ul').css('left', '');
-			});
-		};
-
-		function moveRight() {
-			$('#slider ul').animate({
-				left: - slideWidth
-			}, 200, function () {
-				$('#slider ul li:first-child').appendTo('#slider ul');
-				$('#slider ul').css('left', '');
-			});
-		};
-
-		$('a.control_prev').click(function () {
-			moveLeft();
-		});
-
-		$('a.control_next').click(function () {
-			moveRight();
-		});
-	});
-
-});    
-
-*/

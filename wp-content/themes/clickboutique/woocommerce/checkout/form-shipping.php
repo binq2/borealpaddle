@@ -73,6 +73,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		<span class="pt-dark-button step-checkout" data-show="billing" data-toggle="tab"><i class="fa fa-angle-double-left"></i>&nbsp;&nbsp;<?php _e('Back', 'plumtree');?></span>
 	</p>
 	<p class="form-row form-row-last step-nav">
-		<span class="pt-dark-button step-checkout" data-show="payment" data-toggle="tab"><?php _e('Continue to Payment Method', 'plumtree');?>&nbsp;&nbsp;<i class="fa fa-angle-double-right"></i></span>
+		<span class="pt-dark-button step-checkout" data-toggle="tab" data-show="order_review"><?php _e('Continue to Order Review', 'plumtree');?>&nbsp;&nbsp;<i class="fa fa-angle-double-right"></i></span>
 	</p>
 <?php } ?>

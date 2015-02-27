@@ -37,7 +37,6 @@ class pt_socials_widget extends WP_Widget {
 			'tumblr'		=> '',
 			'pinterest'		=> '',
 			'instagram'		=> '',
-			'email'			=> '',
 			'color_hover'   => false,
 		);
 
@@ -62,7 +61,6 @@ class pt_socials_widget extends WP_Widget {
 			'tumblr'		=> __( 'Tumblr:', 'plumtree' ),
 			'pinterest'		=> __( 'Pinterest:', 'plumtree' ),
 			'instagram'		=> __( 'Instagram:', 'plumtree' ),
-			'email'			=> __( 'Email:', 'plumtree' ),
 		);
 
 		foreach ($params as $key => $value) {
@@ -90,7 +88,6 @@ class pt_socials_widget extends WP_Widget {
 		$instance['tumblr'] = strip_tags( $new_instance['tumblr'] );
 		$instance['pinterest'] = strip_tags( $new_instance['pinterest'] );
 		$instance['instagram'] = strip_tags( $new_instance['instagram'] );
-		$instance['email'] = strip_tags( $new_instance['email'] );
 		$instance['color_hover'] = $new_instance['color_hover'];
 
 		return $instance;
@@ -112,7 +109,6 @@ class pt_socials_widget extends WP_Widget {
 		$tumblr = (isset($instance['tumblr']) ? $instance['tumblr'] : '' );
 		$pinterest = (isset($instance['pinterest']) ? $instance['pinterest'] : '' );
 		$instagram = (isset($instance['instagram']) ? $instance['instagram'] : '' );
-		$email = (isset($instance['email']) ? $instance['email'] : '' );
 		$color_hover = (isset($instance['color_hover']) ? $instance['color_hover'] : false );
 
 		$twitter = 'http://twitter.com/' . $twitter_user;
@@ -187,13 +183,6 @@ class pt_socials_widget extends WP_Widget {
 					<li class="option-title">
 						<a href="<?php echo $instagram; ?>" title="<?php _e('Connect us on Instagram', 'plumtree');?>" target="_blank">
 							<i class="fa fa-instagram"></i>
-						</a>
-					</li>
-				<?php endif; ?>
-				<?php if($email != '' ) : ?>
-					<li class="option-title">
-						<a href="mailto:<?php echo $email; ?>" title="<?php _e('Email Us', 'plumtree');?>">
-							<i class="fa fa-envelope"></i>
 						</a>
 					</li>
 				<?php endif; ?>

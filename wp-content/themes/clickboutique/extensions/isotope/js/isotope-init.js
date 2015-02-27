@@ -82,6 +82,15 @@ jQuery(document).ready(function($) {
           getSortData: sortData
         });
 
+        var $select = $('select.filter');
+
+        $select.change(function() {
+            var filters = $(this).val();
+            if ( filters != '*' ) iContainer.isotope({ filter: '[data-element*=' + filters + ']'  });
+            else iContainer.isotope({ filter: '*' });
+            return false;
+        });
+
         $(iFilters).find('[data-filter]').click(function(){
           var active_selector = $('.filter').find('.selected');
           var selector = $(this).attr('data-filter');

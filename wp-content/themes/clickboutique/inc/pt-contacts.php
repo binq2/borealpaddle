@@ -3,11 +3,11 @@
 function show_contacts($atts, $content = null) {
 	
 	extract(shortcode_atts( array(
-		'phone' => '11-222-3333',
-		'fax' => '11-222-3333',
-		'skype' => 'example',
-		'email' => 'example@store.com',
-		'address' => 'New York',
+		'phone' => '',
+		'fax' => '',
+		'skype' => '',
+		'email' => '',
+		'address' => '',
  	), $atts ) );
 
 	$html = '<div class="contacts-section">';
@@ -16,7 +16,7 @@ function show_contacts($atts, $content = null) {
 		if ($phone) { $html .= '<div class="contact phone"><i class="fa fa-phone fa-fw"></i>&nbsp;&nbsp;<strong>Phone:&nbsp;&nbsp;</strong><span>'.$phone.'</span></div>'; }
 		if ($fax) { $html .= '<div class="contact fax"><i class="fa fa-print fa-fw"></i>&nbsp;&nbsp;<strong>Fax:&nbsp;&nbsp;</strong><span>'.$fax.'</span></div>'; }
 		if ($skype) { $html .= '<div class="contact skype"><i class="fa fa-skype fa-fw"></i>&nbsp;&nbsp;<strong>Skype:&nbsp;&nbsp;</strong><span>'.$skype.'</span></div>'; }
-		if ($email) { $html .= '<div class="contact email"><i class="fa fa-envelope fa-fw"></i>&nbsp;&nbsp;<strong>Email:&nbsp;&nbsp;</strong><span>'.$email.'</span></div>'; }
+		if ($email) { $html .= '<div class="contact email"><i class="fa fa-envelope fa-fw"></i>&nbsp;&nbsp;<strong>Email:&nbsp;&nbsp;</strong><span><a title="'.__('Email us', 'plumtree').'" href="mailto:'.$email.'">'.$email.'</a></span></div>'; }
 		if ($address) { $html .= '<address class="contact address"><i class="fa fa-map-marker fa-fw"></i>&nbsp;&nbsp;<strong>Address:&nbsp;&nbsp;</strong><span>'.$address.'</span></address>'; }
 
 	$html .= '</div>';	

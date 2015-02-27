@@ -215,9 +215,6 @@ if ( ! class_exists( 'IG_Carousel' ) ) {
 
 
 
-		
-		
-				
 			
 		
 		

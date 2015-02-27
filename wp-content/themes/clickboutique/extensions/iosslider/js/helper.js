@@ -99,7 +99,8 @@ jQuery(document).ready(function($){
 			var slides = $(this).find('[data-item="ios"]');
 			var buttons = $(this).parent().find('[data-item="iosButtons"]');
 		    var autoplay = ( $(this).data('autoplay') == true ) ? true : false;
-            var infinite = ( $(this).data('infinite') == true ) ? true : false;
+		    
+            var infinite = ( $(this).data('infinite') == 'true' ) ? true : false;
             var c_drag = ( $(this).data('drag') == false ) ? false : true;
             var autoplay_timer = isNaN( parseInt($(this).data('timer'))  ) ? 4000 : parseInt($(this).data('timer'));
 

@@ -15,6 +15,8 @@ $panel->addSection($pt_blog);
 $panel->addSection($pt_store);
 
 
+
+
 /*  Global Settings Forms  */
 $logo_upload_option = OptionFactory::create('site_logo_id',
 	'site_logo',

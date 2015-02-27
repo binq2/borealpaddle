@@ -65,9 +65,11 @@ if ( ! is_user_logged_in() ) :
 
     <?php endif; ?>
 
+	<?php if (get_option('checkout_steps') == 'on') : ?>
 	<p class="form-row form-row-last step-nav">
 		<span class="pt-dark-button step-checkout" data-toggle="tab" data-show="billing"><?php _e('Continue to Billing Address', 'plumtree');?>&nbsp;&nbsp;<i class="fa fa-angle-double-right"></i></span>
 	</p>
+	<?php endif; ?>
 
 </div>
 

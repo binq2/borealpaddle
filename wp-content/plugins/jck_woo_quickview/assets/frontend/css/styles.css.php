@@ -163,12 +163,11 @@
 	
 	@media (max-width: 1020px){
 		#jckqv_images_wrap {
-			width: 100% !important;
+			width: 100%;
 			float: none;
 			display: block;
 			margin: 0;
 			padding-bottom: 150px; /* thumbnail Height */
-			margin-left:25%;
 		}
 	}
 		
@@ -208,12 +207,11 @@
 	
 	@media (max-width: 1020px){
 		#jckqv_summary {
-			width: 100% !important;
+			width: 100%;
 			float: none;
 			display: block;
 			padding: 40px 40px 30px;
 		}
-		.mfp-arrow { top:53% !important; }
 	}
 	
 	/* Rating */

@@ -68,11 +68,11 @@ class pt_search_widget extends WP_Widget {
 		if ($title) { echo $before_title . $title . $after_title; }
 	?>
 
-		<span class="show-search" title="Click to show search-field"><i class="fa fa-search"></i></span>
+		<span class="show-search" title="<?php _e('Click to show search-field', 'plumtree'); ?>"><i class="fa fa-search"></i></span>
 		<div id="pt-searchform-container">
 			<form class="pt-searchform" method="get" action="<?php echo esc_url( home_url() ); ?>">
 				<input id="s" name="s" type="text" class="searchtext" value="" title="<?php echo esc_attr( $text ); ?>" placeholder="<?php echo esc_attr( $text ); ?>" tabindex="1" />
-				<input id="searchsubmit" type="submit" class="search-button" value="<?php echo esc_attr( $button ); ?>" title="Click to search" tabindex="2" />
+				<input id="searchsubmit" type="submit" class="search-button" value="<?php echo esc_attr( $button ); ?>" title="<?php _e('Click to search', 'plumtree'); ?>" tabindex="2" />
 			</form>
 		</div>
 		<script type="text/javascript">

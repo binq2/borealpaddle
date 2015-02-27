@@ -1038,7 +1038,7 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 		wc_delete_product_transients($pid);
 		
 		// VARIATIONS
-		if ( $product_type == 'variable' and ! $this->options['link_all_variations'] and "xml" != $import->options['matching_parent'] ){												
+		if ( in_array($product_type, array('variation', 'variable')) and ! $this->options['link_all_variations'] and "xml" != $import->options['matching_parent'] ){												
 
 			$set_defaults = false;
 
@@ -1120,7 +1120,7 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 				}
 				elseif ($articleData['post_type'] == 'product_variation'){
 					$variation_post = get_post($pid);
-					$product_parent_post = get_post($product_parent_post_id = $variation_post->parent_post);							
+					$product_parent_post = get_post($product_parent_post_id = $variation_post->post_parent);							
 				}
 				
 			}												
@@ -1171,7 +1171,7 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 
 					if ($import->options['create_new_records']){
 						
-						$pid = ($import->options['is_fast_mode']) ? pmxi_insert_post($variation) : wp_insert_post( $variation );	
+						$pid = wp_insert_post( $variation );	
 
 						if ($create_new_variation){															
 							
@@ -1218,7 +1218,7 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 					} else {
 
 						$this->pushmeta($pid, '_manage_stock', 'no');
-						$this->pushmeta($pid, '_stock_status', stripslashes( $v_stock_status[$i] ));						
+						$this->pushmeta($pid, '_stock_status', 'instock');						
 						delete_post_meta( $pid, '_backorders' );
 						delete_post_meta( $pid, '_stock' );
 												
@@ -1259,6 +1259,8 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 					$this->pushmeta($pid, '_download_type', '');	
 					$this->pushmeta($pid, '_downloadable_files', '');									
 				}
+
+				wp_set_object_terms( $pid, NULL, 'product_type' );
 
 				// Remove old taxonomies attributes so data is kept up to date
 				if ( $pid and ($import->options['update_all_data'] == "yes" or ( $import->options['update_all_data'] == "no" and $import->options['is_update_attributes']))) {
@@ -1330,6 +1332,9 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 					$set_defaults = true;
 				else
 					$this->previousID = $product_parent_post_id;
+
+				if ($product_parent_post_id) 
+					wc_delete_product_transients($product_parent_post_id);
 				
 			}
 			else // this is parent product
@@ -1361,6 +1366,8 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 							'posts_per_page'=> -1,
 							'post_type' 	=> 'product_variation',
 							'fields' 		=> 'ids',
+							'orderby'		=> 'ID',
+							'order'			=> 'ASC',
 							'post_status'	=> array('draft', 'publish', 'trash', 'pending', 'future', 'private')
 						) );
 
@@ -1369,7 +1376,13 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 							$lowest_price = $lowest_regular_price = $lowest_sale_price = $highest_price = $highest_regular_price = $highest_sale_price = '';
 
 							if ( $children ) {
-								foreach ( $children as $child ) {
+								foreach ( $children as $n => $child ) {
+
+									if ($first_is_parent == "no" and !$n ){
+										$parent_thumbnail_id = get_post_thumbnail_id( $post_parent );																														
+										if ($parent_thumbnail_id) 
+											update_post_meta($child, '_thumbnail_id', $parent_thumbnail_id);
+									}
 
 									$child_price 			= get_post_meta( $child, '_price', true );
 									$child_regular_price 	= get_post_meta( $child, '_regular_price', true );
@@ -1443,8 +1456,24 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 
 										if ( $attribute['is_variation'] ) {							
 
-											if (!empty($value) and empty($default_attributes[ $attribute['name'] ]))
-												$default_attributes[ sanitize_title($attribute['name']) ] = sanitize_title((is_array($value)) ? $value[0] : $value);
+											if (!empty($value) and empty($default_attributes[ $attribute['name'] ])){
+												switch ($import->options['default_attributes_type']) {
+													case 'instock':
+														$is_instock = get_post_meta($child, '_stock_status', true);
+														if ($is_instock == 'instock'){
+															$default_attributes[ sanitize_title($attribute['name']) ] = sanitize_title((is_array($value)) ? $value[0] : $value);	
+														}
+														break;
+													case 'first':
+														$default_attributes[ sanitize_title($attribute['name']) ] = sanitize_title((is_array($value)) ? $value[0] : $value);
+														break;
+													
+													default:
+														# code...
+														break;
+												}
+																								
+											}
 											
 										}
 									}								
@@ -1997,7 +2026,7 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 
 					if ( ! $variation_to_update_id ) {
 
-						$variation_to_update_id = ($import->options['is_fast_mode']) ? pmxi_insert_post($variation) : wp_insert_post( $variation );		
+						$variation_to_update_id = wp_insert_post( $variation );		
 
 						// associate variation with import
 						$postRecord->isEmpty() and $postRecord->set(array(
@@ -2102,7 +2131,7 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 					add_post_meta( $variation_to_update_id, 'total_sales', '0', true );
 					
 					// Product type + Downloadable/Virtual
-					wp_set_object_terms( $variation_to_update_id, $product_type, 'product_type' );
+					wp_set_object_terms( $variation_to_update_id, NULL, 'product_type' );
 					update_post_meta( $variation_to_update_id, '_downloadable', ($variation_product_downloadable[$j] == "yes") ? 'yes' : 'no' );
 					update_post_meta( $variation_to_update_id, '_virtual', ($variation_product_virtual[$j] == "yes") ? 'yes' : 'no' );						
 
@@ -2487,7 +2516,7 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 												$attachment['post_content'] = $image_meta['caption'];
 										}
 
-										$attid = ($import->options['is_fast_mode']) ? pmxi_insert_attachment($attachment, $image_filepath, $variation_to_update_id) : wp_insert_attachment($attachment, $image_filepath, $variation_to_update_id);										
+										$attid = wp_insert_attachment($attachment, $image_filepath, $variation_to_update_id);
 
 										if (is_wp_error($attid)) {
 											$logger and call_user_func($logger, __('- <b>WARNING</b>', 'pmxi_plugin') . ': ' . $attid->get_error_message());											
@@ -2611,9 +2640,25 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 
 									if ( ! in_array($value, $values, true))  $values[] = $value;
 
-									if ( ! empty($value) and empty($default_attributes[ (( intval($attr_data['in_taxonomy'][$j])) ? wc_attribute_taxonomy_name( $attr_name ) : sanitize_title($attr_name)) ]))
-									
-										$default_attributes[ (( intval($attr_data['in_taxonomy'][$j]) ) ? wc_attribute_taxonomy_name( $attr_name ) : sanitize_title($attr_name)) ] = sanitize_title($value);
+									if ( ! empty($value) and empty($default_attributes[ (( intval($attr_data['in_taxonomy'][$j])) ? wc_attribute_taxonomy_name( $attr_name ) : sanitize_title($attr_name)) ])){
+
+										switch ($import->options['default_attributes_type']) {
+											case 'instock':												
+												if ($variable_stock_status[$j] == 'instock'){
+													$default_attributes[ (( intval($attr_data['in_taxonomy'][$j]) ) ? wc_attribute_taxonomy_name( $attr_name ) : sanitize_title($attr_name)) ] = sanitize_title($value);
+												}
+												break;
+											case 'first':
+												$default_attributes[ (( intval($attr_data['in_taxonomy'][$j]) ) ? wc_attribute_taxonomy_name( $attr_name ) : sanitize_title($attr_name)) ] = sanitize_title($value);
+												break;
+											
+											default:
+												# code...
+												break;
+										}										
+
+									}
+																			
 								}
 							}												
 
@@ -2861,6 +2906,7 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 			$sql_query.= implode(" UNION ALL ", $sql_query_sel);
 			$this->wpdb->query($sql_query);
 		}
+
 	}
 	
 	function pmwi_buf_prices($pid){
@@ -3036,7 +3082,7 @@ class PMWI_Import_Record extends PMWI_Model_Record {
 			if ( in_array( $variation, $available_variations ) )
 				continue;
 
-			$variation_id = (!empty($options['is_fast_mode'])) ? pmxi_insert_post($variation_post_data) : wp_insert_post( $variation_post_data );			
+			$variation_id = wp_insert_post( $variation_post_data );			
 			
 			update_post_meta( $variation_id, '_regular_price', get_post_meta( $post_id, '_regular_price', true ) );
 			update_post_meta( $variation_id, '_sale_price', get_post_meta( $post_id, '_sale_price', true ) );

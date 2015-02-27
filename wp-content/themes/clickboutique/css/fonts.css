@@ -5,6 +5,8 @@
 
 /* Default Theme fonts */
 @import url(http://fonts.googleapis.com/css?family=Lato:400,300,700,300italic,400italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Merriweather+Sans|Economica|Galdeano|Nixie+One|Actor|Open+Sans:400,300|Maven+Pro|Monda:400,700|Ropa+Sans|Roboto:400,700,300|Quicksand:300,400,700|Cabin:400,700);
+
 /*
 font-family: 'Lato', sans-serif;
 font-family: 'Roboto Condensed', sans-serif;
@@ -29,28 +31,6 @@ font-family: 'Roboto Condensed', sans-serif;
          url('../fonts/RobotoCondensed-Light-webfont.ttf') format('truetype'),
          url('../fonts/RobotoCondensed-Light-webfont.svg#roboto_condensedlight') format('svg');
     font-weight: 100;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'star';
-    src: url('../fonts/star.eot');
-    src: url('../fonts/star.eot') format('embedded-opentype'),
-         url('../fonts/star.woff') format('woff'),
-         url('../fonts/star.ttf') format('truetype'),
-         url('../fonts/star.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'WooCommerce';
-    src: url('../fonts/WooCommerce.eot');
-    src: url('../fonts/WooCommerce.eot') format('embedded-opentype'),
-         url('../fonts/WooCommerce.woff') format('woff'),
-         url('../fonts/WooCommerce.ttf') format('truetype'),
-         url('../fonts/WooCommerce.svg') format('svg');
-    font-weight: normal;
     font-style: normal;
 }
 
