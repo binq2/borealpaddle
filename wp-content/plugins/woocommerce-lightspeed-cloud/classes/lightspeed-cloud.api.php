@@ -386,14 +386,14 @@ class Lightspeed_Cloud_API {
 			return false;
 
 		// required field must be present and have a value
-		if( ( ! isset( $item_data['customSku'] ) || ! $item_data['customSku'] ) )
+		if( ( ! isset( $item_data['systemSku'] ) || ! $item_data['systemSku'] ) )
 			return false;
 
 		// create search query
 		$lookup = array(
 			'archived' => 0,
 			'limit' => '2',
-			'customSku' => $item_data['customSku'],
+			'systemSku' => $item_data['systemSku'],
 			'load_relations' => 'all'
 		);
 
@@ -463,7 +463,7 @@ class Lightspeed_Cloud_API {
 
 		if( ! is_array( $sale_data ) || ! count( $sale_data ) )
 			return false;
-
+		error_log(var_dump($sale_data));
 		$sale = $this->merchantos->makeAPICall( 'Account.Sale', 'Create', NULL, $sale_data, array( 'load_relations' => 'all' ) );
 
 		if( $this->is_valid_request( $sale ) ) // should only ever return 1 sale.
@@ -480,6 +480,21 @@ class Lightspeed_Cloud_API {
 			return false;
 
 		$sale = $this->merchantos->makeAPICall( 'Account.Sale', 'Update', $sale_id, $sale_data, array( 'load_relations' => 'all' ) );
+
+		if( $this->is_valid_request( $sale ) ) // should only ever return 1 sale.
+			return $sale->Sale;
+
+		return false;
+	}
+	
+	function refund_sale($sale_id, $refund){
+		if( ! $this->ready() )
+			return false;
+		
+		if( is_empty( $refund ) || is_empty( $sale_id ) )
+			return false;
+			
+		$sale = $this->merchantos->makeAPICall( 'Account.Sale/refund', 'Create', NULL, $sale_data, array( 'load_relations' => 'all' ) );
 
 		if( $this->is_valid_request( $sale ) ) // should only ever return 1 sale.
 			return $sale->Sale;

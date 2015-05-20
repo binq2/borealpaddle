@@ -227,7 +227,7 @@ function pt_share_icons(){
 if (get_option('checkout_steps') === "on") {
 
 	remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
-	add_action( 'woocommerce_checkout_before_customer_details', 'woocommerce_checkout_login_form', 10 );
+	add_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 30 );
 	add_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_custom_output', 29 );
 
 	function woocommerce_checkout_custom_output() {

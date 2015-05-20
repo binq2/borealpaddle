@@ -76,7 +76,7 @@ if ( ! class_exists( 'IG_Testimonials' ) ) {
 					),
 
 
-					array(
+					/*array(
 						'name' => __( 'Cycling Interval',  'plumtree' ),
 						'type' => array(
 							array(
@@ -89,7 +89,7 @@ if ( ! class_exists( 'IG_Testimonials' ) ) {
 								'validate'   => 'number',
 							),
 						),
-						'dependency' => array('automatic_cycling', '=', 'yes'),
+						'dependency' => array('autoplay', '=', 'yes'),
                         'tooltip' => __( 'Set interval for each cycling',  'plumtree' ),
 					),
 					array(
@@ -98,9 +98,9 @@ if ( ! class_exists( 'IG_Testimonials' ) ) {
 						'type'       => 'radio',
 						'std'        => 'yes',
 						'options'    => array( 'yes' => __( 'Yes',  'plumtree' ), 'no' => __( 'No',  'plumtree' ) ),
-						'dependency' => array( 'automatic_cycling', '=', 'yes' ),
+						'dependency' => array( 'autoplay', '=', 'yes' ),
                         'tooltip' => __( 'Pause cycling on mouse over',  'plumtree' ),
-					),
+					),*/
 				)
 			);
 		}

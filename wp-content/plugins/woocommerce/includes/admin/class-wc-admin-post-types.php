@@ -477,9 +477,8 @@ class WC_Admin_Post_Types {
 
 			break;
 			case 'customer_message' :
-
 				if ( $the_order->customer_message ) {
-					echo '<span class="note-on tips" data-tip="' . esc_attr( $the_order->customer_message ) . '">' . __( 'Yes', 'woocommerce' ) . '</span>';
+					echo '<span class="note-on tips" data-tip="' . esc_attr( wc_sanitize_tooltip( $the_order->customer_message ) ) . '">' . __( 'Yes', 'woocommerce' ) . '</span>';
 				} else {
 					echo '<span class="na">&ndash;</span>';
 				}
@@ -536,7 +535,7 @@ class WC_Admin_Post_Types {
 				if ( $post->comment_count ) {
 
 					// check the status of the post
-					( $post->post_status !== 'trash' ) ? $status = '' : $status = 'post-trashed';
+					$status = ( 'trash' !== $post->post_status ) ? '' : 'post-trashed';
 
 					$latest_notes = get_comments( array(
 						'post_id'   => $post->ID,
@@ -547,9 +546,9 @@ class WC_Admin_Post_Types {
 					$latest_note = current( $latest_notes );
 
 					if ( $post->comment_count == 1 ) {
-						echo '<span class="note-on tips" data-tip="' . esc_attr( $latest_note->comment_content ) . '">' . __( 'Yes', 'woocommerce' ) . '</span>';
+						echo '<span class="note-on tips" data-tip="' . esc_attr( wc_sanitize_tooltip( $latest_note->comment_content ) ) . '">' . __( 'Yes', 'woocommerce' ) . '</span>';
 					} else {
-						$note_tip = isset( $latest_note->comment_content ) ? esc_attr( $latest_note->comment_content . '<small style="display:block">' . sprintf( _n( 'plus %d other note', 'plus %d other notes', ( $post->comment_count - 1 ), 'woocommerce' ), ( $post->comment_count - 1 ) ) . '</small>' ) : sprintf( _n( '%d note', '%d notes', $post->comment_count, 'woocommerce' ), $post->comment_count );
+						$note_tip = isset( $latest_note->comment_content ) ? esc_attr( wc_sanitize_tooltip( $latest_note->comment_content ) . '<small style="display:block">' . sprintf( _n( 'plus %d other note', 'plus %d other notes', ( $post->comment_count - 1 ), 'woocommerce' ), ( $post->comment_count - 1 ) ) . '</small>' ) : sprintf( _n( '%d note', '%d notes', $post->comment_count, 'woocommerce' ), $post->comment_count );
 
 						echo '<span class="note-on tips" data-tip="' . $note_tip . '">' . __( 'Yes', 'woocommerce' ) . '</span>';
 					}
@@ -582,7 +581,7 @@ class WC_Admin_Post_Types {
 					$customer_tip .= __( 'Tel:', 'woocommerce' ) . ' ' . $the_order->billing_phone;
 				}
 
-				echo '<div class="tips" data-tip="' . esc_attr( $customer_tip ) . '">';
+				echo '<div class="tips" data-tip="' . esc_attr( wc_sanitize_tooltip( $customer_tip ) ) . '">';
 
 				if ( $the_order->user_id ) {
 					$user_info = get_userdata( $the_order->user_id );
@@ -1226,9 +1225,8 @@ class WC_Admin_Post_Types {
 	 * Process the new bulk actions for changing order status
 	 */
 	public function bulk_action() {
-
 		$wp_list_table = _get_list_table( 'WP_Posts_List_Table' );
-		$action = $wp_list_table->current_action();
+		$action        = $wp_list_table->current_action();
 
 		// Bail out if this is not a status-changing action
 		if ( strpos( $action, 'mark_' ) === false ) {
@@ -1257,7 +1255,12 @@ class WC_Admin_Post_Types {
 		}
 
 		$sendback = add_query_arg( array( 'post_type' => 'shop_order', $report_action => true, 'changed' => $changed, 'ids' => join( ',', $post_ids ) ), '' );
-		wp_redirect( $sendback );
+
+		if ( isset( $_GET['post_status'] ) ) {
+			$sendback = add_query_arg( 'post_status', sanitize_text_field( $_GET['post_status'] ), $sendback );
+		}
+
+		wp_redirect( esc_url_raw( $sendback ) );
 		exit();
 	}
 
@@ -1529,7 +1532,7 @@ class WC_Admin_Post_Types {
 	 * @return array
 	 */
 	public function request_query( $vars ) {
-		global $typenow, $wp_query;
+		global $typenow, $wp_query, $wp_post_statuses;
 
 		if ( 'product' === $typenow ) {
 			// Sorting
@@ -1581,7 +1584,15 @@ class WC_Admin_Post_Types {
 
 			// Status
 			if ( ! isset( $vars['post_status'] ) ) {
-				$vars['post_status'] = array_keys( wc_get_order_statuses() );
+				$post_statuses = wc_get_order_statuses();
+
+				foreach ( $post_statuses as $status => $value ) {
+					if ( isset( $wp_post_statuses[ $status ] ) && false === $wp_post_statuses[ $status ]->show_in_admin_all_list ) {
+						unset( $post_statuses[ $status ] );
+					}
+				}
+
+				$vars['post_status'] = array_keys( $post_statuses );
 			}
 		}
 

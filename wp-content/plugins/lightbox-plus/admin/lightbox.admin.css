@@ -3,9 +3,9 @@
 * @subpackage lightbox.admin.css
 * @internal 2012.03.30
 * @author Dan Zappone / 23Systems
-* @version 2.7
+* @version 2.7.2
 * @$Id: lightbox.admin.css 937945 2014-06-24 17:11:13Z dzappone $
-* @$URL: http://plugins.svn.wordpress.org/lightbox-plus/tags/2.7/admin/lightbox.admin.css $
+* @$URL: https://plugins.svn.wordpress.org/lightbox-plus/tags/2.7/admin/lightbox.admin.css $
 */
 /*---- Lightbox Plus Colorbox Styles ----*/
 .notice{background:#dff0f5 url(images/information.png) center no-repeat;background-position:15px 50%;text-align:left;border:1px solid #3796b3;display:block;padding:5px 20px 5px 45px;color:#046380;width:90%;margin:10px auto;-webkit-border-radius:10px;-moz-border-radius:10px;-khtml-border-radius:10px;}

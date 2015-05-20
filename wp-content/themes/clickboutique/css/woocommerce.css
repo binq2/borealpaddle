@@ -2957,18 +2957,18 @@ header .widget_shopping_cart > .widget_shopping_cart_content,
 }
 
 /* Login form styles */
-.login-in {
+.multistep-checkout .login {
 	display: block !important;
 }
-.login-in p {
+.login p {
 	margin: 0;
 }
-.login-in p.form-row {
+.login p.form-row {
 	display: inline-block;
 	width: 50%;
 	float: left;
 }
-  .login-in label {
+  .login label {
     color: #454544;
     display: block;
     font-weight: bold;
@@ -2977,22 +2977,23 @@ header .widget_shopping_cart > .widget_shopping_cart_content,
     font-weight: 1.6rem;
     margin: 0;
 }
-  .login-in label.inline {
+  .login label.inline {
     display: inline-block;
     margin: 14px 0 0 15px;
     padding: 0;
     vertical-align: middle;
 }
-.login-in .form-row .button {
+.login .form-row .button {
 	margin: 25px 0 10px;
 }
-.login-in .required_fields {
+.login .required_fields {
 	color: #ed1c24;
 	margin-top: 10px;
 }
-.login-in .lost_password {
+.login .lost_password {
 	display: block;
 	clear: both;
+	margin-bottom: 20px;
 }
 
 /* Billing & Shipping address */
@@ -3031,6 +3032,15 @@ header .widget_shopping_cart > .widget_shopping_cart_content,
 .woocommerce-shipping-fields .notes {
 	clear: both;
 	width: 100%;
+}
+.woocommerce-shipping-fields .pt-content-title {
+	margin-top: 30px;
+}
+.woocommerce-billing-fields:after,
+.woocommerce-shipping-fields:after {
+	display: block;
+	content: '';
+	clear: both;
 }
 
 /* Payment Methods */
@@ -3074,6 +3084,9 @@ header .widget_shopping_cart > .widget_shopping_cart_content,
     font-weight: 1.6rem;
     margin: 0;
 }
+#order_review_heading {
+	margin-top: 30px;
+}
 
 
 /* ------------------ MY ACCOUNT STYLING --------------------- */
@@ -3111,11 +3124,12 @@ header .widget_shopping_cart > .widget_shopping_cart_content,
 	display: block;
 	width: 100%;
 }
-.login .lost_password {
-	display: block;
-	clear: both;
+.woocommerce-account .login p.form-row {
+	width: 100%;
 }
-
+.woocommerce-account .entry-content p + p {
+	margin: 0;
+}
 
 /* ------------------ WIDGET AREAS STYLING --------------------- */ 
 .widget.woocommerce ul li {

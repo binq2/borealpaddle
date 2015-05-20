@@ -36,11 +36,11 @@ class A3_Lazy_Load_Less
     {
 		@ini_set( 'display_errors', false );
         $_upload_dir = wp_upload_dir();
-        @chmod($_upload_dir['basedir'], 0777);
+        @chmod($_upload_dir['basedir'], 0755);
         if (!is_dir($_upload_dir['basedir'] . '/sass')) {
-            @mkdir($_upload_dir['basedir'] . '/sass', 0777);
+            @mkdir($_upload_dir['basedir'] . '/sass', 0755);
         } else {
-            @chmod($_upload_dir['basedir'] . '/sass', 0777);
+            @chmod($_upload_dir['basedir'] . '/sass', 0755);
         }
 
 		if ( trim( $css_file_name ) == '' ) $css_file_name = $this->css_file_name;
@@ -72,7 +72,7 @@ class A3_Lazy_Load_Less
         ));
         if ($files) {
             foreach ($files as $file) {
-                @chmod($_upload_dir['basedir'] . '/sass/' . $file, 0777);
+                @chmod($_upload_dir['basedir'] . '/sass/' . $file, 0644);
             }
         }
 

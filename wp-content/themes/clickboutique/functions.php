@@ -104,10 +104,10 @@ function plumtree_scripts_styles() {
     wp_enqueue_script( 'plumtree-validate', get_template_directory_uri() . '/js/jquery.validate.min.js', array('jquery'), '1.0');
 
 	//----Load Theme JS Helper---------------------
-	wp_enqueue_script( 'plumtree-helper', get_template_directory_uri() . '/js/helper.js', array('jquery'), '1.0'. true);
+	wp_enqueue_script( 'plumtree-helper', get_template_directory_uri() . '/js/helper.js', array('jquery'), '1.0', true);
 	
 	//----Shop Tooltips---------------------
-	wp_enqueue_script( 'plumtree-shop-tooltips', get_template_directory_uri() . '/js/shop-tooltips.js', array('jquery'), '1.0'. true);
+	wp_enqueue_script( 'plumtree-shop-tooltips', get_template_directory_uri() . '/js/shop-tooltips.js', array('jquery'), '1.0', true);
 
 	//----WooCommerce Checkout with form styler fix-----------
 	//wp_enqueue_script('checkout-fix', get_template_directory_uri().'/js/country-select.js', array('jquery'), '1.0', true);
@@ -341,7 +341,7 @@ if (class_exists('Woocommerce')) {
 }
 
 /*-----Including addons--------*/
-//require_once('extensions/formstyler/formstyler.php');
+require_once('extensions/formstyler/formstyler.php');
 require_once('extensions/iosslider/iosslider.php');
 require_once('extensions/isotope/isotope.php');
 require_once('extensions/magnific/magnific.php');
@@ -373,17 +373,135 @@ function remove_protected_text($text){
 add_filter('protected_title_format','remove_protected_text');
 
 
+/**
+ * Get Matrix title 
+ * @param int itemMatrixID
+ */
+function get_matrix_title($itemMatrixID, $title=null){
 
+	$ptitle = $title;
+		
+	if(empty($itemMatrixID))
+		return;
+		
+	if (file_exists($_SERVER['DOCUMENT_ROOT'].'/wp-content/plugins/lightspeed-import/xml/matrices/lightspeed-webstore-product_matrices.xml')) {
+		$xml = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/wp-content/plugins/lightspeed-import/xml/matrices/lightspeed-webstore-product_matrices.xml');
+				
+		if ($xml == FALSE)
+		{
+		  echo "Failed loading XML\n";
 
+		  foreach (libxml_get_errors() as $error) 
+		  {
+			echo "\t", $error->message;
+		  }   
+		}
+		
+		
+		$xml = simplexml_load_string($xml);
+		
+		$matrix = $xml->xpath("//ItemMatrices/ItemMatrix/itemMatrixID[.='$itemMatrixID']/parent::*");
+		
+		$title = $matrix[0]->description;
+		
+		
+		
+	}
+	
+	if(empty($title)){
+		$has_value = false;
+		$title = $ptitle;
+		$attributes = $matrix[0]->itemAttributes;
+		if(!empty($attributes)){	
+			foreach($attributes as $attribute){
+				if($attribute)
+					$has_value = true;
+			}
+		}
+		if($has_value)
+			$title = substr($title,0,strrpos($title, " "));
+	}	
+	
+	return $title;
+	
+}
 
+/**
+ * Get Matrix Images 
+ * @param int itemMatrixID
+ */
+function get_matrix_images($itemMatrixID, $itemID=null){
+	
+	$images = null;
+	
+	if(empty($itemMatrixID))
+		return;
+		
+	$path = $_SERVER['DOCUMENT_ROOT'].'/wp-content/plugins/lightspeed-import/xml/items/lightspeed-webstore-products.xml';
+	$type = 'items';
+	
+	$images = wclsc_get_product_images($type, $path, '', $itemID);	
+	
+	if(empty($images)){
+		$path = $_SERVER['DOCUMENT_ROOT'].'/wp-content/plugins/lightspeed-import/xml/matrices/lightspeed-webstore-product_matrices.xml';
+		$type = 'matrix';
+		$images = wclsc_get_product_images($type, $path, $itemMatrixID);
+	}
+	
+	return $images;
+	
+}
 
+//return product images from Lightspeed XML 
+function wclsc_get_product_images($type, $path, $itemMatrixID=null, $itemID=null){
+	$image_paths = null;
+	if (file_exists($path)) {
+		$xml = file_get_contents($path);
+				
+		if ($xml == FALSE)
+		{
+		  echo "Failed loading XML\n";
 
+		  foreach (libxml_get_errors() as $error) 
+		  {
+			echo "\t", $error->message;
+		  }   
+		}
+		
+		
+		$xml = simplexml_load_string($xml);
+		
+		$results = ($type == 'items')? $xml->xpath("//Items/Item/itemID[.='$itemID']/parent::*") : $xml->xpath("//ItemMatrices/ItemMatrix/itemMatrixID[.='$itemMatrixID']/parent::*");
+		
+		if(!empty($results)){
+			$images = $results[0]->Images;
+		
+		
+			if(!empty($images)){
+				$images=$images[0];
+				foreach($images as $image){			
+					$image_paths .= $image->baseImageURL.$image->publicID."\r\n";
+				}
+			}
+		}
+	}
+	return $image_paths;
+}
 
+//remove the featured image from the product gallery display.
+add_filter('woocommerce_product_gallery_attachment_ids', 'remove_featured_image', 10,2);
+function remove_featured_image($ids, $product) {
+	$featured_image = null;
+	if(!empty($product->children['post']))
+		$featured_image = get_post_thumbnail_id($product->children['post']->ID);
+	if (($key = array_search($featured_image, $ids)) !== false) {
+	    unset($ids[$key]);
+	}
+	return $ids;
+	
+}
 
-
-
-
-
-
-
-
+add_action( 'after_setup_theme', 'register_footer_menu' );
+function register_footer_menu() {
+  register_nav_menu( 'footer', __( 'Footer Menu', 'commercegurus' ) );
+}

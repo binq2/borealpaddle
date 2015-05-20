@@ -39,6 +39,16 @@ if(!class_exists("LightspeedImport")) :
 		 * @var $LI_cache
 		 */
 		public $LI_cache = null;
+		
+		/**
+		 * @var $XML_dir
+		 */
+		 public $XML_dir_matrices = null;
+		 
+		 /**
+		 * @var $XML_dir
+		 */
+		 public $XML_dir_items = null;
 
 		/**
 		* Main Lightspeed Import Instance
@@ -96,7 +106,7 @@ if(!class_exists("LightspeedImport")) :
 			// Include required files
 			$this->includes();
 			
-			$this->API_key = "992e498dfa5ab5245f5bd5afee4ee1ce6ac6e0a1ee7d11e36480694a9b5282e7";
+			$this->API_key = "b01d4d3fea131c822c72eb8c3e9d85b83c2beac92ac9fab197e932c4b20a71c0"; //"a871cfc48ef1ee01f27d7c773aacd6a7c5b2ae80203d0401c3f0c1fc8354f0a2";
 			
 			$this->API_account = "83442";
 
@@ -105,6 +115,12 @@ if(!class_exists("LightspeedImport")) :
 			
 			// simple Caching with:
 			$this->LI_cache = phpFastCache();
+			
+			// set xml directory
+			$this->XML_dir_matrices = $this->plugin_path() . '/xml/matrices/';
+			
+			// set xml directory
+			$this->XML_dir_items = $this->plugin_path() . '/xml/items/';
 			
 			//$this->options = get_option('lightspeed_inteleck_options');
 
@@ -117,12 +133,18 @@ if(!class_exists("LightspeedImport")) :
 			
 			register_activation_hook( __FILE__, array($this, 'lightspeed_import_activation') );
 			
-			add_action( 'lightspeed_import_hourly_event_hook', array($this, 'lightspeed_import') );
+			register_deactivation_hook( __FILE__, array($this, 'lightspeed_import_deactivation') );
 			
-			//add_action('init', array($this, 'lightspeed_import'));
+			add_action( 'lightspeed_hourly_product_import', array($this, 'lightspeed_import_items') );
 			
-			add_filter( 'cron_schedules', array($this, 'cron_add_five_mins') );
+			add_action( 'lightspeed_hourly_matrices_import', array($this, 'lightspeed_import_matrices') );
+			
+			
+			
+			
+			
 		}
+		
 		
 		
 		
@@ -130,44 +152,144 @@ if(!class_exists("LightspeedImport")) :
 		 * On activation, set a time, frequency and name of an action hook to be scheduled.
 		 */
 		function lightspeed_import_activation() {
-			wp_schedule_event( time(), 'everyfive', 'lightspeed_import' );
+			wp_schedule_event( time(), 'hourly', 'lightspeed_hourly_product_import' );
 			
-			
+			wp_schedule_event( time(), 'hourly', 'lightspeed_hourly_matrices_import' );
 		}
-
+		
+		
+		/**
+		* On deactivation, remove all functions from the scheduled action hook.
+		*/
+		function lightspeed_import_deactivation() {
+			wp_clear_scheduled_hook( 'lightspeed_hourly_product_import' );
+			
+			wp_clear_scheduled_hook( 'lightspeed_hourly_matrices_import' );
+		}
+		
+		
 		
 		/**
 		 * On the scheduled action hook, run the function.
 		 */
-		function lightspeed_import() {
+		function lightspeed_import_items() {
 			// do import every hour
 			
+			//empty the directory to build new xml files
+			$files = glob($this->XML_dir_items.'*'); // get all file names
+			foreach($files as $file){ // iterate files
+				if(is_file($file))
+					unlink($file); // delete file
+			}
 			
+			$emitter = 'https://api.merchantos.com/API/Account/'.LI()->API_account.'/Item';
+
+			$offset = 0;
+			$limit = 100;
+			$c=$j=0;
+			$feeds = array();
+			$grouped_results = null;
+			
+			$xml_query_string = 'tag=webstore&limit='.$limit.'&offset='.$offset;
+			$products = LI()->api->makeAPICall("Account.Item","Read",null,null,$emitter, $xml_query_string);
+			$c = $products->attributes()->count;
+			
+			syslog (LOG_DEBUG, "Products Count=".$c);
+			
+			
+			$loop_size = ceil($c / $limit);
+			for ( $i = 0; $i < $loop_size; $i++ ) {
+				$offset = $limit * $i;
+				$feeds[] = 'tag=webstore&limit='.$limit.'&offset='.$offset.'&load_relations=all';
+			}
+			
+			// For each feed, store the results as an array
+			foreach ( $feeds as $feed ) {
+				$products = LI()->api->makeAPICall("Account.Item","Read",null,null,$emitter, $feed);
+				if(!empty($products)){
+					if($j==0){
+						$grouped_results = $products;
+					}
+					else{
+						$dom_grouped_results = dom_import_simplexml($grouped_results);
+						$dom_products = dom_import_simplexml($products);
+						foreach($dom_products->childNodes as $node){
+							$dom_product = $dom_grouped_results->ownerDocument->importNode($node, TRUE);
+							$dom_grouped_results->appendChild($dom_product);
+						}
+					}
+				}
+				$j++;
+			}
+			$grouped_results->asXML($this->XML_dir_items.'lightspeed-webstore-products.xml');
+			
+			
+		}
+		
+		
+		/**
+		 * On the scheduled action hook, run the function.
+		 */
+		function lightspeed_import_matrices() {
+			// do import every hour
+			
+			//empty the directory to build new xml files
+			$files = glob($this->XML_dir_matrices.'*'); // get all file names
+			foreach($files as $file){ // iterate files
+				if(is_file($file))
+					unlink($file); // delete file
+			}
 			
 			$emitter = 'https://api.merchantos.com/API/Account/'.LI()->API_account.'/ItemMatrix';
 
-			$xml_query_string = 'tag=webstore&limit=100&load_relations=["ItemECommerce","Tags","Images","Category"]';
+			$offset = 0;
+			$limit = 100;
+			$c=$j=0;
+			$feeds = array();
+			$grouped_results = null;
 			
+			$xml_query_string = 'tag=webstore&limit='.$limit.'&offset='.$offset;
 			$products = LI()->api->makeAPICall("Account.ItemMatrix","Read",null,null,$emitter, $xml_query_string);
+			$c = $products->attributes()->count;
+			
+			syslog (LOG_DEBUG, "Matrices Count=".$c);
 			
 			
-			if(!empty($products))
-				$products->asXML($this->plugin_path() . '/xml/boreal-paddle-lightspeed-products.xml');
-				
+			if($c>0){
+				$loop_size = ceil($c / $limit);
+				for ( $i = 0; $i < $loop_size; $i++ ) {
+					$offset = $limit * $i;
+					$feeds[] = 'tag=webstore&limit='.$limit.'&offset='.$offset.'&load_relations=all';
+				}
+			
+				// For each feed, store the results as an array
+				foreach ( $feeds as $feed ) {
+					$products = LI()->api->makeAPICall("Account.ItemMatrix","Read",null,null,$emitter, $feed);
+					if(!empty($products)){
+						if($j==0){
+							$grouped_results = $products;
+						}
+						else{
+							$dom_grouped_results = dom_import_simplexml($grouped_results);
+							$dom_products = dom_import_simplexml($products);
+							foreach($dom_products->childNodes as $node){
+								$dom_product = $dom_grouped_results->ownerDocument->importNode($node, TRUE);
+								$dom_grouped_results->appendChild($dom_product);
+							}
+						}
+					}
+					$j++;
+				}
+				$grouped_results->asXML($this->XML_dir_matrices.'lightspeed-webstore-product_matrices.xml');
+			}
 			
 			
 		}
+		
+		
 		
 		
  
-		function cron_add_five_mins( $schedules ) {
-			// Adds once weekly to the existing schedules.
-			$schedules['everyfive'] = array(
-				'interval' => 300,
-				'display' => __( 'Once Every Five Mins' )
-			);
-			return $schedules;
-		}
 		
 		
 		/**

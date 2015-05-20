@@ -11,18 +11,19 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 ?>
 
-<div class="tab-pane active" id="authorization">
-
 <?php
 
 if ( ! is_user_logged_in() ) :
 
 ?>
 
+	<?php if (get_option('checkout_steps') == 'on') : ?>
+		<div class="tab-pane active" id="authorization">
+	<?php endif; ?>
 
-	<h3 class="pt-content-title"><?php _e( 'Login', 'plumtree' ); ?></h3>
+	<form method="post" class="login" <?php if ( $hidden ) echo 'style="display:none;"'; ?>>
 
-	<form method="post" class="login-in" <?php if ( $hidden ) echo 'style="display:none;"'; ?>>
+		<h3 class="pt-content-title"><?php _e( 'Login', 'plumtree' ); ?></h3>
 
 		<?php do_action( 'woocommerce_login_form_start' ); ?>
 
@@ -69,7 +70,6 @@ if ( ! is_user_logged_in() ) :
 	<p class="form-row form-row-last step-nav">
 		<span class="pt-dark-button step-checkout" data-toggle="tab" data-show="billing"><?php _e('Continue to Billing Address', 'plumtree');?>&nbsp;&nbsp;<i class="fa fa-angle-double-right"></i></span>
 	</p>
+	</div>
 	<?php endif; ?>
-
-</div>
 

@@ -3,12 +3,14 @@
 		
 		<p class="form-field"><?php _e('Import options','pmxi_plugin');?></p>
 		
+		<?php if ( "new" == $post['wizard_type']): ?>
 		<p class="form-field wpallimport-radio-field">
 			<input type="hidden" name="missing_records_stock_status" value="0" />
 			<input type="checkbox" id="missing_records_stock_status" name="missing_records_stock_status" value="1" <?php echo $post['missing_records_stock_status'] ? 'checked="checked"' : '' ?> />
 			<label for="missing_records_stock_status"><?php _e('Set out of stock status for missing records', 'pmxi_plugin') ?></label>
 			<a href="#help" class="wpallimport-help" title="<?php _e('Option to set the stock status to out of stock instead of deleting the product entirely. This option doesn\'t work when \'Delete missing records\' option is enabled.', 'pmxi_plugin') ?>" style="position:relative; top:-2px;">?</a>
 		</p>
+		<?php endif; ?>
 		<p class="form-field wpallimport-radio-field">
 			<input type="hidden" name="disable_auto_sku_generation" value="0" />
 			<input type="checkbox" id="disable_auto_sku_generation" name="disable_auto_sku_generation" value="1" <?php echo $post['disable_auto_sku_generation'] ? 'checked="checked"' : '' ?> />

@@ -22,4 +22,3 @@ require_once( WCLSC_PATH . '/classes/wc-lightspeed-cloud.class.php' );
 
 global $wc_lightspeed_cloud;
 $wc_lightspeed_cloud = new WC_Lightspeed_Cloud();
-$wc_lightspeed_cloud->initialize();

@@ -40,7 +40,7 @@ if( ! class_exists('PMWI_Updater') ) {
          */
         public function init() {
 
-            add_filter( 'pre_set_site_transient_update_plugins', array( $this, 'check_update' ) );
+            add_filter( 'pre_set_site_transient_update_plugins', array( $this, 'check_update' ), 21 );
             add_filter( 'plugins_api', array( $this, 'plugins_api_filter' ), 10, 3 );
 
             add_action( 'after_plugin_row_' . $this->name, array( $this, 'show_update_notification' ), 10, 2 );
@@ -116,7 +116,7 @@ if( ! class_exists('PMWI_Updater') ) {
             }
 
             // Remove our filter on the site transient
-            remove_filter( 'pre_set_site_transient_update_plugins', array( $this, 'check_update' ), 10 );
+            remove_filter( 'pre_set_site_transient_update_plugins', array( $this, 'check_update' ), 21 );
 
             $update_cache = get_site_transient( 'update_plugins' );
 
@@ -155,7 +155,7 @@ if( ! class_exists('PMWI_Updater') ) {
             }
 
             // Restore our filter
-            add_filter( 'pre_set_site_transient_update_plugins', array( $this, 'check_update' ) );
+            add_filter( 'pre_set_site_transient_update_plugins', array( $this, 'check_update' ), 21 );
 
             if ( ! empty( $update_cache->response[ $this->name ] ) && version_compare( $this->version, $version_info->new_version, '<' ) ) {
 

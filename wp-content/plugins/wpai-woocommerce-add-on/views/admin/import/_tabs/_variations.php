@@ -4,18 +4,18 @@
 		
 		<p class="form-field wpallimport-radio-field">
 			<input type="radio" id="auto_matching_parent" class="switcher" name="matching_parent" value="auto" <?php echo 'auto' == $post['matching_parent'] ? 'checked="checked"': '' ?>/>
-			<label for="auto_matching_parent" style="width:95%"><?php _e('All my variable products have SKUs or some other unique identifier. Each variation is linked to its parent with its parent\'s SKU or other unique identifier.', 'pmxi_plugin' )?></label>
+			<label for="auto_matching_parent" style="width:95%"><?php _e('All my variable products have SKUs or some other unique identifier. Each variation is linked to its parent with its parent\'s SKU or other unique identifier.', 'wp_all_import_plugin' )?></label>
 		</p>
 		<div class="switcher-target-auto_matching_parent"  style="padding-left:25px;">									
 			<p class="form-field">
 				<label style="width:195px; padding-top:3px;"><?php _e("SKU element for parent", "pmxi_plugin"); ?></label> 
 				<input type="text" class="short" placeholder="" name="single_product_id" value="<?php echo esc_attr($post['single_product_id']) ?>"/>
-				<a href="#help" class="wpallimport-help" title="<?php _e('SKU column in the below example.', 'pmxi_plugin') ?>" style="position:relative;">?</a>
+				<a href="#help" class="wpallimport-help" title="<?php _e('SKU column in the below example.', 'wp_all_import_plugin') ?>" style="position:relative;">?</a>
 			</p>
 			<p class="form-field">
 				<label style="width:195px; padding-top:3px;"><?php _e("Parent SKU element for variation", "pmxi_plugin"); ?></label>
 				<input type="text" class="short" placeholder="" name="single_product_parent_id" value="<?php echo esc_attr($post['single_product_parent_id']) ?>"/>
-				<a href="#help" class="wpallimport-help" title="<?php _e('Parent SKU column in the below example.', 'pmxi_plugin') ?>" style="position:relative;">?</a>
+				<a href="#help" class="wpallimport-help" title="<?php _e('Parent SKU column in the below example.', 'wp_all_import_plugin') ?>" style="position:relative;">?</a>
 			</p>
 			<p class="form-field">
 				<strong><?php _e("Example Data For Use With This Option","pmxi_plugin");?> </strong> - <a href="http://www.wpallimport.com/wp-content/uploads/2014/10/data-example-1.csv" tatger="_blank"><?php _e("download","pmxi_plugin");?></a>
@@ -28,14 +28,14 @@
 	
 		<p class="form-field wpallimport-radio-field">
 			<input type="radio" id="auto_matching_parent_first_is_parent_id" class="switcher" name="matching_parent" value="first_is_parent_id" <?php echo 'first_is_parent_id' == $post['matching_parent'] ? 'checked="checked"': '' ?> style="float:left;"/>
-			<label for="auto_matching_parent_first_is_parent_id" style="width:95%"><?php _e('All products with variations are grouped with a unique identifier that is the same for each variation and unique for each product.', 'pmxi_plugin' )?></label>
+			<label for="auto_matching_parent_first_is_parent_id" style="width:95%"><?php _e('All products with variations are grouped with a unique identifier that is the same for each variation and unique for each product.', 'wp_all_import_plugin' )?></label>
 		</p>
 
 		<div class="switcher-target-auto_matching_parent_first_is_parent_id"  style="padding-left:25px;">									
 			<p class="form-field">
 				<label style="width:105px; padding-top: 3px;"><?php _e("Unique Identifier", "pmxi_plugin"); ?></label> 
 				<input type="text" class="short" placeholder="" name="single_product_id_first_is_parent_id" value="<?php echo esc_attr($post['single_product_id_first_is_parent_id']) ?>"/>
-				<a href="#help" class="wpallimport-help" title="<?php _e('Group ID column in the below example.', 'pmxi_plugin') ?>" style="position:relative;">?</a>
+				<a href="#help" class="wpallimport-help" title="<?php _e('Group ID column in the below example.', 'wp_all_import_plugin') ?>" style="position:relative;">?</a>
 			</p>										
 			<p class="form-field">
 				<strong><?php _e("Example Data For Use With This Option","pmxi_plugin");?> </strong> - <a href="http://www.wpallimport.com/wp-content/uploads/2014/10/data-example-2.csv" tatger="_blank"><?php _e("download","pmxi_plugin");?></a>
@@ -48,7 +48,7 @@
 		
 		<p class="form-field wpallimport-radio-field">
 			<input type="radio" id="auto_matching_parent_first_is_parent_title" class="switcher" name="matching_parent" value="first_is_parent_title" <?php echo 'first_is_parent_title' == $post['matching_parent'] ? 'checked="checked"': '' ?> style="float:left;"/>
-			<label for="auto_matching_parent_first_is_parent_title" style="width:95%"><?php _e('All variations for a particular product have the same title as the parent product.', 'pmxi_plugin' )?></label>
+			<label for="auto_matching_parent_first_is_parent_title" style="width:95%"><?php _e('All variations for a particular product have the same title as the parent product.', 'wp_all_import_plugin' )?></label>
 		</p>
 
 		<div class="switcher-target-auto_matching_parent_first_is_parent_title"  style="padding-left:25px;">
@@ -67,7 +67,7 @@
 	
 		<p class="form-field wpallimport-radio-field">
 			<input type="radio" id="auto_matching_parent_first_is_variation" class="switcher" name="matching_parent" value="first_is_variation" <?php echo 'first_is_variation' == $post['matching_parent'] ? 'checked="checked"': '' ?> style="float:left;"/>
-			<label for="auto_matching_parent_first_is_variation" style="width:95%"><?php _e('All variations for a particular product have the same title. There are no parent products.', 'pmxi_plugin' )?></label>
+			<label for="auto_matching_parent_first_is_variation" style="width:95%"><?php _e('All variations for a particular product have the same title. There are no parent products.', 'wp_all_import_plugin' )?></label>
 		</p>
 		<div class="switcher-target-auto_matching_parent_first_is_variation"  style="padding-left:25px;">
 			<p class="form-field">
@@ -85,7 +85,7 @@
 		
 		<p class="form-field wpallimport-radio-field">
 			<input type="radio" id="xml_matching_parent" class="switcher" name="matching_parent" value="xml" <?php echo 'xml' == $post['matching_parent'] ? 'checked="checked"': '' ?> style="float:left;"/>
-			<label for="xml_matching_parent" style="width:350px;"><?php _e('I\'m importing XML and my variations are child XML elements', 'pmxi_plugin' )?> </label>			
+			<label for="xml_matching_parent" style="width:350px;"><?php _e('I\'m importing XML and my variations are child XML elements', 'wp_all_import_plugin' )?> </label>			
 		</p>
 			
 		<div class="switcher-target-xml_matching_parent" style="padding-left:25px; position:relative;">
@@ -122,7 +122,7 @@
 								<input type="hidden" name="variable_sku_add_parent" value="0"/>
 								<input type="checkbox" name="variable_sku_add_parent" id="variable_sku_add_parent" style="margin-left:5px; margin-right:5px;" <?php echo ($post['variable_sku_add_parent']) ? 'checked="checked"' : ''; ?>>
 								<label style="width: 160px;" for="variable_sku_add_parent"><?php _e("Add value to the parent SKU","pmxi_plugin"); ?></label>
-								<a href="#help" class="wpallimport-help" title="<?php _e('Enable this checkbox to combine SKU from parent and variation products.', 'pmxi_plugin') ?>" style="position:relative; top:2px;">?</a>
+								<a href="#help" class="wpallimport-help" title="<?php _e('Enable this checkbox to combine SKU from parent and variation products.', 'wp_all_import_plugin') ?>" style="position:relative; top:2px;">?</a>
 							</span>
 						</p>						
 						<p class="form-field">
@@ -150,12 +150,12 @@
 						</p>
 						<div class="form-field wpallimport-radio-field">
 							<input type="radio" id="is_variable_product_manage_stock_xpath" class="switcher" name="is_variable_product_manage_stock" value="xpath" <?php echo 'xpath' == $post['is_variable_product_manage_stock'] ? 'checked="checked"': '' ?>/>
-							<label for="is_variable_product_manage_stock_xpath"><?php _e('Set with XPath', 'pmxi_plugin' )?></label>
+							<label for="is_variable_product_manage_stock_xpath"><?php _e('Set with XPath', 'wp_all_import_plugin' )?></label>
 							<span class="wpallimport-clear"></span>
 							<div class="switcher-target-is_variable_product_manage_stock_xpath set_with_xpath" style="width:390px;">
 								<span class="wpallimport-slide-content" style="padding-left:0;">
 									<input type="text" class="smaller-text" name="single_variable_product_manage_stock" style="width:345px;" value="<?php echo esc_attr($post['single_variable_product_manage_stock']) ?>"/>
-									<a href="#help" class="wpallimport-help" title="<?php _e('The value of presented XPath should be one of the following: (\'yes\', \'no\').', 'pmxi_plugin') ?>" style="position:relative; top:2px;">?</a>
+									<a href="#help" class="wpallimport-help" title="<?php _e('The value of presented XPath should be one of the following: (\'yes\', \'no\').', 'wp_all_import_plugin') ?>" style="position:relative; top:2px;">?</a>
 									<span class="use_parent" style="float:right; top: 2px;">
 										<input type="hidden" name="single_variable_product_manage_stock_use_parent" value="0"/>
 										<input type="checkbox" name="single_variable_product_manage_stock_use_parent" id="single_variable_product_manage_stock_use_parent" style="position:relative; top:1px; margin-right:5px; float: left;" <?php echo ($post['single_variable_product_manage_stock_use_parent']) ? 'checked="checked"' : ''; ?>>
@@ -174,7 +174,7 @@
 								<input type="hidden" name="variable_stock_use_parent" value="0"/>
 								<input type="checkbox" name="variable_stock_use_parent" id="variable_stock_use_parent" style="margin-left:5px; margin-right: 5px;" <?php echo ($post['variable_stock_use_parent']) ? 'checked="checked"' : ''; ?>>
 								<label for="variable_stock_use_parent" style="width:120px;"><?php _e("XPath Is From Parent","pmxi_plugin"); ?></label>
-								<a href="#help" class="wpallimport-help" title="<?php _e('Enable this checkbox to determine XPath from parent element.', 'pmxi_plugin') ?>" style="position:relative; top:2px;">?</a>
+								<a href="#help" class="wpallimport-help" title="<?php _e('Enable this checkbox to determine XPath from parent element.', 'wp_all_import_plugin') ?>" style="position:relative; top:2px;">?</a>
 							</span>
 						</p>
 					</div>
@@ -194,16 +194,16 @@
 						<p class="form-field wpallimport-radio-field">
 							<input type="radio" id="variable_stock_status_auto" class="switcher" name="variable_stock_status" value="auto" <?php echo 'auto' == $post['variable_stock_status'] ? 'checked="checked"': '' ?>/>
 							<label for="variable_stock_status_auto" style="width:100px;"><?php _e("Set automatically"); ?></label>
-							<a href="#help" class="wpallimport-help" title="<?php _e('Set the stock status to In Stock for positive or blank Stock Qty values, and Out Of Stock if Stock Qty is 0.', 'pmxi_plugin') ?>" style="position:relative; top:3px;">?</a>
+							<a href="#help" class="wpallimport-help" title="<?php _e('Set the stock status to In Stock for positive or blank Stock Qty values, and Out Of Stock if Stock Qty is 0.', 'wp_all_import_plugin') ?>" style="position:relative; top:3px;">?</a>
 						</p>
 						<div class="form-field wpallimport-radio-field">
 							<input type="radio" id="variable_stock_status_xpath" class="switcher" name="variable_stock_status" value="xpath" <?php echo 'xpath' == $post['variable_stock_status'] ? 'checked="checked"': '' ?>/>
-							<label for="variable_stock_status_xpath"><?php _e('Set with XPath', 'pmxi_plugin' )?></label>
+							<label for="variable_stock_status_xpath"><?php _e('Set with XPath', 'wp_all_import_plugin' )?></label>
 							<span class="wpallimport-clear"></span>
 							<div class="switcher-target-variable_stock_status_xpath set_with_xpath" style="width:390px;">
 								<span class="wpallimport-slide-content" style="padding-left:0;">
 									<input type="text" class="smaller-text" name="single_variable_stock_status" style="width:345px;" value="<?php echo esc_attr($post['single_variable_stock_status']) ?>"/>
-									<a href="#help" class="wpallimport-help" title="<?php _e('The value of presented XPath should be one of the following: (\'instock\', \'outofstock\').', 'pmxi_plugin') ?>" style="position:relative; top:2px;">?</a>									
+									<a href="#help" class="wpallimport-help" title="<?php _e('The value of presented XPath should be one of the following: (\'instock\', \'outofstock\').', 'wp_all_import_plugin') ?>" style="position:relative; top:2px;">?</a>									
 								</span>																							
 							</div>						
 						</div>
@@ -254,7 +254,7 @@
 								</span>
 								<br>
 								<input type="text" class="datepicker" name="variable_sale_price_dates_from" value="<?php echo esc_attr($post['variable_sale_price_dates_from']) ?>" style="float:none;"/>
-								<?php _e('and', 'pmxi_plugin') ?>
+								<?php _e('and', 'wp_all_import_plugin') ?>
 								<input type="text" class="datepicker" name="variable_sale_price_dates_to" value="<?php echo esc_attr($post['variable_sale_price_dates_to']) ?>" style="float:none;"/>
 								&nbsp;<a id="cancel_variable_regular_price_shedule" href="javascript:void(0);"><?php _e('cancel');?></a>
 							</span>							
@@ -273,12 +273,12 @@
 						</p>
 						<div class="form-field wpallimport-radio-field">
 							<input type="radio" id="is_variable_product_virtual_xpath" class="switcher" name="is_variable_product_virtual" value="xpath" <?php echo 'xpath' == $post['is_variable_product_virtual'] ? 'checked="checked"': '' ?>/>
-							<label for="is_variable_product_virtual_xpath"><?php _e('Set with XPath', 'pmxi_plugin' )?></label>
+							<label for="is_variable_product_virtual_xpath"><?php _e('Set with XPath', 'wp_all_import_plugin' )?></label>
 							<span class="wpallimport-clear"></span>
 							<div class="switcher-target-is_variable_product_virtual_xpath set_with_xpath" style="width:390px;">
 								<span class="wpallimport-slide-content" style="padding-left:0;">
 									<input type="text" class="smaller-text" name="single_variable_product_virtual" style="width:300px;" value="<?php echo esc_attr($post['single_variable_product_virtual']) ?>"/>
-									<a href="#help" class="wpallimport-help" title="<?php _e('The value of presented XPath should be one of the following: (\'yes\', \'no\').', 'pmxi_plugin') ?>" style="position:relative; top:2px;">?</a>
+									<a href="#help" class="wpallimport-help" title="<?php _e('The value of presented XPath should be one of the following: (\'yes\', \'no\').', 'wp_all_import_plugin') ?>" style="position:relative; top:2px;">?</a>
 									<span class="use_parent" style="float:right; top: 2px;">
 										<input type="hidden" name="single_variable_product_virtual_use_parent" value="0"/>
 										<input type="checkbox" name="single_variable_product_virtual_use_parent" id="single_variable_product_virtual_use_parent" style="position:relative; top:1px; margin-right:5px; float: left;" <?php echo ($post['single_variable_product_virtual_use_parent']) ? 'checked="checked"' : ''; ?>>
@@ -344,12 +344,12 @@
 						<!-- Shipping class -->
 						<div class="form-field wpallimport-radio-field">
 							<input type="radio" id="multiple_variable_product_shipping_class_no" class="switcher" name="is_multiple_variable_product_shipping_class" value="no" <?php echo 'no' == $post['is_multiple_variable_product_shipping_class'] ? 'checked="checked"': '' ?>/>
-							<label for="multiple_variable_product_shipping_class_no" style="width:300px;"><?php _e('Set product shipping class with XPath', 'pmxi_plugin' )?></label>
+							<label for="multiple_variable_product_shipping_class_no" style="width:300px;"><?php _e('Set product shipping class with XPath', 'wp_all_import_plugin' )?></label>
 							<span class="wpallimport-clear"></span>
 							<div class="switcher-target-multiple_variable_product_shipping_class_no set_with_xpath">						
 								<span class="wpallimport-slide-content" style="padding-left:0;">
 									<input type="text" class="smaller-text" name="single_variable_product_shipping_class" style="width:300px;" value="<?php echo esc_attr($post['single_variable_product_shipping_class']) ?>"/>
-									<a href="#help" class="wpallimport-help" title="<?php _e('The value of presented XPath should be one of the following: (\'taxable\', \'shipping\', \'none\').', 'pmxi_plugin') ?>" style="position: relative; top: -10px;">?</a>
+									<a href="#help" class="wpallimport-help" title="<?php _e('The value of presented XPath should be one of the following: (\'taxable\', \'shipping\', \'none\').', 'wp_all_import_plugin') ?>" style="position: relative; top: -10px;">?</a>
 									<span class="use_parent">
 										<input type="hidden" name="single_variable_product_shipping_class_use_parent" value="0"/>
 										<input type="checkbox" name="single_variable_product_shipping_class_use_parent" id="single_variable_product_shipping_class_use_parent" style="position:relative; top:2px; margin-left:5px; margin-right:5px;" <?php echo ($post['single_variable_product_shipping_class_use_parent']) ? 'checked="checked"' : ''; ?>>
@@ -388,12 +388,12 @@
 						<!-- Tax class -->								
 						<div class="form-field wpallimport-radio-field">
 							<input type="radio" id="multiple_variable_product_tax_class_no" class="switcher" name="is_multiple_variable_product_tax_class" value="no" <?php echo 'no' == $post['is_multiple_variable_product_tax_class'] ? 'checked="checked"': '' ?>/>
-							<label for="multiple_variable_product_tax_class_no" style="width: 300px;"><?php _e('Set product tax class with XPath', 'pmxi_plugin' )?></label>
+							<label for="multiple_variable_product_tax_class_no" style="width: 300px;"><?php _e('Set product tax class with XPath', 'wp_all_import_plugin' )?></label>
 							<span class="wpallimport-clear"></span>
 							<div class="switcher-target-multiple_variable_product_tax_class_no set_with_xpath">
 								<span class="wpallimport-slide-content" style="padding-left:0;">
 									<input type="text" class="smaller-text" name="single_variable_product_tax_class" style="width:300px;" value="<?php echo esc_attr($post['single_variable_product_tax_class']) ?>"/>
-									<a href="#help" class="wpallimport-help" title="<?php _e('The value of presented XPath should be one of the following: (\'reduced-rate\', \'zero-rate\').', 'pmxi_plugin') ?>" style="position: relative; top:-10px;">?</a>
+									<a href="#help" class="wpallimport-help" title="<?php _e('The value of presented XPath should be one of the following: (\'reduced-rate\', \'zero-rate\').', 'wp_all_import_plugin') ?>" style="position: relative; top:-10px;">?</a>
 									<span class="use_parent">
 										<input type="hidden" name="single_variable_product_tax_class_use_parent" value="0"/>
 										<input type="checkbox" name="single_variable_product_tax_class_use_parent" id="single_variable_product_tax_class_use_parent" style="position:relative; top:2px; margin-left:5px; margin-right:5px;" <?php echo ($post['single_variable_product_tax_class_use_parent']) ? 'checked="checked"' : ''; ?>>
@@ -417,12 +417,12 @@
 						</p>
 						<div class="form-field wpallimport-radio-field">
 							<input type="radio" id="is_variable_product_downloadable_xpath" class="switcher" name="is_variable_product_downloadable" value="xpath" <?php echo 'xpath' == $post['is_variable_product_downloadable'] ? 'checked="checked"': '' ?>/>
-							<label for="is_variable_product_downloadable_xpath"><?php _e('Set with XPath', 'pmxi_plugin' )?></label>
+							<label for="is_variable_product_downloadable_xpath"><?php _e('Set with XPath', 'wp_all_import_plugin' )?></label>
 							<span class="wpallimport-clear"></span>
 							<div class="switcher-target-is_variable_product_downloadable_xpath set_with_xpath" style="width:390px;">
 								<span class="wpallimport-slide-content" style="padding-left:0;">
 									<input type="text" class="smaller-text" name="single_variable_product_downloadable" style="width:345px;" value="<?php echo esc_attr($post['single_variable_product_downloadable']) ?>"/>
-									<a href="#help" class="wpallimport-help" title="<?php _e('The value of presented XPath should be one of the following: (\'yes\', \'no\').', 'pmxi_plugin') ?>" style="position:relative; top:2px;">?</a>
+									<a href="#help" class="wpallimport-help" title="<?php _e('The value of presented XPath should be one of the following: (\'yes\', \'no\').', 'wp_all_import_plugin') ?>" style="position:relative; top:2px;">?</a>
 									<span class="use_parent" style="float:right; top: 2px;">
 										<input type="hidden" name="single_variable_product_downloadable_use_parent" value="0"/>
 										<input type="checkbox" name="single_variable_product_downloadable_use_parent" id="single_variable_product_downloadable_use_parent" style="position:relative; top:1px; margin-right:5px; float: left;" <?php echo ($post['single_variable_product_downloadable_use_parent']) ? 'checked="checked"' : ''; ?>>
@@ -438,13 +438,13 @@
 							<label style="width:150px;"><?php _e('File paths','woocommerce');?></label>
 							<input type="text" value="<?php echo esc_attr($post['variable_file_paths']) ?>" name="variable_file_paths" class="short" style="width:60% !important;">
 							<input type="text" class="small" name="variable_product_files_delim" value="<?php echo esc_attr($post['variable_product_files_delim']) ?>" style="width:5% !important;text-align:center; margin-left:5px;"/>
-							<a href="#help" class="wpallimport-help" title="<?php _e('File paths/URLs, comma separated. The delimiter option uses when xml element contains few paths/URLs (http://files.com/1.doc, http://files.com/2.doc).', 'pmxi_plugin') ?>">?</a>
+							<a href="#help" class="wpallimport-help" title="<?php _e('File paths/URLs, comma separated. The delimiter option uses when xml element contains few paths/URLs (http://files.com/1.doc, http://files.com/2.doc).', 'wp_all_import_plugin') ?>">?</a>
 						</p>
 						<p class="form-field">
 							<label style="width:150px;"><?php _e("File names"); ?></label>
 							<input type="text" class="short" name="variable_file_names" value="<?php echo esc_attr($post['variable_file_names']) ?>" style="width:60% !important;"/>
 							<input type="text" class="small" name="variable_product_files_names_delim" value="<?php echo esc_attr($post['variable_product_files_names_delim']) ?>" style="width:5% !important;text-align:center; margin-left:5px;"/>
-							<a href="#help" class="wpallimport-help" title="<?php _e('File names, comma separated. The delimiter is used when an XML element contains multiple names - i.e. <code>1.doc, 2.doc</code>.', 'pmxi_plugin') ?>">?</a>
+							<a href="#help" class="wpallimport-help" title="<?php _e('File names, comma separated. The delimiter is used when an XML element contains multiple names - i.e. <code>1.doc, 2.doc</code>.', 'wp_all_import_plugin') ?>">?</a>
 						</p>
 						<p class="form-field">
 							<label style="width:150px;"><?php _e('Download Limit','woocommerce');?></label>
@@ -468,7 +468,7 @@
 
 					<div class="options_group">
 
-						<label style="width:150px; padding-left:0px;"><?php _e('Variation Enabled','pmxi_plugin'); ?></label>		
+						<label style="width:150px; padding-left:0px;"><?php _e('Variation Enabled','wp_all_import_plugin'); ?></label>		
 
 						<span class="wpallimport-clear"></span>				
 						
@@ -482,12 +482,12 @@
 						</p>
 						<div class="form-field wpallimport-radio-field">
 							<input type="radio" id="variable_product_enabled_xpath" class="switcher" name="is_variable_product_enabled" value="xpath" <?php echo 'xpath' == $post['is_variable_product_enabled'] ? 'checked="checked"': '' ?>/>
-							<label for="variable_product_enabled_xpath"><?php _e('Set with XPath', 'pmxi_plugin' )?></label>
+							<label for="variable_product_enabled_xpath"><?php _e('Set with XPath', 'wp_all_import_plugin' )?></label>
 							<span class="wpallimport-clear"></span>
 							<div class="switcher-target-variable_product_enabled_xpath set_with_xpath">
 								<span class="wpallimport-slide-content" style="padding-left:0;">	
 									<input type="text" class="smaller-text" name="single_variable_product_enabled" style="width:300px; " value="<?php echo esc_attr($post['single_variable_product_enabled']) ?>"/>
-									<a href="#help" class="wpallimport-help" title="<?php _e('The value of presented XPath should be one of the following: (\'yes\', \'no\').', 'pmxi_plugin') ?>" style="position:relative; top:2px;">?</a>
+									<a href="#help" class="wpallimport-help" title="<?php _e('The value of presented XPath should be one of the following: (\'yes\', \'no\').', 'wp_all_import_plugin') ?>" style="position:relative; top:2px;">?</a>
 								</span>									
 							</div>
 						</div>						
@@ -496,7 +496,7 @@
 
 					<div class="options_group variation_attributes">
 						
-						<label style="width:150px; padding-left:0px;"><?php _e('Variation Attributes','pmxi_plugin');?></label>
+						<label style="width:150px; padding-left:0px;"><?php _e('Variation Attributes','wp_all_import_plugin');?></label>
 						
 						<span class="wpallimport-clear"></span>
 
@@ -504,8 +504,8 @@
 							<table class="form-table custom-params" style="max-width:95%;">
 								<thead>
 									<tr>
-										<td><?php _e('Name', 'pmxi_plugin') ?></td>
-										<td><?php _e('Values', 'pmxi_plugin') ?></td>
+										<td><?php _e('Name', 'wp_all_import_plugin') ?></td>
+										<td><?php _e('Values', 'wp_all_import_plugin') ?></td>
 										<td></td>
 									</tr>
 								</thead>
@@ -523,22 +523,22 @@
 													<p class="form-field wpallimport-radio-field" style="padding: 0 !important; position: relative; left: -100%; width: 200%;">
 														<span class='in_variations' style="margin-left:0px;">
 															<input type="checkbox" name="variable_in_variations[]" id="variable_in_variations_<?php echo $i; ?>" <?php echo ($post['variable_in_variations'][$i]) ? 'checked="checked"' : ''; ?> style="float:left;" value="1"/>
-															<label for="variable_in_variations_<?php echo $i; ?>"><?php _e('In Variations','pmxi_plugin');?></label>															
+															<label for="variable_in_variations_<?php echo $i; ?>"><?php _e('In Variations','wp_all_import_plugin');?></label>															
 														</span>
 
 														<span class='is_visible'>
 															<input type="checkbox" name="variable_is_visible[]" id="variable_is_visible_<?php echo $i; ?>" <?php echo ($post['variable_is_visible'][$i]) ? 'checked="checked"' : ''; ?> style="float: left;" value="1"/>
-															<label for="variable_is_visible_<?php echo $i; ?>"><?php _e('Is Visible','pmxi_plugin');?></label>																		
+															<label for="variable_is_visible_<?php echo $i; ?>"><?php _e('Is Visible','wp_all_import_plugin');?></label>																		
 														</span>
 
 														<span class='is_taxonomy'>
 															<input type="checkbox" name="variable_is_taxonomy[]" id="variable_is_taxonomy_<?php echo $i; ?>" <?php echo ($post['variable_is_taxonomy'][$i]) ? 'checked="checked"' : ''; ?> style="float: left;" value="1"/>
-															<label for="variable_is_taxonomy_<?php echo $i; ?>"><?php _e('Taxonomy','pmxi_plugin');?></label>																	
+															<label for="variable_is_taxonomy_<?php echo $i; ?>"><?php _e('Taxonomy','wp_all_import_plugin');?></label>																	
 														</span>
 
 														<span class='is_create_taxonomy'>
 															<input type="checkbox" name="variable_create_taxonomy_in_not_exists[]" id="variable_create_taxonomy_in_not_exists_<?php echo $i;?>" <?php echo ($post['variable_create_taxonomy_in_not_exists'][$i]) ? 'checked="checked"' : ''; ?> style="float:left;" value="1"/>
-															<label for="variable_create_taxonomy_in_not_exists_<?php echo $i; ?>"><?php _e('Auto-Create Terms','pmxi_plugin');?></label>
+															<label for="variable_create_taxonomy_in_not_exists_<?php echo $i; ?>"><?php _e('Auto-Create Terms','wp_all_import_plugin');?></label>
 														</span>
 													</p>																								
 												</td>
@@ -557,19 +557,19 @@
 											<p class="form-field wpallimport-radio-field" style="padding: 0 !important; position: relative; left: -100%; width: 200%;">
 												<span class='in_variations' style="margin-left:0px;">
 													<input type="checkbox" name="variable_in_variations[]" id="variable_in_variations_0" checked="checked" style="float: left;" value="1"/>
-													<label for="variable_in_variations_0"><?php _e('In Variations','pmxi_plugin');?></label>																	
+													<label for="variable_in_variations_0"><?php _e('In Variations','wp_all_import_plugin');?></label>																	
 												</span>
 												<span class='is_visible'>
 													<input type="checkbox" name="variable_is_visible[]" id="variable_is_visible_0" checked="checked" style="float:left;" value="1"/>
-													<label for="variable_is_visible_0"><?php _e('Is Visible','pmxi_plugin');?></label>																								
+													<label for="variable_is_visible_0"><?php _e('Is Visible','wp_all_import_plugin');?></label>																								
 												</span>
 												<span class='is_taxonomy'>
 													<input type="checkbox" name="variable_is_taxonomy[]" id="variable_is_taxonomy_0" checked="checked" style="float:left;" value="1"/>
-													<label for="variable_is_taxonomy_0"><?php _e('Taxonomy','pmxi_plugin');?></label>																	
+													<label for="variable_is_taxonomy_0"><?php _e('Taxonomy','wp_all_import_plugin');?></label>																	
 												</span>
 												<span class='is_create_taxonomy'>
 													<input type="checkbox" name="variable_create_taxonomy_in_not_exists[]" id="variable_create_taxonomy_in_not_exists_0" checked="checked" style="float:left;" value="1"/>
-													<label for="variable_create_taxonomy_in_not_exists_0"><?php _e('Auto-Create Terms','pmxi_plugin');?></label>
+													<label for="variable_create_taxonomy_in_not_exists_0"><?php _e('Auto-Create Terms','wp_all_import_plugin');?></label>
 												</span>																
 											</p>
 										</td>
@@ -587,26 +587,26 @@
 											<p class="form-field wpallimport-radio-field" style="padding: 0 !important; position: relative; left: -100%; width: 200%;">
 												<span class='in_variations' style="margin-left:0px;">
 													<input type="checkbox" name="variable_in_variations[]" checked="checked" style="float: left;" value="1"/>
-													<label for=""><?php _e('In Variations','pmxi_plugin');?></label>																	
+													<label for=""><?php _e('In Variations','wp_all_import_plugin');?></label>																	
 												</span>
 												<span class='is_visible'>
 													<input type="checkbox" name="variable_is_visible[]" checked="checked" style="float: left;" value="1"/>
-													<label for=""><?php _e('Is Visible','pmxi_plugin');?></label>	
+													<label for=""><?php _e('Is Visible','wp_all_import_plugin');?></label>	
 												</span>
 												<span class='is_taxonomy'>
 													<input type="checkbox" name="variable_is_taxonomy[]" checked="checked" style="float: left;" value="1"/>
-													<label for=""><?php _e('Taxonomy','pmxi_plugin');?></label>
+													<label for=""><?php _e('Taxonomy','wp_all_import_plugin');?></label>
 												</span>
 												<span class='is_create_taxonomy'>
 													<input type="checkbox" name="variable_create_taxonomy_in_not_exists[]" checked="checked" style="float: left;" value="1"/>
-													<label for=""><?php _e('Auto-Create Terms','pmxi_plugin');?></label>
+													<label for=""><?php _e('Auto-Create Terms','wp_all_import_plugin');?></label>
 												</span>	
 											</p>
 										</td>
 										<td class="action remove"><a href="#remove" style="top: 9px;"></a></td>
 									</tr>
 									<tr>
-										<td colspan="3"><a href="#add" title="<?php _e('add', 'pmxi_plugin')?>" class="action add-new-custom"><?php _e('Add more', 'pmxi_plugin') ?></a></td>
+										<td colspan="3"><a href="#add" title="<?php _e('add', 'wp_all_import_plugin')?>" class="action add-new-custom"><?php _e('Add more', 'wp_all_import_plugin') ?></a></td>
 									</tr>
 								</tbody>
 							</table>
@@ -620,7 +620,7 @@
 							<div class="variations_tag">
 								<input type="hidden" name="variations_tagno" value="<?php echo (!empty($tagno)) ? $tagno : 0; ?>" />
 								<div class="title">
-									<?php printf(__('No matching elements found for XPath expression specified', 'pmxi_plugin'), (!empty($tagno)) ? $tagno : 0, (!empty($variation_list_count)) ? $variation_list_count : 0); ?>
+									<?php printf(__('No matching elements found for XPath expression specified', 'wp_all_import_plugin'), (!empty($tagno)) ? $tagno : 0, (!empty($variation_list_count)) ? $variation_list_count : 0); ?>
 								</div>
 								<div class="clear"></div>
 								<div class="xml resetable"></div>
@@ -649,12 +649,12 @@
 		</p>
 		<div class="form-field wpallimport-radio-field">
 			<input type="radio" id="is_variation_product_manage_stock_xpath" class="switcher" name="is_variation_product_manage_stock" value="xpath" <?php echo 'xpath' == $post['is_variation_product_manage_stock'] ? 'checked="checked"': '' ?>/>
-			<label for="is_variation_product_manage_stock_xpath"><?php _e('Set with XPath', 'pmxi_plugin' )?></label>
+			<label for="is_variation_product_manage_stock_xpath"><?php _e('Set with XPath', 'wp_all_import_plugin' )?></label>
 			<span class="wpallimport-clear"></span>
 			<div class="switcher-target-is_variation_product_manage_stock_xpath set_with_xpath" style="width:390px;">
 				<span class="wpallimport-slide-content" style="padding-left:0;">
 					<input type="text" class="smaller-text" name="single_variation_product_manage_stock" style="width:345px;" value="<?php echo esc_attr($post['single_variation_product_manage_stock']) ?>"/>
-					<a href="#help" class="wpallimport-help" title="<?php _e('The value of presented XPath should be one of the following: (\'yes\', \'no\').', 'pmxi_plugin') ?>" style="position:relative; top:2px;">?</a>									
+					<a href="#help" class="wpallimport-help" title="<?php _e('The value of presented XPath should be one of the following: (\'yes\', \'no\').', 'wp_all_import_plugin') ?>" style="position:relative; top:2px;">?</a>									
 				</span>																							
 			</div>						
 		</div>
@@ -682,16 +682,16 @@
 		<p class="form-field wpallimport-radio-field">
 			<input type="radio" id="variation_stock_status_auto" class="switcher" name="variation_stock_status" value="auto" <?php echo 'auto' == $post['variation_stock_status'] ? 'checked="checked"': '' ?>/>
 			<label for="variation_stock_status_auto" style="width:100px;"><?php _e("Set automatically"); ?></label>
-			<a href="#help" class="wpallimport-help" title="<?php _e('Set the stock status to In Stock for positive or blank Stock Qty values, and Out Of Stock if Stock Qty is 0.', 'pmxi_plugin') ?>" style="position:relative; top:3px;">?</a>
+			<a href="#help" class="wpallimport-help" title="<?php _e('Set the stock status to In Stock for positive Stock Qty values, and Out Of Stock if Stock Qty is 0 or blank.', 'wp_all_import_plugin') ?>" style="position:relative; top:3px;">?</a>
 		</p>
 		<div class="form-field wpallimport-radio-field">
 			<input type="radio" id="variation_stock_status_xpath" class="switcher" name="variation_stock_status" value="xpath" <?php echo 'xpath' == $post['variation_stock_status'] ? 'checked="checked"': '' ?>/>
-			<label for="variation_stock_status_xpath"><?php _e('Set with XPath', 'pmxi_plugin' )?></label>
+			<label for="variation_stock_status_xpath"><?php _e('Set with XPath', 'wp_all_import_plugin' )?></label>
 			<span class="wpallimport-clear"></span>
 			<div class="switcher-target-variation_stock_status_xpath set_with_xpath" style="width:390px;">
 				<span class="wpallimport-slide-content" style="padding-left:0;">
 					<input type="text" class="smaller-text" name="single_variation_stock_status" style="width:345px;" value="<?php echo esc_attr($post['single_variation_stock_status']) ?>"/>
-					<a href="#help" class="wpallimport-help" title="<?php _e('The value of presented XPath should be one of the following: (\'instock\', \'outofstock\').', 'pmxi_plugin') ?>" style="position:relative; top:2px;">?</a>									
+					<a href="#help" class="wpallimport-help" title="<?php _e('The value of presented XPath should be one of the following: (\'instock\', \'outofstock\').', 'wp_all_import_plugin') ?>" style="position:relative; top:2px;">?</a>									
 				</span>																							
 			</div>						
 		</div>
@@ -699,7 +699,7 @@
 
 	<div class="options_group variations_are_not_child_elements">
 
-		<p class="form-field"><?php _e('Variation Enabled','pmxi_plugin');?><a href="#help" class="wpallimport-help" title="<?php _e('This option is the same as the Enabled checkbox when editing an individual variation in WooCommerce.', 'pmxi_plugin') ?>" style="position:relative; top:0px;">?</a></p>			
+		<p class="form-field"><?php _e('Variation Enabled','wp_all_import_plugin');?><a href="#help" class="wpallimport-help" title="<?php _e('This option is the same as the Enabled checkbox when editing an individual variation in WooCommerce.', 'wp_all_import_plugin') ?>" style="position:relative; top:0px;">?</a></p>			
 			
 		<p class="form-field wpallimport-radio-field">
 			<input type="radio" id="product_enabled_yes" class="switcher" name="is_product_enabled" value="yes" <?php echo 'yes' == $post['is_product_enabled'] ? 'checked="checked"': '' ?>/>
@@ -711,12 +711,12 @@
 		</p>
 		<div class="form-field wpallimport-radio-field">
 			<input type="radio" id="product_enabled_xpath" class="switcher" name="is_product_enabled" value="xpath" <?php echo 'xpath' == $post['is_product_enabled'] ? 'checked="checked"': '' ?>/>
-			<label for="product_enabled_xpath"><?php _e('Set with XPath', 'pmxi_plugin' )?></label>
+			<label for="product_enabled_xpath"><?php _e('Set with XPath', 'wp_all_import_plugin' )?></label>
 			<span class="wpallimport-clear"></span>
 			<div class="switcher-target-product_enabled_xpath set_with_xpath">
 				<span class="wpallimport-slide-content" style="padding-left:0;">
 					<input type="text" class="smaller-text" name="single_product_enabled" style="width:300px;" value="<?php echo esc_attr($post['single_product_enabled']) ?>"/>
-					<a href="#help" class="wpallimport-help" title="<?php _e('The value of presented XPath should be one of the following: (\'yes\', \'no\').', 'pmxi_plugin') ?>" style="position:relative; top:2px;">?</a>
+					<a href="#help" class="wpallimport-help" title="<?php _e('The value of presented XPath should be one of the following: (\'yes\', \'no\').', 'wp_all_import_plugin') ?>" style="position:relative; top:2px;">?</a>
 				</span>
 			</div>
 		</div>
@@ -728,8 +728,8 @@
 
 		<p class="form-field wpallimport-radio-field">
 			<input type="radio" id="set_default_yes" class="switcher" name="is_default_attributes" value="1" <?php echo $post['is_default_attributes'] ? 'checked="checked"': '' ?>/>
-			<label for="set_default_yes" style="width: 400px;"><?php _e("Set the default selection in the attributes dropdowns.", 'pmxi_plugin'); ?></label>
-			<a href="#help" class="wpallimport-help" title="<?php _e('The attributes for the first variation will be automatically selected on the frontend.', 'pmxi_plugin') ?>" style="position:relative; top:2px;">?</a>
+			<label for="set_default_yes" style="width: 400px;"><?php _e("Set the default selection in the attributes dropdowns.", 'wp_all_import_plugin'); ?></label>
+			<a href="#help" class="wpallimport-help" title="<?php _e('The attributes for the first variation will be automatically selected on the frontend.', 'wp_all_import_plugin') ?>" style="position:relative; top:2px;">?</a>
 		</p>
 		<div class="switcher-target-set_default_yes set_with_xpath" style="padding-left:17px;">
 			<p class="form-field wpallimport-radio-field">
@@ -749,13 +749,18 @@
 		<p class="form-field wpallimport-radio-field">
 			<input type="hidden" name="make_simple_product" value="0" />
 			<input type="checkbox" id="make_simple_product" name="make_simple_product" value="1" <?php echo $post['make_simple_product'] ? 'checked="checked"' : '' ?> />
-			<label for="make_simple_product" style="width:340px;"><?php _e('Create products with no variations as simple products.', 'pmxi_plugin') ?></label>								
+			<label for="make_simple_product" style="width:340px;"><?php _e('Create products with no variations as simple products.', 'wp_all_import_plugin') ?></label>								
+		</p>
+		<p class="form-field wpallimport-radio-field">
+			<input type="hidden" name="put_variation_image_to_gallery" value="0" />
+			<input type="checkbox" id="put_variation_image_to_gallery" name="put_variation_image_to_gallery" value="1" <?php echo $post['put_variation_image_to_gallery'] ? 'checked="checked"' : '' ?> />
+			<label for="put_variation_image_to_gallery" style="width:340px;"><?php _e('Save variation image to the gallery.', 'wp_all_import_plugin') ?></label>								
 		</p>
 		<p class="form-field wpallimport-radio-field set_parent_stock_option" style="display:none;">
 			<input type="hidden" name="set_parent_stock" value="0" />
 			<input type="checkbox" id="set_parent_stock" name="set_parent_stock" value="1" <?php echo $post['set_parent_stock'] ? 'checked="checked"' : '' ?> />
-			<label for="set_parent_stock" style="width: 435px;"><?php _e('Set _stock value for parent product to the _stock value for the first variation.', 'pmxi_plugin') ?></label>								
-			<a href="#help" class="wpallimport-help" title="<?php _e('This option works when there are no parent products in your feed ( cases 2 and 4 on Variations tab).', 'pmxi_plugin') ?>" style="position:relative; top:1px;">?</a>
+			<label for="set_parent_stock" style="width: 435px;"><?php _e('Set _stock value for parent product to the _stock value for the first variation.', 'wp_all_import_plugin') ?></label>								
+			<a href="#help" class="wpallimport-help" title="<?php _e('This option works when there are no parent products in your feed ( cases 2 and 4 on Variations tab).', 'wp_all_import_plugin') ?>" style="position:relative; top:1px;">?</a>
 		</p>
 
 	</div>

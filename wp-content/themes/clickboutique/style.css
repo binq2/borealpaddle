@@ -4,7 +4,7 @@ Theme URI: http://themes.zone
 Author: plumtree
 Author URI: http://themes.zone/
 Description: ClickBoutique - Responsive WordPress WooCommerce theme
-Version: 1.2.6
+Version: 1.2.11
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: plumtree
@@ -509,6 +509,7 @@ img.size-large,
 img.wp-post-image {
     height: auto;
     max-width: 100%;
+    width: 100%;
 }
 embed,
 iframe,
@@ -4390,6 +4391,14 @@ input.wysija-submit{
 }
 
 .widget_shopping_cart .widget_shopping_cart_content .button.cart tr {
+    display: none;
+}
+
+.jckqv-qty-spinners {
+    display: none;
+}
+
+#jckqv .quantity span.label {
     display: none;
 }
 

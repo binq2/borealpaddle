@@ -3,8 +3,8 @@ Contributors: woothemes, mikejolley, jameskoster, claudiosanches, barrykooij
 Tags: ecommerce, e-commerce, commerce, woothemes, wordpress ecommerce, affiliate, store, sales, sell, shop, shopping, cart, checkout, configurable, variable, widgets, reports, download, downloadable, digital, inventory, stock, reports, shipping, tax
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@woothemes.com&item_name=Donation+for+WooCommerce
 Requires at least: 4.0
-Tested up to: 4.1
-Stable tag: 2.3.5
+Tested up to: 4.2
+Stable tag: 2.3.9
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -137,6 +137,85 @@ Yes you can! Join in on our [GitHub repository](http://github.com/woothemes/wooc
 6. A product archive (grid).
 
 == Changelog ==
+
+= 2.3.9 - 19/05/2015 =
+* Fix - Fixed language upgrader verification.
+* Fix - Refund reporting #8010
+* Fix - Redirect after bulk editing.
+* Fix - Prevent variable overwrite in save_product_meta.
+* Fix - Fix stock report pagination.
+* Fix - Fixed paypal about URL for Malta.
+* Fix - Fixed save downloadable files for product variations.
+* Fix - Remove submitdiv and fix post status updating.
+* Fix - Fixed the sort order dropdown items when create new product attributes.
+* Fix - Move action to prevent infinite recursion on login/restoring saved carts.
+* Fix - Update PrettyPhoto to 3.1.6 to resolve XSS security issue https://github.com/scaron/prettyphoto/issues/149
+
+= 2.3.8 - 20/04/2015 =
+* Fix - Ensure coupon taxes are reset when calculating totals.
+* Fix - Downloads url sanitization to work correctly with shortcodes and urls.
+* Fix - State/Contry select2 issues with Internet Explorer.
+* Fix - Flat rate per item and per class if no additional costs added.
+* Fix - Simplify Commerce compatibility with free trial subscriptions.
+* Fix - Select2 z-index in the admin.
+* Fix - Postmeta records deletation on plugin uninstall.
+* Fix - List only approved comments in products reviews on API.
+* Fix - Improved variation SKU display.
+* Fix - Prices including tax within orders.
+* Fix - Ensure line taxes are stored when calculating tax theough the API.
+* Fix - Add null date check for download permissions.
+* Fix - PayPal Logging.
+* Fix - Coupon product id and category id checks should run for all coupon types.
+* Tweak - Hook in cart totals via action.
+* Tweak - Prevent errors when adding or deleting products for the coupon.
+* Tweak - Prevent errors when check customer capability to view orders.
+* Tweak - Ensure Price Filter links has a trailing slash to avoid pagination issues.
+* Tweak - Improved the check for mismatched totals in items lines for PayPal payment gateway.
+* Tweak - Use wc_stock_amount to format API orders stock amount.
+* Tweak - Ensure show_in_admin_all_list is respected for order statuses.
+* Tweak - Remove rounding from shipping costs for greater shipping tax precision.
+* Tweak - Only automatically cancel orders created via checkout + allow post_parent to be set.
+* Tweak - Deny all access to revisions through API.
+
+= 2.3.7 - 18/03/2015 =
+* Fix - Allow saving of empty download expiry date on orders.
+* Fix - get_total_discount() function with certain tax setups.
+* Fix - stock management for variations for Products API.
+* Fix - Price filter styling.
+* Fix - Support price filter min or max only.
+* Fix - Allowed paths for file url.
+* Tweak - Chile address format.
+* Tweak - Revised how discounts/discount taxes are stored for consistency. Always store ex. tax to make data retrieval easier, and to ensure totals are correct after settings changes. Backwards compatibility maintained through use of order versioning.
+* Tweak - Delete product attachments when the Products API fails.
+
+= 2.3.6 - 13/03/2015 =
+* Fix - Removal of coupons containing spaces.
+* Fix - Unclosed div in profile page.
+* Fix - Export report CSV.
+* Fix - Settings API - allow multiselect fields to be emptied.
+* Fix - Saving an order needs to save the discount amount ex. tax like the cart.
+* Fix - Order again with custom attributes.
+* Fix - [CVE-2015-2329] Prevent potential XSS within tooltips (discovered by Fortinet FortiGuard Labs).
+* Fix - Paypal debug option.
+* Fix - Removed $q->query['wc_query'] = 'product_query' which broke redirects (#7703). Use $q->get('wc_query') instead.
+* Fix - Sanitize tax_rate_id when saving taxes in the backend to prevent potential SQL injection (discovered by WordFence).
+* Tweak - Show discounts inc. tax when showing order totals inc. tax.
+* Tweak - Use 30 days instead of year for transients to avoid bugs in memcache plugins.
+* Tweak - Add reports menu item if user can access reports but not the main WC section.
+* Tweak - Improve grouped product quantity inputs.
+* Tweak - Load the persistant cart if cart is empty.
+* Tweak - Prevent cart being cleared when accessing the login page.
+* Tweak - Shipping calculator - Made state/postcode respect country locale like checkout.
+* Tweak - Move default customer location to general settings tab.
+* Tweak - Only run save_category_fields for product_cat taxonomy.
+* Tweak - Improved message when variation attributes are missing.
+* Tweak - Allow wc_attribute_label to support product-level attribute names.
+* Tweak - Added the option to not round the line total.
+* Tweak - Improved coupon percent calculation for fixed discounts.
+* Tweak - Show calculate total when shipping is needed, but shipping is hidden.
+* Tweak - Cart total labels.
+* Tweak - Increase wc_get_weight precision.
+* Dev - API - reports/sales now also returns total refunds.
 
 = 2.3.5 - 20/02/2015 =
 * Fix - Plain text address formatting.
@@ -1281,5 +1360,5 @@ Yes you can! Join in on our [GitHub repository](http://github.com/woothemes/wooc
 
 == Upgrade Notice ==
 
-= 2.3.5 =
+= 2.3.0 =
 2.3.0 is a major update so it is important that you make backups, test extensions and your theme prior to updating, and ensure extensions are 2.3 compatible. Developers should catch up with [develop.woothemes.com](http://develop.woothemes.com/) to see what has been happening in core.

@@ -16,6 +16,18 @@ if( class_exists( 'Lightspeed_Cloud_API' ) ) return;
 class WC_Lightspeed_Cloud {
 
 	/**
+	 * Debug Mode
+	 * @var boolean
+	 */
+	var $debug = true;
+
+	/**
+	 * WooCommerce Debug Logger
+	 * @var object
+	 */
+	var $debug_logger;
+
+	/**
 	 * Instance of Lightspeed_Cloud_API
 	 * @var object
 	 */
@@ -32,23 +44,30 @@ class WC_Lightspeed_Cloud {
 	 * @var array
 	 */
 	var $product_log = array();
+	
+	/**
+	 * No Shipping Categories
+	 * @var array
+	 */
+	 var $no_shipping_categories = array();
+	 
+	 /**
+	 * Shipping Item ID
+	 * @var array
+	 */
+	 var $shippingItemID;
 
 	/**
 	 * Class constructor
 	 */
 	function __construct(){
 		$this->lightspeed = new Lightspeed_Cloud_API();
-	}
-
-	/**
-	 * Add necessary hooks
-	 * @return void
-	 */
-	function initialize(){
-
+		
 		// base plugin actions
 		add_action( 'init', array( $this, '_init' ) );
-
+		
+		//Set the non-inventory item ID for shipping
+		$this->shippingItemID = 13966; //test is 96
 	}
 
 	/**
@@ -57,6 +76,10 @@ class WC_Lightspeed_Cloud {
 	 * @return void
 	 */
 	function _init(){
+		global $woocommerce;
+		$this->debug_logger = class_exists( 'WC_Logger' ) ? new WC_Logger() : $woocommerce->logger();
+		
+		$this->no_shipping_categories = array(306,320,407,304,314,372,309);
 
 		// Admin Ajax function to lookup account id and test API
 		add_action( 'wp_ajax_wclsc_lookup_account_id', array( $this, 'get_lightspeed_account_id' ) );
@@ -65,37 +88,88 @@ class WC_Lightspeed_Cloud {
 		add_action( 'wp_ajax_wclsc_clear_error_log', array( $this, 'clear_error_log' ) );
 
 		// store customer information in LightSpeed
-		add_action( 'woocommerce_checkout_order_processed', array( $this, 'sync_lightspeed_customer' ), 10, 2 );
+		//add_action( 'woocommerce_checkout_order_processed', array( $this, 'sync_lightspeed_customer' ), 10, 2 );
 
-			// store guest information in LightSpeed
-			add_action( 'woocommerce_checkout_update_order_meta', array( $this, 'sync_lightspeed_guest' ), 10, 2 );
-
-		// store order item information in LightSpeed
-		add_action( 'woocommerce_add_order_item_meta', array( $this, 'sync_lightspeed_product' ), 10, 3 );
-
-			// add product tags to product data array
-			add_filter( 'wclsc_product_data', array( $this, 'attach_product_tags' ), 10, 3 );
-
-			// add product photos to product data array
-			add_filter( 'wclsc_product_data', array( $this, 'attach_product_images' ), 10, 3 );
+		// store guest information in LightSpeed
+		add_action( 'woocommerce_checkout_update_order_meta', array( $this, 'sync_lightspeed_customer' ), 10, 2 );
 
 		// store order information in LightSpeed
 		add_action( 'woocommerce_checkout_order_processed', array( $this, 'sync_lightspeed_order' ), 10, 2 );
 
 		// store payment information in LightSpeed
-		#add_action( 'woocommerce_payment_complete', array( $this, 'sync_lightspeed_payment' ) );
 		add_filter( 'woocommerce_payment_successful_result', array( $this, 'sync_lightspeed_payment_filter' ), 10, 2 );
-
-		// sync payment details in LightSpeed
-		#add_action( 'woocommerce_order_status_completed', array( $this, 'sync_lightspeed_payment_details' ) );
 
 		// sync order status in LightSpeed
 		add_action( 'woocommerce_order_status_changed', array( $this, 'sync_order_status' ), 10, 3 );
 
 		// Administration actions
 		add_action( 'admin_init', array( $this, '_admin_init' ) );
+		
+		//Refund Order
+		//add_action( 'woocommerce_order_refunded', array( $this, 'wclsc_refund_order' ), 10, 2 );
+		
+		//replace add to cart if item belongs to certain categories define above ($this->no_shipping_categories)
+		//add_action('wp',array($this,'wclsc_call_for_shipping_button'));
+		
+		//remove add to cart buttons for regular loop and quick view
+		//remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+		//remove_action( 'cg_woocommerce_single_product_summary_quickview', 'woocommerce_template_single_add_to_cart', 30 );
+		
+		//add in new button to view product details
+		//add_action( 'woocommerce_after_shop_loop_item', array($this, 'wclsc_woocommerce_template_loop_add_to_cart'));		
+		//add_action( 'cg_woocommerce_single_product_summary_quickview', array($this,'wclsc_woocommerce_quickview_loop_add_to_cart'));
+		
+		//add_filter( 'woocommerce_payment_complete_order_status', array($this, 'wclsc_update_order_status_complete'));
+		
+	
 	}
+	
+	
+	
+	
+	function wclsc_woocommerce_quickview_loop_add_to_cart() {
+		global $post, $product, $woocommerce;
+		
+		if ( has_term($this->no_shipping_categories,'product_cat', $post->ID) ){
+			echo '<a href="'.get_permalink( $product->id ).'" rel="nofollow" data-product_id="'.$product->ID.'" class="button add_to_cart_button product_type_simple">Product Details</a>';
+		}else{
+			woocommerce_template_loop_add_to_cart();
+		}
+	}
+	
+	function wclsc_woocommerce_template_loop_add_to_cart() {
+		global $post, $product, $woocommerce;
+		
+		echo '<a href="'.get_permalink( $product->id ).'" rel="nofollow" data-product_id="'.$product->ID.'" class="button add_to_cart_button product_type_simple">Product Details</a>';
+	}
+	
+	
+	function wclsc_call_for_shipping_button(){
+		global $post;
 
+		if ( has_term($this->no_shipping_categories,'product_cat') ){ 
+			remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+			remove_action( 'woocommerce_simple_add_to_cart', 'woocommerce_simple_add_to_cart', 30 );
+			remove_action( 'woocommerce_grouped_add_to_cart', 'woocommerce_grouped_add_to_cart', 30 );
+			remove_action( 'woocommerce_variable_add_to_cart', 'woocommerce_variable_add_to_cart', 30 );
+			remove_action( 'woocommerce_external_add_to_cart', 'woocommerce_external_add_to_cart', 30 );
+ 
+			// adding our own custom text
+			add_action( 'woocommerce_single_product_summary', array($this,'wclsc_call_for_shipping_text'), 30 );
+			add_action( 'woocommerce_simple_add_to_cart', array($this,'wclsc_call_for_shipping_text'), 30 );
+			add_action( 'woocommerce_grouped_add_to_cart', array($this,'wclsc_call_for_shipping_text'), 30 );
+			add_action( 'woocommerce_variable_add_to_cart', array($this,'wclsc_call_for_shipping_text'), 30 );
+			add_action( 'woocommerce_external_add_to_cart', array($this,'wclsc_call_for_shipping_text'), 30 );
+		}
+
+	}
+	
+	function wclsc_call_for_shipping_text(){
+		echo '<button style="cursor:default;margin-left:0;" class="single_add_to_cart_button button">Please Call for Shipping</button><br />';
+	} // wclsc_call_for_shipping_text
+	
+	
+	
 	/**
 	 * admin init actions and filters
 	 * @return void
@@ -431,35 +505,33 @@ class WC_Lightspeed_Cloud {
 
 		wp_send_json( $response );
 	}
+	
 
 	/**
-	 * Sync customer data from order with LightSpeed
-	 * action: woocommerce_checkout_order_processed
+	 * Add guest data to LightSpeed Customer and attach to order
+	 * action: woocommerce_checkout_update_order_meta
 	 * @param  int $order_id WooCommerce Order ID
-	 * @param  array $order_data       Posted data for order
+	 * @param  array $order_data    Posted Order Array data
 	 * @return void
 	 */
 	function sync_lightspeed_customer( $order_id, $order_data ){
-		$user_id = apply_filters( 'woocommerce_checkout_customer_id', get_current_user_id() );
-		// get WordPress User
-		$user = get_userdata( $user_id );
+		
+		if( ! isset( $order_data['order_id'] ) )
+			$order_data['order_id'] = $order_id;
 
-		if( ! $user )
-			return;
-
-		// setup customer array
-		$customer_data = $this->setup_customer_data( $user_id, $user, $order_data );
+		$customer_data = $this->setup_customer_data( $order_data );
 
 		if( ! count( $customer_data ) )
 			return;
 
 		$this->log_order_data( $order_id, 'Customer Data: <pre>' . var_export( $customer_data, true ) . '</pre>' );
 
-		// check if customer LightSpeed ID already exists
-		if( $customer_id = $this->lightspeed->get_customer_id( $user_id ) ){
+		// check if guest LightSpeed ID already exists
+		if( $customer_id = $this->lightspeed->get_guest_id( $order_id ) ){
 
 			// only update if this is a valid customer
 			if( $this->lightspeed->get_customer( $customer_id ) ){
+
 				$this->lightspeed->customer_id = $customer_id;
 
 				$customer = $this->lightspeed->update_customer( $this->lightspeed->customer_id, $customer_data );
@@ -473,152 +545,21 @@ class WC_Lightspeed_Cloud {
 
 		// Look up customer in LightSpeed
 		if( $customer = $this->lightspeed->lookup_customer( $customer_data ) ) {
-			$this->lightspeed->update_customer( $this->lightspeed->customer_id, $customer_data );
+			$customer = $this->lightspeed->update_customer( $this->lightspeed->customer_id, $customer_data );
 
-			// set LS customer id for this user.
 			$this->lightspeed->customer_id = $customer->customerID;
 
 			$this->log_order_data( $order_id, 'Sync Customer: Update Customer (false): ' . $this->lightspeed->customer_id );
-			update_user_meta( $user_id, WCLSC_META_PREFIX . 'customer_id', $this->lightspeed->customer_id );
+			update_post_meta( $order_id, WCLSC_META_PREFIX . 'customer_id', $this->lightspeed->customer_id );
 
 		// Create a new customer in LightSpeed
 		} else {
 			$customer = $this->lightspeed->create_customer( $customer_data );
 
-			// set LS customer id for this user.
+			// set LightSpeed customer id for this order.
 			$this->lightspeed->customer_id = $customer->customerID;
 
 			$this->log_order_data( $order_id, 'Sync Customer: Created New Customer ID: ' . $this->lightspeed->customer_id );
-			update_user_meta( $user_id, WCLSC_META_PREFIX . 'customer_id', $this->lightspeed->customer_id );
-		}
-
-	}
-
-	/**
-	 * Create LightSpeed array to create/update Customer
-	 * @param  int $user_id        WordPress User ID
-	 * @param  object $user        WordPress User object
-	 * @param  array $order_data   WooCommerce Order Data
-	 * @return array $customer_data
-	 */
-	function setup_customer_data( $user_id, $user, $order_data ){
-		$customer_data = array(
-			'firstName' => $user->first_name,
-			'lastName' => $user->last_name,
-			'Contact' => array(
-				'Emails' => array(
-					'ContactEmail' => array(
-						'address' => $user->user_email, // Required to lookup later
-						'useType' => 'Primary'
-					)
-				)
-			)
-		);
-
-		// add website if exists
-		if( $user->user_url )
-			$customer_data['Contact']['Websites']['ContactWebsite'] = array( 'url' => $user->user_url );
-
-		// add title if exists
-		$title = get_user_meta( $user_id, 'title', true );
-		if( $title )
-			$customer_data['title'] = $title;
-
-		// add phone if exists
-		$phone = get_user_meta( $user_id, 'phone', true );
-		if( ! $phone )
-			$phone = get_user_meta( $user_id, 'billing_phone', true );
-		if( ! $phone )
-			$phone = get_user_meta( $user_id, 'shipping_phone', true );
-		if( $phone )
-			$customer_data['Contact']['Phones']['ContactPhone'] = array( 'number' => $phone, 'useType' => 'Mobile' );
-
-		// add company if exists
-		$company = get_user_meta( $user_id, 'company', true );
-		if( ! $company )
-			$company = get_user_meta( $user_id, 'billing_company', true );
-		if( ! $company )
-			$company = get_user_meta( $user_id, 'shipping_company', true );
-		if( $company )
-			$customer_data['company'] = $company;
-
-		if( $this->lightspeed->api_settings['customer_contact_address'] && $this->lightspeed->api_settings['customer_contact_address'] != 'none' ){
-			// set address as Customer ContactAddress based on selection
-			$type = $this->lightspeed->api_settings['customer_contact_address'];
-			$customer_data['Contact']['Addresses']['ContactAddress'] = array(
-				'address1' => get_user_meta( $user_id, $type . '_address_1', true ),
-				'address2' => get_user_meta( $user_id, $type . '_address_2', true ),
-				'city' => get_user_meta( $user_id, $type . '_city', true ),
-				'state' => get_user_meta( $user_id, $type . '_state', true ),
-				'zip' => get_user_meta( $user_id, $type . '_postcode', true ),
-				'country' => get_user_meta( $user_id, $type . '_country', true )
-			);
-		}
-
-		$customer_type = $this->lightspeed->get_customer_type();
-		if( $customer_type ){
-			$customer_data['customerTypeID'] = $customer_type;
-		}
-
-		return (array) apply_filters( 'wclsc_customer_data', $customer_data, $user_id, $order_data );
-	}
-
-	/**
-	 * Add guest data to LightSpeed Customer and attach to order
-	 * action: woocommerce_checkout_update_order_meta
-	 * @param  int $order_id WooCommerce Order ID
-	 * @param  array $order_data    Posted Order Array data
-	 * @return void
-	 */
-	function sync_lightspeed_guest( $order_id, $order_data ){
-		// make sure the user is not logged in
-		if( is_user_logged_in() )
-			return;
-
-		if( ! isset( $order_data['order_id'] ) )
-			$order_data['order_id'] = $order_id;
-
-		$guest_data = $this->setup_guest_data( $order_data );
-
-		if( ! count( $guest_data ) )
-			return;
-
-		$this->log_order_data( $order_id, 'Guest Data: <pre>' . var_export( $guest_data, true ) . '</pre>' );
-
-		// check if guest LightSpeed ID already exists
-		if( $customer_id = $this->lightspeed->get_guest_id( $order_id ) ){
-
-			// only update if this is a valid customer
-			if( $this->lightspeed->get_customer( $customer_id ) ){
-
-				$this->lightspeed->customer_id = $customer_id;
-
-				$guest = $this->lightspeed->update_customer( $this->lightspeed->customer_id, $guest_data );
-
-				$this->log_order_data( $order_id, 'Sync Guest: Update Customer (true): ' . $this->lightspeed->customer_id );
-
-				return;
-			}
-
-		}
-
-		// Look up guest in LightSpeed
-		if( $guest = $this->lightspeed->lookup_customer( $guest_data ) ) {
-			$guest = $this->lightspeed->update_customer( $this->lightspeed->customer_id, $guest_data );
-
-			$this->lightspeed->customer_id = $guest->customerID;
-
-			$this->log_order_data( $order_id, 'Sync Guest: Update Customer (false): ' . $this->lightspeed->customer_id );
-			update_post_meta( $order_id, WCLSC_META_PREFIX . 'customer_id', $this->lightspeed->customer_id );
-
-		// Create a new guest in LightSpeed
-		} else {
-			$guest = $this->lightspeed->create_customer( $guest_data );
-
-			// set LightSpeed customer id for this order.
-			$this->lightspeed->customer_id = $guest->customerID;
-
-			$this->log_order_data( $order_id, 'Sync Guest: Created New Customer ID: ' . $this->lightspeed->customer_id );
 			update_post_meta( $order_id, WCLSC_META_PREFIX . 'customer_id', $this->lightspeed->customer_id );
 		}
 	}
@@ -628,8 +569,8 @@ class WC_Lightspeed_Cloud {
 	 * @param  array $order_data Posted Order Data from WooCommerce
 	 * @return array $guest_data
 	 */
-	function setup_guest_data( $order_data ){
-		$guest_data = array(
+	function setup_customer_data( $order_data ){
+		$customer_data = array(
 			'firstName' => $order_data['billing_first_name'],
 			'lastName' => $order_data['billing_last_name'],
 			'Contact' => array(
@@ -644,17 +585,17 @@ class WC_Lightspeed_Cloud {
 
 		// add phone if exists
 		if( $order_data['billing_phone'] )
-			$guest_data['Contact']['Phones']['ContactPhone'] = array( 'number' => $order_data['billing_phone'], 'useType' => 'Mobile' );
+			$customer_data['Contact']['Phones']['ContactPhone'] = array( 'number' => $order_data['billing_phone'], 'useType' => 'Mobile' );
 
 		// add company if exists
 		if( $order_data['billing_company'] )
-			$guest_data['company'] = $order_data['billing_company'];
+			$customer_data['company'] = $order_data['billing_company'];
 
 		if( $this->lightspeed->api_settings['customer_contact_address'] && $this->lightspeed->api_settings['customer_contact_address'] != 'none' ){
 			// set address as Customer ContactAddress based on selection
 			$type = ! $order_data['ship_to_different_address'] ? 'billing' : $this->lightspeed->api_settings['customer_contact_address'];
 
-			$guest_data['Contact']['Addresses']['ContactAddress'] = array(
+			$customer_data['Contact']['Addresses']['ContactAddress'] = array(
 				'address1' => $order_data[ $type . '_address_1' ],
 				'address2' => $order_data[ $type . '_address_2' ],
 				'city' => $order_data[ $type . '_city' ],
@@ -666,59 +607,10 @@ class WC_Lightspeed_Cloud {
 
 		$customer_type = $this->lightspeed->get_customer_type();
 		if( $customer_type ){
-			$guest_data['customerTypeID'] = $customer_type;
+			$customer_data['customerTypeID'] = $customer_type;
 		}
 
-		return (array) apply_filters( 'wclsc_guest_data', $guest_data, $order_data );
-	}
-
-	/**
-	 * Sync product data from order with LightSpeed
-	 * action: woocommerce_add_order_item_meta
-	 * @param  int $cart_item_id       WooCommerce Cart Item ID
-	 * @param  array $values        Product Details array
-	 * @param  string $cart_item_key Cart ID
-	 * @return void
-	 */
-	function sync_lightspeed_product( $cart_item_id, $values, $cart_item_key ){
-		$product = isset( $values['data'] ) && is_object( $values['data'] ) ? $values['data'] : NULL;
-		$product_id  = $product ? $product->id : apply_filters( 'woocommerce_cart_item_product_id', $cart_item_id, $values, $cart_item_key );
-		$product_data = $this->setup_product_data( $product_id, $values, $cart_item_key );
-
-		if( ! count( $product_data ) )
-			return;
-
-		$this->log_product_data( $product_id, 'Product Data: <pre>' . var_export( $product_data, true ) . '</pre>' );
-
-		// check if item LightSpeed ID already exists
-		if( $item_id = $this->lightspeed->get_item_id( $product_id ) ){
-			// only update if valid item id
-			if( $this->lightspeed->get_item( $item_id ) ){
-				$item = $this->lightspeed->update_item( $item_id, $product_data );
-				return;
-			}
-
-		}
-
-		// Look up item in LightSpeed
-		if( $item = $this->lightspeed->lookup_item( $product_data ) ) {
-			$item_id = $item->itemID;
-
-			$this->lightspeed->update_item( $item_id, $product_data );
-
-			$this->log_order_data( $order_id, 'Sync Product: Updated Item ID: ' . $item_id );
-			update_post_meta( $product_id, WCLSC_META_PREFIX . 'item_id', $item_id );
-
-		// Create a new item in LightSpeed
-		} else {
-			$item = $this->lightspeed->create_item( $product_data );
-
-			// set LS item id for this user.
-			$item_id = $item->itemID;
-			$this->log_product_data( $product_id, 'Sync Product: Created New Item ID: ' . $item_id );
-			update_post_meta( $product_id, WCLSC_META_PREFIX . 'item_id', $item_id );
-		}
-
+		return (array) apply_filters( 'wclsc_customer_data', $customer_data, $order_data );
 	}
 
 	/**
@@ -748,79 +640,36 @@ class WC_Lightspeed_Cloud {
 		);
 
 		if( $product->get_sku() )
-			$product_data['customSku'] = $product->get_sku();
-
-		/*
-
-		## replace this with a "reduce stock" function based on backorder setting when order "ships" or is processed
-
-		if( $product->managing_stock() && $in_stock = $product->get_stock_quantity() ){
-			$product_data['ItemShops']['itemShop'] = array(
-				'qoh' => $in_stock,
-				'itemShopID' => $this->lightspeed->get_shop_id()
-			);
-		}
-		*/
+			$product_data['systemSku'] = $product->get_sku();		
 
 		return (array) apply_filters( 'wclsc_product_data', $product_data, $product_id, $product );
 	}
-
+	
+	
 	/**
-	 * Attach product tags (categories) to product
-	 * filter: wclsc_product_data
-	 * @param  array $product_data Product Data array
-	 * @param  int $product_id	 	WooCommerce Product ID
-	 * @param  object $product      WooCommerce Product object
-	 * @return array               $product_data
+	 * Update order status to complete on successful payment
+	 * action: woocommerce_payment_complete_order_status_
+	 * @param  int $order_id  WooCommerce Order ID
+	 * @param  array $order_data    Posted data for order
+	 * @return void
 	 */
-	function attach_product_tags( $product_data, $product_id, $product ){
-		return $product_data; // temporary disabled.
+	function wclsc_update_order_status_complete($order_id, $order_data){
+		if( ! isset( $order_data['order_id'] ) )
+			$order_data['order_id'] = $order_id;
 
-		$categories = $product->get_categories( ',' );
+		$order = new WC_Order( $order_id );
 
-		if( strpos( $categories, ',' ) !== false ){
-			$categories = explode( ',', $categories );
-		} elseif( $categories ) {
-			$categories = array( $categories );
-		}
-
-		if( $categories ){
-			$attributes = '@attributes';
-			$tags = new stdClass();
-			$tags->$attributes = new stdClass();
-			$tags->$attributes->count = 0;
-			$tags->tag = array();
-
-			foreach( $categories as $category ){
-				$category = str_replace( ' ', '-', strip_tags( $category ) );
-				if( $tag = $this->lightspeed->lookup_tag( $category ) ){
-					$tags->tag[] = $tag->name;
-				} elseif( $tag = $this->lightspeed->create_tag( $category ) ){
-					$tags->tag[] = $tag->name;
-				}
-			}
-
-			if( $total_tags = count( $tags ) ){
-				$tags->$attributes->count = $total_tags;
-				$product_data['Tags'] = $tags;
-			}
-		}
-
-		return $product_data;
+		if( ! is_object( $order ) )
+			return;
+			
+		$saleID = $this->lightspeed->get_sale_id($order_id);
+		
+		$order->update_status('complete');
+		
+		$this->sync_order_status($order_id); 
 	}
 
-	/**
-	 * Attach product photos to product
-	 * filter: wclsc_product_data
-	 * @param  array $product_data Product Data array
-	 * @param  int $product_id	 	WooCommerce Product ID
-	 * @param  object $product      WooCommerce Product object
-	 * @return array               $product_data
-	 */
-	function attach_product_images( $product_data, $product_id, $product ){
-		//TODO
-		return $product_data;
-	}
+	
 
 	/**
 	 * Sync order data with LightSpeed
@@ -840,6 +689,7 @@ class WC_Lightspeed_Cloud {
 
 		$sale_data = $this->setup_sale_data( $order );
 		$this->log_order_data( $order_id, 'Sale Data: <pre>' . var_export( $sale_data, true ) . '</pre>' );
+		$this->debug_logger->add( 'wclsc', 'SALE DATA:' . "\r\n" . var_export( $sale_data, true ) );
 
 		if( $sale_data ){
 			$sale = $this->lightspeed->create_sale( $sale_data );
@@ -875,6 +725,7 @@ class WC_Lightspeed_Cloud {
 			'registerID' => $this->lightspeed->get_register_id(),
 			'customerID' => $customer_id,
 			'shipTo' => $this->setup_ship_to_data( $order, $customer_id ),
+			//'shipToID' => ,
 
 			'SaleLines' => $this->setup_sale_lines_data( $order, $customer_id ),
 
@@ -913,16 +764,37 @@ class WC_Lightspeed_Cloud {
 	 */
 	function setup_ship_to_data( $order, $customer_id ){
 		$order_id = $order->id;
-		$shipping_address = $order->get_formatted_shipping_address();
-		if( ! $shipping_address )
-			$shipping_address = $order->get_formatted_billing_address();
+		$shipping_address = array(
+								'first_name'    => $order->shipping_first_name,
+								'last_name'     => $order->shipping_last_name,
+								'company'       => $order->shipping_company,
+								'address_1'     => $order->shipping_address_1,
+								'address_2'     => $order->shipping_address_2,
+								'city'          => $order->shipping_city,
+								'state'         => $order->shipping_state,
+								'postcode'      => $order->shipping_postcode,
+								'country'       => $order->shipping_country
+							);
+		if(empty($shipping_address)){
+			$shipping_address = array(
+								'first_name'    => $order->billing_first_name,
+								'last_name'     => $order->billing_last_name,
+								'company'       => $order->billing_company,
+								'address_1'     => $order->billing_address_1,
+								'address_2'     => $order->billing_address_2,
+								'city'          => $order->billing_city,
+								'state'         => $order->billing_state,
+								'postcode'      => $order->billing_postcode,
+								'country'       => $order->billing_country
+							);
+		}
 
 		$ship_to_data = array(
 			'customerID' => $customer_id,
 			'shipped' => false,
 			'timeStamp' => date( 'c', strtotime( $order->order_date ) )
 		);
-
+		
 		if( $shipping_address && count( $shipping_address ) ){
 
 			$this->log_order_data( $order_id, 'Shipping Address: <pre>' . var_export( $shipping_address, true ) . '</pre>' );
@@ -947,7 +819,7 @@ class WC_Lightspeed_Cloud {
 
 		return (array) apply_filters( 'wclsc_ship_to_data', $ship_to_data, $order, $customer_id );
 	}
-
+	
 
 	/**
 	 * Setup LightSpeed array to create SaleLines
@@ -974,7 +846,7 @@ class WC_Lightspeed_Cloud {
 				'method' => $shipping_method,
 				'cost' => $shipping_cost,
 				'tax' => $order->get_shipping_tax(),
-				'item_id' => $this->lightspeed->get_shipping_item_id( $shipping_method )
+				'item_id' => $this->shippingItemID
 			);
 
 			$shipping_data = array(
@@ -1461,4 +1333,158 @@ class WC_Lightspeed_Cloud {
 
 		return false;
 	}
+	
+	
+	/*function wclsc_refund_order( $order_id, $refund_id ){
+		$order = wc_get_order( $order_id );
+		$refund = $order->get_refunds();
+
+		if( ! is_object( $refund ) )
+			return;
+			
+		$sale_data = $this->setup_refund_sale_data( $order, $refund );
+		$this->log_order_data( $order_id, 'Refund Sale Data: <pre>' . var_export( $sale_data, true ) . '</pre>' );
+		$this->debug_logger->add( 'wclsc', 'Refund SALE DATA:' . "\r\n" . var_export( $sale_data, true ) );
+
+		if( $sale_data ){
+			$sale = $this->lightspeed->create_sale( $sale_data );
+
+			if( $sale ){
+				$this->log_order_data( $refund_id, 'Sync Refund Order: New Refund Sale ID:' . $sale->saleID );
+				update_post_meta( $refund_id, WCLSC_META_PREFIX . 'sale_id', $sale->saleID );
+
+				$this->lightspeed->sale_id = $sale->saleID;
+			}
+		}
+
+		$sale_data = array(
+			'employeeID' => $this->lightspeed->get_employee_id(),
+			'registerID' => $this->lightspeed->get_register_id(),
+			'shopID' => $this->lightspeed->get_shop_id(),
+			
+			'SaleLines' => $this->setup_refund_sale_lines_data( $order, $customer_id ),
+			'SalePayments' => $this->setup_refund_payment_lines_data( $order, $customer_id ),
+
+			
+		);
+
+	}*/
+	
+	
+	/**
+	 * Setup LightSpeed data to create Sale.refund
+	 * @param  object $order WooCommerce Order Object
+	 * @return void
+	 */
+	/*function setup_refund_sale_data( $order, $refund ){
+		$order_id = $order->id;
+		$refund_id = $refund->id;
+		$customer_id = $this->lightspeed->get_guest_id( $order_id );
+
+		if( ! $customer_id )
+			$customer_id = $this->lightspeed->get_customer_id();
+
+		$sale_data = array(
+			'timeStamp' => date( 'c', strtotime( $order->order_date ) ),
+			'referenceNumber' => $refund_id,
+			'referenceNumberSource' => __( 'WooCommerce', 'woocommerce' ),
+
+			'taxCategoryID' => $this->get_tax_category_id( $order ),
+			'employeeID' => $this->lightspeed->get_employee_id(),
+			'registerID' => $this->lightspeed->get_register_id(),
+			'customerID' => $customer_id,
+			
+			'SaleLines' => $this->setup_refund_sale_lines_data( $order, $refund, $customer_id ),
+
+			'shopID' => $this->lightspeed->get_shop_id()
+		);
+
+		return (array) apply_filters( 'wclsc_sale_data', $sale_data, $order );
+	}*/
+	
+	
+	/**
+	 * Setup LightSpeed array to create SaleLines
+	 * @param  object $order       WooCommerce Order Object
+	 * @param  int $customer_id LightSpeed CustomerID
+	 * @return array $sale_lines_data
+	 */
+	/*function setup_refund_sale_lines_data( $order, $refund, $customer_id ){
+		$sale_lines_data = array();
+
+		foreach( $order->get_items() as $item ){
+			$line_data = $this->setup_refund_sale_line_item( $item, $order, $customer_id );
+
+			if( $line_data ){
+				$sale_lines_data[] = array( 'SaleLine' => $line_data );
+			}
+		}
+
+		$shipping_cost = $order->get_total_shipping();
+		$shipping_method = $order->get_shipping_method();
+
+		if( $shipping_cost && $shipping_method ){
+			$shipping = array(
+				'method' => $shipping_method,
+				'cost' => $shipping_cost,
+				'tax' => $order->get_shipping_tax(),
+				'item_id' => $this->shippingItemID
+			);
+
+			$shipping_data = array(
+				'createTime' => date( 'c', strtotime( $order->order_date ) ),
+				'timeStamp' => date( 'c', strtotime( $order->order_date ) ),
+				'unitQuantity' => 1,
+				'tax' => ( $shipping['tax'] > 0 ),
+				'taxClassID' => 0,
+				'tax1Rate' => $this->lightspeed->format_money( $shipping['tax'] ),
+
+				'unitPrice' => $this->lightspeed->format_money( $shipping['cost'] ),
+
+				'customerID' => $customer_id,
+				'itemID' => $shipping['item_id']
+			);
+
+			$shipping_data = apply_filters( 'wclsc_sale_line_item_data', $shipping_data, $shipping, $order, $customer_id );
+
+			$sale_lines_data[] = array( 'SaleLine' => $shipping_data );
+		}
+
+		return (array) apply_filters( 'wclsc_sale_lines_data', $sale_lines_data, $order, $customer_id );
+	}*/
+
+	/**
+	 * Setup LightSpeed array to create Sale.SaleLine
+	 * @param  array $item        WooCommerce item array
+	 * @param  object $order       WooCommerce Order object
+	 * @param  int $customer_id LightSpeed CustomerID
+	 * @return array $line_data
+	 */
+	/*function setup_sale_line_item( $item, $order, $customer_id ){
+		$product_id = isset( $item['variation_id'] ) && $item['variation_id'] ? $item['variation_id'] : $item['product_id'];
+		$item_id = $this->lightspeed->get_item_id( $product_id );
+
+		$unit_price = floatval( round( $item['line_total'] / $item['qty'], 2 ) );
+		$line_tax = floatval( round( $item['line_tax'], 2 ) );
+
+		$line_data = array(
+			'createTime' => date( 'c', strtotime( $order->order_date ) ),
+			'timeStamp' => date( 'c', strtotime( $order->order_date ) ),
+			'unitQuantity' => $item['qty'],
+			'tax' => ( $line_tax > 0 ),
+
+			'unitPrice' => $this->lightspeed->format_money( $unit_price ),
+
+			'customerID' => $customer_id
+		);
+
+		if( ! $this->get_tax_category_id( $order ) ){
+			$line_data['tax1Rate'] = $this->lightspeed->format_money( $line_tax );
+		}
+
+		if( $item_id )
+			$line_data['itemID'] = $item_id;
+
+		return (array) apply_filters( 'wclsc_sale_line_item_data', $line_data, $item, $order, $customer_id );
+	}*/
 }

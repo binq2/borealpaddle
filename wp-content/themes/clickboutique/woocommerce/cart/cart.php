@@ -4,7 +4,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.3.0
+ * @version     2.3.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -64,9 +64,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 							<div class="title-wrap">
 							<?php
 								if ( ! $_product->is_visible() )
-									echo apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key );
+									echo apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key ). '&nbsp;';
 								else
-									echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', $_product->get_permalink( $cart_item ), $_product->get_title() ), $cart_item, $cart_item_key );
+									echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s </a>', $_product->get_permalink( $cart_item ), $_product->get_title() ), $cart_item, $cart_item_key );
 
 								// Meta data
 								echo WC()->cart->get_item_data( $cart_item );
@@ -163,8 +163,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 	<div class="cart-collaterals span9">
 
 		<?php do_action( 'woocommerce_cart_collaterals' ); ?>
-
-		<?php woocommerce_cart_totals(); ?>
 
 	</div>
 	<?php if ( is_active_sidebar( 'cart-widgets' ) ) : ?>

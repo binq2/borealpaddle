@@ -1,0 +1,673 @@
+
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-CA">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-CA">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-CA">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Page not found &#8211; Boreal</title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="http://borealpaddle/xmlrpc.php" />
+<!--[if lt IE 9]>
+<script src="http://borealpaddle/wp-content/themes/clickboutique/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+<link rel="alternate" type="application/rss+xml" title="Boreal &raquo; Feed" href="http://borealpaddle/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Boreal &raquo; Comments Feed" href="http://borealpaddle/comments/feed/" />
+<link rel='stylesheet' id='jckqv-minstyles-css'  href='http://borealpaddle/wp-content/plugins/jck_woo_quickview/assets/frontend/css/jckqv-styles.min.css?ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='jckqv-styles-css'  href='http://borealpaddle/wp-admin/admin-ajax.php?action=jckqv_styles&#038;ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='http://borealpaddle/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='rs-plugin-settings-css'  href='http://borealpaddle/wp-content/plugins/revslider/rs-plugin/css/settings.css?rev=4.6.0&#038;ver=4.1.1' type='text/css' media='all' />
+<style id='rs-plugin-settings-inline-css' type='text/css'>
+.tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}.lato-bold-sm{font-size:19px;  font-family:"latobold";  color:#fff;  text-transform:uppercase; text-shadow:1px 2px 0px rgba(0,0,0,0.18)}.lato-bold-sm-d{font-size:19px;  font-family:"latobold";  color:#454544;  text-transform:uppercase; text-shadow:1px 2px 0px rgba(0,0,0,0.18)}.lato-bold-b{font-size:48px;  font-family:"latobold";  color:#fff;  text-transform:uppercase; text-shadow:1px 2px 0px rgba(0,0,0,0.18)}.lato-bold-b-d{font-size:48px;  font-family:"latobold";  color:#454544;  text-transform:uppercase; text-shadow:1px 2px 0px rgba(0,0,0,0.18)}.hr-line{width:389px; height:2px; display:block; background-color:rgba(255,255,255,0.4)}.hr-line-d{width:389px; height:2px; display:block; background-color:rgba(0,0,0,0.4)}.lato-reg{font-size:20px;  font-family:"latoregular"; color:#fff;  text-shadow:1px 2px 0px rgba(0,0,0,0.18);  text-align:right;  line-height:1.3em}.lato-reg-c{font-size:20px;  font-family:"latoregular"; color:#fff;  text-shadow:1px 2px 0px rgba(0,0,0,0.18);  text-align:center;  line-height:1.3em}.lato-reg-d{font-size:20px;  font-family:"latoregular"; color:#454544;  text-shadow:1px 2px 0px rgba(0,0,0,0.18);  text-align:center;  line-height:1.3em}.lato-reg-d-r{font-size:20px;  font-family:"latoregular"; color:#454544;  text-shadow:1px 2px 0px rgba(0,0,0,0.18);  text-align:right;  line-height:1.3em}.lato-reg-d-r-w{font-size:20px;  font-family:"latoregular"; color:#fff;  text-shadow:1px 2px 0px rgba(0,0,0,0.18);  text-align:right;  line-height:1.3em}.rv-button{border:rgba(255,255,255,0.7) 2px solid; border-radius:1px;  background:rgba(255,255,255,0.4);  font-size:19px;  font-family:"Roboto Condensed";  color:#fff; text-shadow:1px 2px 0px rgba(0,0,0,0.18);  text-transform:uppercase; padding:13px 20px;  -webkit-transition:background-color 0.3s linear;-moz-transition:background-color 0.3s linear;-ms-transition:background-color 0.3s linear;-o-transition:background-color 0.3s linear;transition:background-color 0.3s linear; cursor:pointer}.rv-button:hover{background:rgba(255,255,255,0.6)}.rv-button-d{border:rgba(0,0,0,0.6) 2px solid; border-radius:1px;  background:rgba(255,255,255,0.0);  font-size:19px;  font-family:"Roboto Condensed";  color:#000; text-shadow:1px 2px 0px rgba(0,0,0,0.18);  text-transform:uppercase; padding:13px 20px;  -webkit-transition:background-color 0.3s linear;-moz-transition:background-color 0.3s linear;-ms-transition:background-color 0.3s linear;-o-transition:background-color 0.3s linear;transition:background-color 0.3s linear; cursor:pointer}.rv-button-d:hover{background:rgba(255,255,255,0.3)}
+</style>
+<link rel='stylesheet' id='pusoc-style-css'  href='http://borealpaddle/wp-content/plugins/simple-social-share-icons/style.css?ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='simple-instagram-plugin-styles-css'  href='http://borealpaddle/wp-content/plugins/simple-instagram/public/assets/css/public.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='plumtree-bootstrap-css'  href='http://borealpaddle/wp-content/themes/clickboutique/css/bootstrap.min.css?ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='plumtree-bootstrap-r-css'  href='http://borealpaddle/wp-content/themes/clickboutique/css/bootstrap.r.min.css?ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='plumtree-awesome-fonts-css'  href='http://borealpaddle/wp-content/themes/clickboutique/css/font-awesome.min.css?ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='plumtree-reset-css'  href='http://borealpaddle/wp-content/themes/clickboutique/css/reset.css?ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='plumtree-layout-css'  href='http://borealpaddle/wp-content/themes/clickboutique/css/layout.css?ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='plumtree-basic-css'  href='http://borealpaddle/wp-content/themes/clickboutique/style.css?ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='plumtree-animation-css'  href='http://borealpaddle/wp-content/themes/clickboutique/css/animation.css?ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='plumtree-specials-css'  href='http://borealpaddle/wp-content/themes/clickboutique/css/specials.css?ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='ptpanel-fonts-css'  href='http://borealpaddle/wp-content/themes/clickboutique/css/fonts.css?ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='pt-woocommerce-css'  href='http://borealpaddle/wp-content/themes/clickboutique/css/woocommerce.css?ver=1' type='text/css' media='screen' />
+<link rel='stylesheet' id='iosslider-css'  href='http://borealpaddle/wp-content/themes/clickboutique/extensions/iosslider/css/styles.css?ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='isotope-css'  href='http://borealpaddle/wp-content/themes/clickboutique/extensions/isotope/css/style.css?ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='magnific-popup-css'  href='http://borealpaddle/wp-content/themes/clickboutique/extensions/magnific/css/magnific-popup.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='resmenu-component-css'  href='http://borealpaddle/wp-content/themes/clickboutique/extensions/resmenu/css/component.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='superfish-css'  href='http://borealpaddle/wp-content/themes/clickboutique/extensions/superfish/css/superfish.css?ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='tooltipster-css'  href='http://borealpaddle/wp-content/themes/clickboutique/extensions/tooltipster/css/tooltipster.css?ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='tooltipster-themes-css'  href='http://borealpaddle/wp-content/themes/clickboutique/extensions/tooltipster/css/themes/tooltipster-punk.css?ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='totop-css'  href='http://borealpaddle/wp-content/themes/clickboutique/extensions/totop/css/ui.totop.css?ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='mosaic-css'  href='http://borealpaddle/wp-content/themes/clickboutique/extensions/mosaic/css/styles.css?ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='jquery-lazyloadxt-css-css'  href='//borealpaddle/wp-content/plugins/a3-lazy-load/assets/css/jquery.lazyloadxt.spinner.css?ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='ig-pb-font-icomoon-css'  href='http://borealpaddle/wp-content/plugins/contentbuilder/assets/3rd-party/font-icomoon/css/icomoon.css' type='text/css' media='all' />
+<link rel='stylesheet' id='ig-pb-bootstrap-css'  href='http://borealpaddle/wp-content/plugins/contentbuilder/assets/3rd-party/bootstrap3/css/bootstrap_frontend.min.css?ver=3.0.2' type='text/css' media='all' />
+<link rel='stylesheet' id='ig-pb-joomlashine-frontend-css'  href='http://borealpaddle/wp-content/plugins/contentbuilder/assets/innogears/css/jsn-gui-frontend.css' type='text/css' media='all' />
+<link rel='stylesheet' id='ig-pb-frontend-css'  href='http://borealpaddle/wp-content/plugins/contentbuilder/assets/innogears/css/front_end.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='ig-pb-frontend-responsive-css'  href='http://borealpaddle/wp-content/plugins/contentbuilder/assets/innogears/css/front_end_responsive.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='lightboxStyle-css'  href='http://borealpaddle/wp-content/plugins/lightbox-plus/css/elegant/colorbox.css?ver=2.7' type='text/css' media='screen' />
+<script type='text/javascript' src='http://borealpaddle/wp-includes/js/jquery/jquery.js?ver=1.11.1'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.tools.min.js?rev=4.6.0&#038;ver=4.1.1'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.revolution.min.js?rev=4.6.0&#038;ver=4.1.1'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/js/jquery.easing.js?ver=1.3.0'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/js/bootstrap.min.js?ver=1.0'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/js/navigation.js?ver=1.0'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/js/enquire.min.js?ver=1.2'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/js/waypoints.min.js?ver=4.1.1'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/js/waypoints-sticky.min.js?ver=4.1.1'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/js/imagesloaded.pkgd.min.js?ver=4.1.1'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/js/hoverIntent.js?ver=1.0'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/js/jquery.validate.min.js?ver=1.0'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/js/helper.js?ver=1.01'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/js/shop-tooltips.js?ver=1.01'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/extensions/resmenu/js/modernizr.custom.js?ver=1'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/extensions/resmenu/js/jquery.dlmenu.js?ver=1'></script>
+<link media="screen" type="text/css" href="http://borealpaddle/wp-content/uploads/sass/a3_lazy_load.min.css" rel="stylesheet" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://borealpaddle/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://borealpaddle/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.1.1" />
+<meta name="generator" content="WooCommerce 2.3.5" />
+
+	<script type="text/javascript">
+		jQuery(document).ready(function($){
+			$(window).load(function(){
+
+				var page = 2;
+				var total = 0;
+				var loading = false;
+
+				$('.pt-get-more-posts').on('click', function(){
+					var post_type = 'post';
+					if ( !loading ) {
+						if (page > total){
+							return false;
+						} else {
+							loading = true;
+							loadPosts(page);
+						}
+						page++;
+					}
+				});
+
+				// Ajax loading Function
+				function loadPosts(pageNumber){
+					$.ajax({
+						url: "http://borealpaddle/wp-admin/admin-ajax.php",
+						type:'POST',
+						data: "action=get_more&page_no=" + pageNumber,
+			            beforeSend : function(){
+			            	if( total>=page ){
+			                	$('.pt-get-more-posts').hide();
+			                    $("#content").append(
+			                    	'<div id="temp_load"><i class="fa fa-refresh fa-spin"></i>&nbsp;Loading... \
+			                        </div>');
+			            	};
+			            },
+						success: function(html){
+							$("#temp_load").remove();
+							$("#content").append(html);    // This will be the div where our content will be loaded*/
+							if( total>page ){ $('.pt-get-more-posts').show(); }
+							loading = false;
+						},
+					});
+				};
+
+			});
+		});
+	</script>
+
+<style type="text/css">
+		body {
+			font-family: 'Lato' !important;
+			color: #7d7d7d;
+		}
+		ul.sf-menu li a, .widget ul.sf-menu li a {
+			font-family: 'Roboto Condensed' !important;
+			color: #454544;
+		}
+		ul.sf-menu li a:hover, ul.sf-menu li a:focus, ul.sf-menu li a:active,
+		.widget ul.sf-menu li a:hover, .widget ul.sf-menu li a:focus, .widget ul.sf-menu li a:active {
+			color: ;
+		}
+		h1.site-title {
+			font-family: 'Lato' !important;
+			color: #000000 !important;
+		}
+		h1.site-title a {
+			color: #000000 !important;
+		}
+		.site-content a,
+		.widget ul li a,
+		.site-content article .entry-content a {
+			color: #454544;
+		}
+		.site-content a:hover,
+		.site-content a:focus,
+		.site-content a:active,
+		.widget ul li a:hover,
+		.widget ul li a:focus,
+		.widget ul li a:active,
+		.site-content article .entry-content a:hover,
+		.site-content article .entry-content a:focus,
+		.site-content article .entry-content a:active {
+			color: #7790b1;
+		}
+		.woocommerce-tabs .tabs li.active a, 
+		.woocommerce-tabs .tabs li:hover a {
+			color: #7790b1;
+		}
+		.products .product-title,
+		.widget.woocommerce ul li .product-title {
+			color: #454544 !important;
+		}
+		.products .product-title:hover,
+		.products .product-title:focus,
+		.products .product-title:active,
+		.widget.woocommerce ul li .product-title:hover,
+		.widget.woocommerce ul li .product-title:focus,
+		.widget.woocommerce ul li .product-title:active {
+			color: #7790b1 !important;
+		}
+		.widget-title span {
+		    color: #959595;
+		}
+		aside .widget .widget-title {
+		    color: #fff;
+		}
+		.site-content .widget .widget-title,
+		.pt-page-title,
+		.comment-reply-title,
+		.pt-content-title,
+		.pt-article-title,
+		.entry-content h1, 
+		.entry-content h2, 
+		.entry-content h3, 
+		.entry-content h4, 
+		.entry-content h5, 
+		.entry-content h6,
+		.single-product .related.products h2,
+		.woocommerce-tabs .panel.entry-content h2,
+		.product_title {
+			font-family: 'Lato' !important;
+		    color: #000000;
+		}
+		#colophon .widget .widget-title {
+		    color: #fff;
+		}
+		.pt-button, 
+		.site-content button, 
+		.site-content input[type="submit"], 
+		.site-content input[type="button"], 
+		.site-content input[type="reset"], 
+		.widget button, 
+		.widget input[type="submit"], 
+		.widget input[type="button"], 
+		.widget input[type="reset"], 
+		button, 
+		input[type="submit"], 
+		input[type="button"], 
+		input[type="reset"],
+		.site-content a.more-link, 
+		.site-content article .entry-content a.more-link, 
+		.more-link,
+		.button.single_add_to_cart_button,
+		.pt-dark-button.step-checkout,
+		.shop_table.cart .coupon-submit, 
+		.cart-totals .update {
+			background-color: #454544;
+			color: #fff;
+		}
+		.pt-button:hover,
+		.pt-button:focus,
+		.site-content   button:hover,
+		.site-content   button:focus,
+		.site-content   input[type="submit"]:hover,
+		.site-content   input[type="button"]:hover,
+		.site-content   input[type="reset"]:hover,
+		.site-content   input[type="submit"]:focus,
+		.site-content   input[type="button"]:focus,
+		.site-content   input[type="reset"]:focus,
+		.widget button:hover,
+		.widget button:focus,
+		.widget input[type="submit"]:hover,
+		.widget input[type="button"]:hover,
+		.widget input[type="reset"]:hover,
+		.widget input[type="submit"]:focus,
+		.widget input[type="button"]:focus,
+		.widget input[type="reset"]:focus,
+		button:hover,
+		input[type="submit"]:hover,
+		input[type="button"]:hover,
+		input[type="reset"]:hover,
+		button:focus,
+		input[type="submit"]:focus,
+		input[type="button"]:focus,
+		input[type="reset"]:focus,
+		.site-content a.more-link:hover, 
+		.site-content article .entry-content a.more-link:hover, 
+		.more-link:hover,
+		.site-content a.more-link:focus, 
+		.site-content article .entry-content a.more-link:focus, 
+		.more-link:focus,
+		.button.single_add_to_cart_button:hover,
+		.button.single_add_to_cart_button:focus,
+		.pt-dark-button.step-checkout:hover,
+		.pt-dark-button.step-checkout:focus ,
+		.shop_table.cart .coupon-submit:hover, 
+		.cart-totals .update:hover,
+		.shop_table.cart .coupon-submit:focus, 
+		.cart-totals .update:focus {
+		    background-color: #7d7d7d;
+		    color: #fff;
+		}
+
+
+		</style>	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+
+</head>
+
+<body class="error404 layout-one-col single-author multistep-checkout">
+
+	
+	<div id="page" class="hfeed site"><!-- Site content -->
+
+		<header id="masthead" class="site-header" role="banner"><!-- Site header -->
+
+			            <div id="mobile-area" class="hidden-desktop hidden-tablet">
+            
+                <div id="dl-menu" class="dl-menuwrapper hidden-desktop hidden-tablet">
+                    <button>Menu</button>
+                    <ul id="menu-main" class="dl-menu menu"><li id="_nav-menu-item-15" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://borealpaddle/" class="menu-link main-menu-link">Home</a></li>
+<li id="_nav-menu-item-16" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown"><a href="https://borealpaddle.lightspeedwebstore.com/" class="menu-link main-menu-link">Shop</a>
+<ul class="dl-submenu menu-odd  menu-depth-1"><li class="dl-back"><a href="#">back</a></li>
+	<li id="_nav-menu-item-48" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-custom menu-item-object-custom"><a href="http://borealpaddle.lightspeedwebstore.com/womens" class="menu-link sub-menu-link">Women&#8217;s</a></li>
+	<li id="_nav-menu-item-49" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-custom menu-item-object-custom"><a href="http://borealpaddle.lightspeedwebstore.com/mens" class="menu-link sub-menu-link">Men&#8217;s</a></li>
+	<li id="_nav-menu-item-50" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-custom menu-item-object-custom"><a href="http://borealpaddle.lightspeedwebstore.com/accessories" class="menu-link sub-menu-link">Accessories</a></li>
+	<li id="_nav-menu-item-51" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-custom menu-item-object-custom"><a href="http://borealpaddle.lightspeedwebstore.com/gear" class="menu-link sub-menu-link">Gear</a></li>
+</ul>
+</li>
+<li id="_nav-menu-item-25" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page current_page_parent"><a href="http://borealpaddle/blog/" class="menu-link main-menu-link">Blog</a></li>
+<li id="_nav-menu-item-23" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://borealpaddle/extra/" class="menu-link main-menu-link">Extra</a></li>
+<li id="_nav-menu-item-24" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://borealpaddle/contact/" class="menu-link main-menu-link">Contact</a></li>
+</ul>                </div>
+                <script>
+                    jQuery(function() {
+                        jQuery( '#dl-menu' ).dlmenu( {
+                            animationClasses : { classin : 'dl-animate-in-3', classout : 'dl-animate-out-3' }
+                        });
+                    });
+                </script>
+                
+                        </div>
+			<div class="logo-wrapper"><!-- Logo & hgroup -->
+				<div class="container-fluid">
+					<div class="row-fluid">
+						<div class="span12">
+															<hgroup class="header-group pos-left">
+									<div class="site-logo">
+																				<a href="http://borealpaddle/" rel="home" title="Boreal">
+											<img src="/wp-content/uploads/2014/11/logo.png" alt="Just another WordPress site" />
+										</a>
+																			</div>
+								</hgroup>
+							                                                            <div id="aside-logo-container">
+                                <!-- Primary aside navigation -->
+                                    <div class="aside-nav-wrapper">
+                                        <nav id="site-navigation-aside" class="nav primary-aside span12" role="navigation">
+                                            <a class="screen-reader-text skip-link" href="#content" title="Skip to content">Skip to content</a>
+                                            <div class="desktop-menu visible-desktop visible-tablet main-menu">
+                                                <ul id="menu-main-1" class=" sf-menu menu"><li id="_nav-menu-item-15" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page   "><a href="http://borealpaddle/" class="menu-link main-menu-link ">Home</a></li>
+<li id="_nav-menu-item-16" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown  mega-menu   "><a href="https://borealpaddle.lightspeedwebstore.com/" class="menu-link main-menu-link ">Shop</a>
+<ul class="dropdown menu-odd  menu-depth-1"   >
+	<li id="_nav-menu-item-48" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-custom menu-item-object-custom   "><a href="http://borealpaddle.lightspeedwebstore.com/womens" class="menu-link sub-menu-link ">Women&#8217;s</a></li>
+	<li id="_nav-menu-item-49" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-custom menu-item-object-custom   "><a href="http://borealpaddle.lightspeedwebstore.com/mens" class="menu-link sub-menu-link ">Men&#8217;s</a></li>
+	<li id="_nav-menu-item-50" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-custom menu-item-object-custom   "><a href="http://borealpaddle.lightspeedwebstore.com/accessories" class="menu-link sub-menu-link ">Accessories</a></li>
+	<li id="_nav-menu-item-51" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-custom menu-item-object-custom   "><a href="http://borealpaddle.lightspeedwebstore.com/gear" class="menu-link sub-menu-link ">Gear</a></li>
+</ul>
+</li>
+<li id="_nav-menu-item-25" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page current_page_parent   "><a href="http://borealpaddle/blog/" class="menu-link main-menu-link ">Blog</a></li>
+<li id="_nav-menu-item-23" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page   "><a href="http://borealpaddle/extra/" class="menu-link main-menu-link ">Extra</a></li>
+<li id="_nav-menu-item-24" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page   "><a href="http://borealpaddle/contact/" class="menu-link main-menu-link ">Contact</a></li>
+</ul>                                            </div>
+                                        </nav>
+                                    </div>
+                                <!-- Primary aside navigation -->
+
+                                                                    <div class="hgroup-sidebar hidden-phone">
+                                        <div id="pt_socials_widget-2" class="widget widget_pt_socials_widget">
+			<ul class="pt-widget-socials ">
+													<li class="option-title">
+						<a href="https://www.facebook.com/pages/Boreal-Paddle-Apparel/651922058234006" title="Connect us on Facebook" target="_blank">
+							<i class="fa fa-facebook"></i>
+						</a>
+					</li>
+																																					<li class="option-title">
+						<a href="http://www.oninstagram.com/profile/boreal_paddle_" title="Connect us on Instagram" target="_blank">
+							<i class="fa fa-instagram"></i>
+						</a>
+					</li>
+				
+			</ul>
+
+		</div><div id="pt_search_widget-2" class="widget widget_pt_search_widget">
+		<span class="show-search" title="Click to show search-field"><i class="fa fa-search"></i></span>
+		<div id="pt-searchform-container">
+			<form class="pt-searchform" method="get" action="http://borealpaddle">
+				<input id="s" name="s" type="text" class="searchtext" value="" title="Text here..." placeholder="Text here..." tabindex="1" />
+				<input id="searchsubmit" type="submit" class="search-button" value="Find" title="Click to search" tabindex="2" />
+			</form>
+		</div>
+		<script type="text/javascript">
+		jQuery(document).ready(function($){
+			$(window).load(function(){
+
+				function SearchDropdown(container, s_hover, fader, s_height, s_width){
+				 	
+				 	state = 'closed';
+				 	closedHeight = jQuery(container).height();
+				 	closedWidth = jQuery(container).width();
+				 	jQuery(fader).hide();
+
+					function srchAnimate(){
+				 		jQuery(s_hover).unbind('click');
+					 	if(state != 'opened') {
+
+					 		jQuery(container).animate({
+					 			height:s_height
+					 		}, 300,'easeInOutQuad', function () {
+					 			jQuery(fader).fadeIn(300, 'easeInOutQuad');
+					 			jQuery(container).animate({
+					 				width:s_width
+					 			}, 400,'easeInOutQuad', function(){ 
+					 				state = 'opened';
+					 				jQuery(s_hover).bind('click', srchAnimate);
+					 			})
+					 		});
+
+					 	} else {
+
+					 		jQuery(s_hover).unbind('click');
+					 		jQuery(fader).fadeOut(300, 'easeInOutQuad');
+					 		jQuery(container).animate({
+					 			width:closedWidth
+					 		}, 400,'easeInOutQuad', function () {
+					 			jQuery(container).animate({
+					 				height:closedHeight
+					 			}, 300,'easeInOutQuad', function(){ state = 'closed'; jQuery(s_hover).bind('click', srchAnimate);})
+					 		});
+					 	}
+				 	}
+
+				 	jQuery(s_hover).click(srchAnimate);
+				 	//jQuery(container).mouseleave(srchAnimate);
+				};
+
+				SearchDropdown('#pt-searchform-container', '.show-search', '.pt-searchform', 45, 300);
+			});
+		});
+		</script>
+
+	</div><div id="shopping_cart-2" class="widget woocommerce widget_shopping_cart"><div class="heading">Cart<a class="cart-contents"><span class="count empty ">0</span></a></div><div class="widget_shopping_cart_content"></div></div>                                    </div>
+                                                                </div>
+                            
+
+						</div>
+					</div>
+				</div>
+			</div><!-- Logo & hgroup -->
+
+						<div class="bottom-nav-wrapper"><!-- Mobile & primary navigation -->
+				<div class="container-fluid">
+					<div class="row-fluid">
+
+						<nav id="site-navigation" class="nav bottom-nav span9" role="navigation">
+							
+							<a class="screen-reader-text skip-link" href="#content" title="Skip to content">Skip to content</a>
+								
+							
+
+
+						</nav><!-- #site-navigation -->
+
+											</div>
+				</div>
+			</div><!-- Mobile & primary navigation -->
+			
+		</header><!-- Site header -->
+		<div id="main" class="wrapper"><!-- Main section wrapper -->
+
+	
+	<div class="spacer" style="background: url(http://borealpaddle/wp-content/themes/clickboutique/assets/spacer-pattern2.png) repeat;">
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<h1 class="spacer-title archive-title">Not found</h1>
+			</div>
+		</div>
+	</div>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+
+	<section id="content" class="site-content span12" role="main">
+
+		<article id="post-0" class="post error404 no-results not-found">
+
+			<header class="entry-header">
+				<h2 class="pt-content-title">This is somewhat embarrassing, isn&rsquo;t it?</h2>
+			</header>
+
+			<div class="entry-content">
+				<p style="font-size:18px;padding-bottom:20px;">It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.</p>
+				<form role="search" method="get" id="searchform" class="searchform" action="http://borealpaddle/">
+				<div>
+					<label class="screen-reader-text" for="s">Search for:</label>
+					<input type="text" value="" name="s" id="s" />
+					<input type="submit" id="searchsubmit" value="Search" />
+				</div>
+			</form>			</div><!-- .entry-content -->
+			
+		</article><!-- #post-0 -->
+
+	</section><!-- #content -->
+
+	</div>
+</div>
+
+		</div><!-- Main section wrapper -->
+
+				<footer id="colophon" role="contentinfo" class="row-fluid" >
+
+            <div class="container-fluid">
+                <div class="row-fluid">
+
+                    <div class="span3">
+                                                    <div id="pt_contacts_widget-2" class="widget widget_pt_contacts_widget"><h3 class="widget-title">Contact</h3>
+		<div class="precontent">Boreal Paddle + Apparel s a life style store. We love to paddle, we love yoga, we love nature, and we love comfy.</div>
+			<ul class="pt-widget-contacts">
+				<li class="option-title a-phone"><span class="phone">(807) 467-3035</span></li>												<li class="option-title a-email"><span class="email"><a title="Email us" href="mailto:hello@borealpaddle.com">hello@borealpaddle.com</a></span></li>				<li class="option-title a-address"><span class="address">708 Lakeview Drive<br/> Kenora, Ontario P9N 3P7</span></li>			</ul>
+
+		</div>                                            </div>
+
+                    <div class="span3">
+                                            </div>
+
+                    <div class="span3">
+                                                    <div id="pt_socials_widget-3" class="widget widget_pt_socials_widget"><h3 class="widget-title"><span>Social</span>  Networks</h3>
+			<ul class="pt-widget-socials color-hover">
+									<li class="option-title">
+						<a href="http://twitter.com/#" title="Connect us on Twitter" target="_blank">
+							<i class="fa fa-twitter"></i>
+						</a>
+					</li>
+													<li class="option-title">
+						<a href="https://www.facebook.com/pages/Boreal-Paddle-Apparel/651922058234006" title="Connect us on Facebook" target="_blank">
+							<i class="fa fa-facebook"></i>
+						</a>
+					</li>
+																									<li class="option-title">
+						<a href="#" title="Connect us on LinkedIn" target="_blank">
+							<i class="fa fa-linkedin"></i>
+						</a>
+					</li>
+																	<li class="option-title">
+						<a href="#" title="Connect us on Pinterest" target="_blank">
+							<i class="fa fa-pinterest"></i>
+						</a>
+					</li>
+								
+			</ul>
+
+		</div>                                            </div>
+
+                    <div class="span3">
+                                            </div>
+
+                </div>
+            </div>
+
+			<div id="footer-bottom">
+				<div class="container-fluid">
+					<div class="row-fluid">
+
+						<!-- Primary aside navigation -->
+
+						<div class="site-info span6">
+							© Boreal Paddle + Apparel 2014. All Rights Are Reserved | Designed by All Ways Creative and Inteleck.						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</footer><!-- Footer content -->
+
+	</div><!-- Site content -->
+
+<script type="text/javascript">
+
+	msg_cart = 'Add to Cart';
+	msg_details = 'View Details';
+	msg_compare = 'Compare';
+	msg_added = 'Added';
+	msg_wish = 'Add to wishlist';
+	msg_wish_details = 'View wishlist';
+
+</script>
+    <script type="text/javascript">
+    /* Waypoint */
+    jQuery(function($) {
+
+            enquire.register("screen and (min-width: 1024px)", {
+
+                match: function() {
+
+                    $('header.site-header').waypoint('sticky', {
+                        stuckClass: 'stuck',
+                        wrapper: '<div class="sticky-wrapper" />',
+                        offset: function(){
+                            return - ($(this).height() * 2);
+                        }
+                    });
+
+                    $('header.site-header').waypoint(function(direction){
+                        if (direction === 'down'){
+                            $('header.site-header').hide();$('body').addClass('header-stuck'); $('header.site-header').fadeIn(500);   }
+                        else { $('body').removeClass('header-stuck');  }
+                    }, {
+                        offset: function(){
+                            return - ($(this).height() * 2);
+                        }
+                    });
+
+                },
+                unmatch: function() {
+
+                }
+
+            });
+    });
+
+    </script> <script>
+		jQuery(document).ready(function() {
+            jQuery('.tooltipster').tooltipster({
+            	animation: 'fall',
+            	 theme: '.tooltipster-punk'
+            });
+        });
+		</script><!-- Lightbox Plus Colorbox v2.7/1.5.9 - 2013.01.24 - Message: 0-->
+<script type="text/javascript">
+jQuery(document).ready(function($){
+  $("a[rel*=lightbox]").colorbox({speed:0,width:false,height:false,innerWidth:false,innerHeight:false,initialWidth:false,initialHeight:false,maxWidth:false,maxHeight:false,scalePhotos:false,opacity:0.7,current:" {current}  {total}",previous:"",next:"",close:"",loop:false,scrolling:false,top:false,right:false,bottom:false,left:false});
+});
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var jckqv = {"ajaxurl":"http:\/\/borealpaddle\/wp-admin\/admin-ajax.php","nonce":"609af69ac6","settings":{"trigger_general_method":"click","trigger_position_autoinsert":1,"trigger_position_position":"beforetitle","trigger_position_align":"left","trigger_position_margins":{"Top":0,"Right":0,"Bottom":10,"Left":0},"trigger_styling_autohide":0,"trigger_styling_hoverel":".product","trigger_styling_icon":"eye","trigger_styling_text":"Quickview","trigger_styling_btnstyle":"flat","trigger_styling_padding":{"Top":8,"Right":10,"Bottom":8,"Left":10},"trigger_styling_btncolour":"#66cc99","trigger_styling_btnhovcolour":"#47C285","trigger_styling_btntextcolour":"#ffffff","trigger_styling_btntexthovcolour":"#ffffff","trigger_styling_borderradius":{"Top Left":4,"Top Right":4,"Btm Right":4,"Btm Left":4},"popup_general_gallery":1,"popup_general_overlaycolour":"#000000","popup_general_overlayopacity":"0.8","popup_imagery_imgscale":"fill","popup_imagery_imgtransition":"horizontal","popup_imagery_transitionspeed":"600","popup_imagery_bgcolour":"#ffffff","popup_imagery_navarr":1,"popup_imagery_hidenavarr":0,"popup_imagery_thumbnails":"thumbnails","popup_content_showtitle":1,"popup_content_showprice":1,"popup_content_showrating":1,"popup_content_showbanner":1,"popup_content_showdesc":"full","popup_content_showatc":1,"popup_content_ajaxcart":1,"popup_content_autohidepopup":1,"popup_content_showqty":1,"popup_content_showmeta":1,"popup_content_themebtn":0,"popup_content_btncolour":"#66cc99","popup_content_btnhovcolour":"#47C285","popup_content_btntextcolour":"#ffffff","popup_content_btntexthovcolour":"#ffffff"},"imgsizes":{"catalog":{"width":"220","height":"286","crop":1},"single":{"width":"500","height":"650","crop":1},"thumbnail":{"width":"120","height":"155","crop":1}},"url":"http:\/\/borealpaddle","text":{"added":"Added!","adding":"Adding to Cart..."}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/plugins/jck_woo_quickview/assets/frontend/js/jckqv-scripts.min.js?ver=4.1.1'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/borealpaddle\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ...","cached":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","i18n_view_cart":"View Cart","cart_url":"http:\/\/borealpaddle\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='//borealpaddle/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=2.3.5'></script>
+<script type='text/javascript' src='//borealpaddle/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.60'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='//borealpaddle/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=2.3.5'></script>
+<script type='text/javascript' src='//borealpaddle/wp-content/plugins/woocommerce/assets/js/jquery-cookie/jquery.cookie.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","fragment_name":"wc_fragments"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='//borealpaddle/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=2.3.5'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-includes/js/jquery/ui/core.min.js?ver=1.11.2'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.2'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-includes/js/jquery/ui/accordion.min.js?ver=1.11.2'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/extensions/iosslider/js/jquery.iosslider.min.js?ver=1.2.25'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/extensions/iosslider/js/helper.js?ver=1.0'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/extensions/isotope/js/jquery.isotope.min.js?ver=1.5.25'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/extensions/isotope/js/isotope-init.js?ver=1.5.25'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/extensions/magnific/js/jquery.magnific-popup.min.js?ver=1.0'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/extensions/magnific/js/helper.js?ver=1.0'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/extensions/superfish/js/superfish.js?ver=1.7.4'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/extensions/superfish/js/helper.js?ver=1.0'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/extensions/tooltipster/js/jquery.tooltipster.min.js?ver=1.0'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/extensions/totop/js/jquery.ui.totop.min.js?ver=1.2'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/extensions/totop/js/helper.js?ver=1.0'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/extensions/mosaic/js/helper.js?ver%5B0%5D=jquery'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/extensions/stellar/js/jquery.stellar.min.js?ver=1.5'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/themes/clickboutique/extensions/stellar/js/helper.js?ver=1.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var a3_lazyload_params = {"apply_images":"1","apply_videos":"1"};
+var a3_lazyload_params = {"apply_images":"1","apply_videos":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='//borealpaddle/wp-content/plugins/a3-lazy-load/assets/js/jquery.lazyloadxt.min.js?ver=1.1.0'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/plugins/contentbuilder/assets/3rd-party/bootstrap3/js/bootstrap_frontend.min.js?ver=3.0.2'></script>
+<script type='text/javascript' src='http://borealpaddle/wp-content/plugins/lightbox-plus/js/jquery.colorbox.1.5.9.js?ver=1.5.9'></script>
+
+</body>
+</html>

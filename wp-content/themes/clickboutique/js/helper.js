@@ -19,6 +19,7 @@ jQuery(document).ready(function($){
 	});
 });
 
+
 // Categories widget accordion animation
 jQuery(document).ready(function($){
 	$(window).load(function(){
@@ -204,59 +205,59 @@ jQuery(document).ready(function($){
 
 		$('p.stars span').replaceWith( '<span><a href="#" class="star-5">5</a><a href="#" class="star-4">4</a><a href="#" class="star-3">3</a><a href="#" class="star-2">2</a><a href="#" class="star-1">1</a></span>' );
 
-		function getEnhancedSelectFormatString() {
-			var formatString = {
-				formatMatches: function( matches ) {
-					if ( 1 === matches ) {
-						return wc_select_params.i18n_matches_1;
-					}
-
-					return wc_select_params.i18n_matches_n.replace( '%qty%', matches );
-				},
-				formatNoMatches: function() {
-					return wc_select_params.i18n_no_matches;
-				},
-				formatAjaxError: function( jqXHR, textStatus, errorThrown ) {
-					return wc_select_params.i18n_ajax_error;
-				},
-				formatInputTooShort: function( input, min ) {
-					var number = min - input.length;
-
-					if ( 1 === number ) {
-						return wc_select_params.i18n_input_too_short_1
-					}
-
-					return wc_select_params.i18n_input_too_short_n.replace( '%qty%', number );
-				},
-				formatInputTooLong: function( input, max ) {
-					var number = input.length - max;
-
-					if ( 1 === number ) {
-						return wc_select_params.i18n_input_too_long_1
-					}
-
-					return wc_select_params.i18n_input_too_long_n.replace( '%qty%', number );
-				},
-				formatSelectionTooBig: function( limit ) {
-					if ( 1 === limit ) {
-						return wc_select_params.i18n_selection_too_long_1;
-					}
-
-					return wc_select_params.i18n_selection_too_long_n.replace( '%qty%', number );
-				},
-				formatLoadMore: function( pageNumber ) {
-					return wc_select_params.i18n_load_more;
-				},
-				formatSearching: function() {
-					return wc_select_params.i18n_searching;
+	/*function getEnhancedSelectFormatString() {
+		var formatString = {
+			formatMatches: function( matches ) {
+				if ( 1 === matches ) {
+					return wc_enhanced_select_params.i18n_matches_1;
 				}
-			};
 
-			return formatString;
-		}
+				return wc_enhanced_select_params.i18n_matches_n.replace( '%qty%', matches );
+			},
+			formatNoMatches: function() {
+				return wc_enhanced_select_params.i18n_no_matches;
+			},
+			formatAjaxError: function( jqXHR, textStatus, errorThrown ) {
+				return wc_enhanced_select_params.i18n_ajax_error;
+			},
+			formatInputTooShort: function( input, min ) {
+				var number = min - input.length;
 
-		if ( $().select2 ) {
-			console.log($( 'select.country_to_state' ));
+				if ( 1 === number ) {
+					return wc_enhanced_select_params.i18n_input_too_short_1;
+				}
+
+				return wc_enhanced_select_params.i18n_input_too_short_n.replace( '%qty%', number );
+			},
+			formatInputTooLong: function( input, max ) {
+				var number = input.length - max;
+
+				if ( 1 === number ) {
+					return wc_enhanced_select_params.i18n_input_too_long_1;
+				}
+
+				return wc_enhanced_select_params.i18n_input_too_long_n.replace( '%qty%', number );
+			},
+			formatSelectionTooBig: function( limit ) {
+				if ( 1 === limit ) {
+					return wc_enhanced_select_params.i18n_selection_too_long_1;
+				}
+
+				return wc_enhanced_select_params.i18n_selection_too_long_n.replace( '%qty%', limit );
+			},
+			formatLoadMore: function( pageNumber ) {
+				return wc_enhanced_select_params.i18n_load_more;
+			},
+			formatSearching: function() {
+				return wc_enhanced_select_params.i18n_searching;
+			}
+		};
+
+		return formatString;
+	}*/
+
+
+		/*if ( $().select2 ) {
 			var pt_country_select_select2 = function() {
 				$( 'select.country_select, select.state_select, select.country_to_state' ).each( function() {
 					var select2_args = $.extend({
@@ -272,7 +273,7 @@ jQuery(document).ready(function($){
 
 			pt_country_select_select2();
 
-		}
+		}*/
 
 	});
 });
@@ -283,7 +284,6 @@ jQuery(document).ready(function($){
 	$(window).load(function(){
 
 		$('.pt-view-switcher span').on('click', function(e) {
-			console.log($(this));
 			e.preventDefault();
 			var products_ul = $('.site-content .products');
 			if ( (e.currentTarget.className == 'pt-grid active' && products_ul.hasClass('grid-layout')) || (e.currentTarget.className == 'pt-list active' && products_ul.hasClass('list-layout')) ) {

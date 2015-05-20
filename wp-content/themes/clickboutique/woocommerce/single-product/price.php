@@ -13,7 +13,7 @@ global $post, $product;
 ?>
 <div class="price-wrap" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 
-	<span class="about"><?php _e('Price:', 'plumtree') ?></span><p class="price"><?php echo $product->get_price_html(); ?></p>
+	<span class="about"><?php $mode = get_option('catalog_mode'); if ($mode == 'on') {return '';} else {_e('Price:', 'plumtree');} ?></span><p class="price"><?php echo $product->get_price_html(); ?></p>
 
 	<meta itemprop="price" content="<?php echo $product->get_price(); ?>" />
 	<meta itemprop="priceCurrency" content="<?php echo get_woocommerce_currency(); ?>" />

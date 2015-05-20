@@ -20,7 +20,6 @@
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    content: attr(data-icon);
 }
 .a3-metabox-wrapper .expand_all:before, .a3-metabox-wrapper .close_all:before {
     font-size: 12px;
