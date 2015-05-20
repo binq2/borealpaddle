@@ -49,6 +49,16 @@ if(!class_exists("LightspeedImport")) :
 		 * @var $XML_dir
 		 */
 		 public $XML_dir_items = null;
+		 
+		 /**
+		 * @var $XML_dir
+		 */
+		 public $XML_dir_vendors = null;
+		 
+		 /**
+		 * @var $XML_dir
+		 */
+		 public $XML_dir_manufacturers = null;
 
 		/**
 		* Main Lightspeed Import Instance
@@ -122,6 +132,11 @@ if(!class_exists("LightspeedImport")) :
 			// set xml directory
 			$this->XML_dir_items = $this->plugin_path() . '/xml/items/';
 			
+			// set xml directory
+			$this->XML_dir_vendors = $this->plugin_path() . '/xml/vendors/';
+			
+			$this->XML_dir_manufacturers = $this->plugin_path() . '/xml/manufacturers/';
+			
 			//$this->options = get_option('lightspeed_inteleck_options');
 
 			/*if(is_admin()) {
@@ -139,7 +154,9 @@ if(!class_exists("LightspeedImport")) :
 			
 			add_action( 'lightspeed_hourly_matrices_import', array($this, 'lightspeed_import_matrices') );
 			
+			add_action( 'lightspeed_hourly_vendors_import', array($this, 'lightspeed_import_vendors') );
 			
+			add_action( 'lightspeed_hourly_manufacturers_import', array($this, 'lightspeed_import_manufacturers') );
 			
 			
 			
@@ -155,6 +172,10 @@ if(!class_exists("LightspeedImport")) :
 			wp_schedule_event( time(), 'hourly', 'lightspeed_hourly_product_import' );
 			
 			wp_schedule_event( time(), 'hourly', 'lightspeed_hourly_matrices_import' );
+			
+			wp_schedule_event( time(), 'hourly', 'lightspeed_hourly_vendors_import' );
+			
+			wp_schedule_event( time(), 'hourly', 'lightspeed_hourly_manufacturers_import' );
 		}
 		
 		
@@ -165,6 +186,10 @@ if(!class_exists("LightspeedImport")) :
 			wp_clear_scheduled_hook( 'lightspeed_hourly_product_import' );
 			
 			wp_clear_scheduled_hook( 'lightspeed_hourly_matrices_import' );
+			
+			wp_clear_scheduled_hook( 'lightspeed_hourly_vendors_import' );
+			
+			wp_clear_scheduled_hook( 'lightspeed_hourly_manufacturers_import' );
 		}
 		
 		
@@ -282,6 +307,120 @@ if(!class_exists("LightspeedImport")) :
 				}
 				$grouped_results->asXML($this->XML_dir_matrices.'lightspeed-webstore-product_matrices.xml');
 			}
+			
+			
+		}
+		
+		/**
+		 * On the scheduled action hook, run the function.
+		 */
+		function lightspeed_import_vendors() {
+			// do import every hour
+			
+			//empty the directory to build new xml files
+			$files = glob($this->XML_dir_vendors.'*'); // get all file names
+			foreach($files as $file){ // iterate files
+				if(is_file($file))
+					unlink($file); // delete file
+			}
+			
+			$emitter = 'https://api.merchantos.com/API/Account/'.LI()->API_account.'/Vendor';
+
+			$offset = 0;
+			$limit = 100;
+			$c=$j=0;
+			$feeds = array();
+			$grouped_results = null;
+			
+			$xml_query_string = 'limit='.$limit.'&offset='.$offset;
+			$vendors = LI()->api->makeAPICall("Account.Vendor","Read",null,null,$emitter, $xml_query_string);
+			$c = $vendors->attributes()->count;
+			
+			syslog (LOG_DEBUG, "Vendor Count=".$c);
+			
+			
+			$loop_size = ceil($c / $limit);
+			for ( $i = 0; $i < $loop_size; $i++ ) {
+				$offset = $limit * $i;
+				$feeds[] = '&limit='.$limit.'&offset='.$offset;
+			}
+			
+			// For each feed, store the results as an array
+			foreach ( $feeds as $feed ) {
+				$vendors = LI()->api->makeAPICall("Account.Vendor","Read",null,null,$emitter, $feed);
+				if(!empty($vendors)){
+					if($j==0){
+						$grouped_results = $vendors;
+					}
+					else{
+						$dom_grouped_results = dom_import_simplexml($grouped_results);
+						$dom_vendors = dom_import_simplexml($vendors);
+						foreach($dom_vendors->childNodes as $node){
+							$dom_vendor = $dom_grouped_results->ownerDocument->importNode($node, TRUE);
+							$dom_grouped_results->appendChild($dom_vendor);
+						}
+					}
+				}
+				$j++;
+			}
+			$grouped_results->asXML($this->XML_dir_vendors.'lightspeed-webstore-vendors.xml');
+			
+			
+		}
+		
+		/**
+		 * On the scheduled action hook, run the function.
+		 */
+		function lightspeed_import_manufacturers() {
+			// do import every hour
+			
+			//empty the directory to build new xml files
+			$files = glob($this->XML_dir_manufacturers.'*'); // get all file names
+			foreach($files as $file){ // iterate files
+				if(is_file($file))
+					unlink($file); // delete file
+			}
+			
+			$emitter = 'https://api.merchantos.com/API/Account/'.LI()->API_account.'/Manufacturer';
+
+			$offset = 0;
+			$limit = 100;
+			$c=$j=0;
+			$feeds = array();
+			$grouped_results = null;
+			
+			$xml_query_string = 'limit='.$limit.'&offset='.$offset;
+			$manufacturers = LI()->api->makeAPICall("Account.Manufacturer","Read",null,null,$emitter, $xml_query_string);
+			$c = $manufacturers->attributes()->count;
+			
+			syslog (LOG_DEBUG, "Manufacturer Count=".$c);
+			
+			
+			$loop_size = ceil($c / $limit);
+			for ( $i = 0; $i < $loop_size; $i++ ) {
+				$offset = $limit * $i;
+				$feeds[] = '&limit='.$limit.'&offset='.$offset;
+			}
+			
+			// For each feed, store the results as an array
+			foreach ( $feeds as $feed ) {
+				$manufacturers = LI()->api->makeAPICall("Account.Manufacturer","Read",null,null,$emitter, $feed);
+				if(!empty($manufacturers)){
+					if($j==0){
+						$grouped_results = $manufacturers;
+					}
+					else{
+						$dom_grouped_results = dom_import_simplexml($grouped_results);
+						$dom_manufacturers = dom_import_simplexml($manufacturers);
+						foreach($dom_manufacturers->childNodes as $node){
+							$dom_manufacturer = $dom_grouped_results->ownerDocument->importNode($node, TRUE);
+							$dom_grouped_results->appendChild($dom_manufacturer);
+						}
+					}
+				}
+				$j++;
+			}
+			$grouped_results->asXML($this->XML_dir_manufacturers.'lightspeed-webstore-manufacturers.xml');
 			
 			
 		}

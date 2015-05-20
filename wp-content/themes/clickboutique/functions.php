@@ -505,3 +505,98 @@ add_action( 'after_setup_theme', 'register_footer_menu' );
 function register_footer_menu() {
   register_nav_menu( 'footer', __( 'Footer Menu', 'commercegurus' ) );
 }
+
+
+function get_item_vendor($vendorID){
+	if(empty($vendorID))
+		return;
+	
+	$vendor = '';
+	
+	$path = $_SERVER['DOCUMENT_ROOT'].'/wp-content/plugins/lightspeed-import/xml/vendors/lightspeed-webstore-vendors.xml';
+	
+	if (file_exists($path)) {
+		$xml = file_get_contents($path);
+				
+		if ($xml == FALSE)
+		{
+		  echo "Failed loading XML\n";
+
+		  foreach (libxml_get_errors() as $error) 
+		  {
+			echo "\t", $error->message;
+		  }   
+		}
+		
+		
+		$xml = simplexml_load_string($xml);
+		
+		$results = $xml->xpath("//Vendors/Vendor/vendorID[.='$vendorID']/parent::*");
+		$vendor = $results[0]->name;
+		
+	}
+	
+	return $vendor;
+
+}
+
+function get_item_manufacturer($manufacturerID){
+	if(empty($manufacturerID))
+		return;
+	
+	$manufacturer = '';
+	
+	$path = $_SERVER['DOCUMENT_ROOT'].'/wp-content/plugins/lightspeed-import/xml/manufacturers/lightspeed-webstore-manufacturers.xml';
+	
+	if (file_exists($path)) {
+		$xml = file_get_contents($path);
+				
+		if ($xml == FALSE)
+		{
+		  echo "Failed loading XML\n";
+
+		  foreach (libxml_get_errors() as $error) 
+		  {
+			echo "\t", $error->message;
+		  }   
+		}
+		
+		
+		$xml = simplexml_load_string($xml);
+		
+		$results = $xml->xpath("//Manufacturer/manufacturerID[.='$manufacturerID']/parent::*");
+		$manufacturer = $results[0]->name;
+		
+	}
+	
+	return $manufacturer;
+
+}
+
+
+add_action( 'woocommerce_product_meta_end', 'cj_show_attribute_links' );
+
+function cj_show_attribute_links() {
+	global $post;
+	$attribute_names = array( 'pa_brand', 'pa_size' ); // Insert attribute names here
+
+	foreach ( $attribute_names as $attribute_name ) {
+		$taxonomy = get_taxonomy( $attribute_name );
+
+		if ( $taxonomy && ! is_wp_error( $taxonomy ) ) {
+			$terms = wp_get_post_terms( $post->ID, $attribute_name );
+			$terms_array = array();
+
+	        if ( ! empty( $terms ) ) {
+		        foreach ( $terms as $term ) {
+			       $archive_link = get_term_link( $term->slug, $attribute_name );
+			       $full_line = '<a href="' . $archive_link . '">'. $term->name . '</a>';
+			       array_push( $terms_array, $full_line );
+		        }
+
+		        echo $taxonomy->labels->name . ' ' . implode( $terms_array, ', ' );
+	        }
+    	}
+    }
+}
+?>
