@@ -11,3 +11,7 @@ wp-content/cache/
 wp-content/upgrade/
 
 wp-content/wp-cache-config.php
+
+wp-content/plugins/lightspeed-import/xml/items/lightspeed-webstore-products.xml
+
+wp-content/plugins/lightspeed-import/xml/items/lightspeed-webstore-products.xml
