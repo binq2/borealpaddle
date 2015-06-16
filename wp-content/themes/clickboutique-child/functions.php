@@ -198,7 +198,7 @@ function remove_featured_image($ids, $product) {
 		$i = $product->children['post']->ID;
 		$featured_image = get_post_thumbnail_id($i);
 		//echo "Featured Image ID =".$featured_image;
-		print_r($ids);
+		//print_r($ids);
 	if (($key = array_search($featured_image, $ids)) !== false) {
 	    unset($ids[$key]);
 	}
