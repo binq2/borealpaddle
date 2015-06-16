@@ -2,6 +2,48 @@
 
 function theme_enqueue_styles() {
 
+	global $wp_styles;
+	
+	wp_enqueue_script('jquery');
+	wp_enqueue_script('jquery-ui-core', array('jquery'));
+	wp_enqueue_script('jquery-ui-accordion', array('jquery'));
+	wp_enqueue_script('jquery-ui-widget', array('jquery'));
+	
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
+		wp_enqueue_script( 'comment-reply' );
+	
+	//----Load jQuery Easings----------
+	wp_enqueue_script( 'plumtree-easings', get_template_directory_uri() . '/js/jquery.easing.js', array('jquery'), '1.3.0');	
+	
+	//----Load Bootsrap JS-------------
+	wp_enqueue_script( 'plumtree-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '1.0');	
+	wp_enqueue_script( 'plumtree-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0');
+
+    //----Enqurie ---------------------
+    wp_enqueue_script( 'enquire', get_template_directory_uri() . '/js/enquire.min.js', array('jquery'), '1.2' );
+
+    //----Load Waypoints---------------
+	wp_enqueue_script('plumtree-waypoints', get_template_directory_uri() . '/js/waypoints.min.js', array('jquery'));
+	wp_enqueue_script('plumtree-waypoints-sticky', get_template_directory_uri() . '/js/waypoints-sticky.min.js', array('jquery'));
+	
+	wp_enqueue_script('plumtree-img', get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js');
+		
+	//----Load Hover Intent Plugin----------------
+	wp_enqueue_script( 'plumtree-hoverintent', get_template_directory_uri() . '/js/hoverIntent.js', array('jquery'), '1.0');
+
+    //----Load Validate Plugin----------------
+    wp_enqueue_script( 'plumtree-validate', get_template_directory_uri() . '/js/jquery.validate.min.js', array('jquery'), '1.0');
+
+	//----Load Theme JS Helper---------------------
+	wp_enqueue_script( 'plumtree-helper', get_template_directory_uri() . '/js/helper.js', array('jquery'), '1.0', true);
+	
+	//----Shop Tooltips---------------------
+	wp_enqueue_script( 'plumtree-shop-tooltips', get_template_directory_uri() . '/js/shop-tooltips.js', array('jquery'), '1.0', true);
+
+	//----WooCommerce Checkout with form styler fix-----------
+	//wp_enqueue_script('checkout-fix', get_template_directory_uri().'/js/country-select.js', array('jquery'), '1.0', true);
+	
+
     $parent_style = 'plumtree-style';
 
     //----Load CSS--------------------------------
@@ -19,6 +61,14 @@ function theme_enqueue_styles() {
         get_stylesheet_directory_uri() . '/style.css',
         array( $parent_style )
     );
+    
+    //---- Theme fonts -----------------------------------
+	wp_enqueue_style( 'ptpanel-fonts', get_template_directory_uri().'/css/fonts.css' );
+
+
+	//---- Theme Patterns -------------------------------
+	wp_enqueue_style( 'plumtree-ie', get_template_directory_uri() . '/css/ie.css', array( 'plumtree-style' ), '20121010' );
+	$wp_styles->add_data( 'plumtree-ie', 'conditional', 'lt IE 9' );
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
