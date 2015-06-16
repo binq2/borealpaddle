@@ -141,7 +141,7 @@ function wclsc_get_product_images($type, $path, $itemMatrixID=null, $itemID=null
 }
 
 //remove the featured image from the product gallery display.
-//add_filter('woocommerce_product_gallery_attachment_ids', 'remove_featured_image', 10,2);
+add_filter('woocommerce_product_gallery_attachment_ids', 'remove_featured_image', 10,2);
 function remove_featured_image($ids, $product) {
 	$featured_image = null;
 	if(!empty($product->children['post']))
