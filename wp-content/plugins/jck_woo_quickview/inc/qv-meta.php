@@ -1,5 +1,7 @@
 <?php global $post, $product, $woocommerce; ?>
 
+<?php do_action($this->slug.'-before-meta'); ?>
+
 <div class="product_meta">
 
 	<?php do_action( 'woocommerce_product_meta_start' ); ?>
@@ -17,3 +19,5 @@
 	<?php do_action( 'woocommerce_product_meta_end' ); ?>
 
 </div>
+
+<?php do_action($this->slug.'-after-meta'); ?>

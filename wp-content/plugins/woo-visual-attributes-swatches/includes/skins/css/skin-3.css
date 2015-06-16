@@ -1,0 +1,9 @@
+div.skin-3-child{
+    display: block;
+}
+input[type=radio].wvas-radio{
+    vertical-align: top;
+}
+label.skin-3-label{
+    display: inline-block;
+}

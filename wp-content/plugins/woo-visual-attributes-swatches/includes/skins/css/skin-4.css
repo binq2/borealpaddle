@@ -1,0 +1,8 @@
+.skin-4-child{
+	background-position: center;
+  	background-size: contain;
+  	background-repeat: no-repeat;
+}
+span.skin-4-child.selected_wvas{
+    border: solid 3px  #9C8B8B;
+}

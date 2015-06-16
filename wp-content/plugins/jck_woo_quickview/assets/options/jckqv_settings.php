@@ -240,20 +240,6 @@ return array(
 	        'section_title' => 'Imagery',
 	        'section_description' => '',
 	        'fields' => array(
-	        	array(
-	                'id' => 'imgscale',
-	                'title' => __('Image Scale Mode', $slug),
-	                'subtitle' => __('The main images use the <a href="'.admin_url().'admin.php?page=wc-settings&tab=products" target="_blank"><strong>Single Product Image</strong></a> sizing, and thumbnails use the <a href="'.admin_url().'admin.php?page=wc-settings&tab=products" target="_blank"><strong>Product Thumbnails</strong></a> sizing.<br><br> <strong>Fit if Smaller</strong> scales image to fit only if size of slider viewport is less then size of image.<br><br> <strong>Fit</strong> same as above, but enlarges image if it\'s smaller then viewport. Best if images are different sizes.<br><br> <strong>Fill</strong> (default) scales image to completely fill slider viewport. Best if images are cropped.<br><br> <strong>None</strong> doesn\'t change size of image.', $slug),
-	                'type' => 'select',
-	                'default' => 'fill',
-	                'placeholder' => '',
-	                'choices' => array(
-	                    'fill' => __('Fill', $slug),
-	                    'fit-if-smaller' => __('Fit if Smaller', $slug),
-	                    'fit' => __('Fit', $slug),
-	                    'none' => __('None', $slug)
-	                )
-	            ),
 	            array(
 	                'id' => 'imgtransition',
 	                'title' => __('Image Transition', $slug),
@@ -262,7 +248,6 @@ return array(
 	                'placeholder' => '',
 	                'choices' => array(
 	                    'horizontal' => __('Horizontal Slide', $slug),
-	                    'vertical' => __('Vertical Slide', $slug),
 	                    'fade' => __('Fade', $slug)
 	                )
 	            ),
@@ -275,11 +260,28 @@ return array(
 	                'placeholder' => '',
 	            ),
 	            array(
-	                'id' => 'bgcolour',
-	                'title' => __('Background Colour', $slug),
-	                'type' => 'color',
-	                'default' => '#ffffff',
+	                'id' => 'autoplay',
+	                'title' => __('Autoplay?', $slug),
+	                'subtitle' => __('Automatically scroll through the product imagery?', $slug),
+	                'type' => 'checkbox',
+	                'default' => 0,
+	                'placeholder' => ''
+	            ),
+	            array(
+	                'id' => 'autoplayspeed',
+	                'title' => __('Autoplay Speed', $slug),
+	                'type' => 'text',
+	                'subtitle' => __('The duration in milliseconds that each image is displayed.', $slug),
+	                'default' => '3000',
 	                'placeholder' => '',
+	            ),
+	            array(
+	                'id' => 'infinite',
+	                'title' => __('Infinite Scroll?', $slug),
+	                'subtitle' => __('Infnitely scroll through the product imagery?', $slug),
+	                'type' => 'checkbox',
+	                'default' => 1,
+	                'placeholder' => ''
 	            ),
 	            array(
 	                'id' => 'navarr',
@@ -287,14 +289,6 @@ return array(
 	                'subtitle' => __('Show previous/next arrows on the image gallery?', $slug),
 	                'type' => 'checkbox',
 	                'default' => 1,
-	                'placeholder' => ''
-	            ),
-	            array(
-	                'id' => 'hidenavarr',
-	                'title' => __('Auto-hide Navigation Arrows?', $slug),
-	                'subtitle' => __('Should the navigation arrows only be visible on hover?', $slug),
-	                'type' => 'checkbox',
-	                'default' => 0,
 	                'placeholder' => ''
 	            ),
 	            array(

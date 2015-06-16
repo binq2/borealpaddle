@@ -19,6 +19,7 @@ if (!class_exists('JckSettingsFramework')) {
         private $first_tab = false;
         private $options_path;
         private $options_url;
+        private $admin_page_slug;
 
         /**
          * Constructor
@@ -26,7 +27,7 @@ if (!class_exists('JckSettingsFramework')) {
          * @param string path to settings file
          * @param string optional "option_group" override
          */
-        public function __construct( $settings_file, $option_group = '' )
+        public function __construct( $settings_file, $admin_page_slug = '', $option_group = '' )
         {
             if( !is_file( $settings_file ) ) return;
 				
@@ -40,9 +41,10 @@ if (!class_exists('JckSettingsFramework')) {
                 $this->option_group = $option_group;
                 
             $this->settings_name = $this->option_group.'_settings';
+            
+            $this->admin_page_slug = $admin_page_slug;
              
             add_action('admin_init', array($this, 'adminInit'));
-            add_action('admin_notices', array($this, 'adminNotices'));
             add_action('admin_enqueue_scripts', array($this, 'adminEnqueueScripts'));
         }
         
@@ -65,21 +67,14 @@ if (!class_exists('JckSettingsFramework')) {
 			$this->processTabs();
     		$this->processSettings();
     	}
-        
-        /**
-         * Displays any errors from the WordPress settings API
-         */
-        public function adminNotices()
-    	{
-        	settings_errors();
-    	}
     	
     	/**
          * Enqueue scripts and styles
          */
         public function adminEnqueueScripts($hook_suffix)
     	{
-    		if($hook_suffix == "woocommerce_page_jckqv") {
+    		if($hook_suffix == $this->admin_page_slug)
+    		{
 	            wp_enqueue_style('farbtastic');
 	            wp_enqueue_style('thickbox');
 	            

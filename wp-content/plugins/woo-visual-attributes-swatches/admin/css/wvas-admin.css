@@ -1,0 +1,253 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+ 
+.wvas_icon{
+    max-height: 40px;
+    max-width: 40px;
+    vertical-align: middle;
+}
+
+.wvas_editor td{
+    width: 50%;
+}
+.wvas_attr_table tr{
+    border-bottom: 1px solid #424953;
+}
+.wvas-color-picker, #wvas_editor_tab input[type=text], #wvas_editor_tab select{
+    /*min-width: 70px;*/
+    width: 100%;
+}
+
+.wvas_table > tbody > tr:nth-child(2n-1){
+    background-color: #f9f9f9;
+}
+
+.wvas_table td{
+    vertical-align: middle;
+}
+
+.wvas_remove_icon
+{
+    width: auto !important;
+    vertical-align: middle !important;
+    /*float: right;*/
+}
+
+.visual_attr_selector > span
+{
+    display: inline-block;
+    width: 100%;
+}
+
+/*configurator style*/
+#TabbedPanels2 .TabbedPanelsTabGroup,#TabbedPanels3 .TabbedPanelsTabGroup,#TabbedPanels1 .TabbedPanelsTabGroup{
+    padding: 0px;
+    background:#dee3e1;
+}
+#TabbedPanels2 .TabbedPanelsTabGroup,#TabbedPanels3 .TabbedPanelsTabGroup{
+    margin-top: 0px;
+}
+#TabbedPanels2 .TabbedPanelsTab.TabbedPanelsTabSelected,#TabbedPanels3 .TabbedPanelsTab.TabbedPanelsTabSelected,#TabbedPanels1 .TabbedPanelsTab.TabbedPanelsTabSelected{
+    position: relative;
+    padding-top: 10px;
+    background: #f7f7f7;
+    border: 1px solid rgb(230, 235, 233);
+    border-bottom: 0px;
+    color:#12aaeb;
+}
+#TabbedPanels2 .TabbedPanelsTab.TabbedPanelsTabSelected:after,#TabbedPanels3 .TabbedPanelsTab.TabbedPanelsTabSelected:after,#TabbedPanels1 .TabbedPanelsTab.TabbedPanelsTabSelected:after{
+    content: "";
+    cursor: pointer;
+    -moz-transition: .15s;
+    -o-transition: .15s;
+    -webkit-transition: .15s;
+    transition: .15s;
+    position: absolute;
+    display: table;
+    left: 0;
+    top: 0px;
+    width:100%;
+    height: 2px;
+    background: #12aaeb;
+}
+
+#TabbedPanels2 .TabbedPanelsContent,#TabbedPanels3 .TabbedPanelsContent,#TabbedPanels1 .TabbedPanelsContent{
+    background: #f7f7f7;
+  border: 1px solid rgb(230, 235, 233);
+    border-top: 0px;
+  /*padding: 25px;*/
+}
+#TabbedPanels1 .TabbedPanelsContent{
+    padding: 25px 10px;
+}
+#TabbedPanels2 .TabbedPanelsContent,#TabbedPanels3 .TabbedPanelsContent{
+    padding: 25px 0px;
+}
+
+#TabbedPanels1 .TabbedPanelsTabGroup{
+    bottom:-1px;
+    position:relative;
+}
+
+.TabbedPanelsTab{
+    padding: 4px;
+    width:80px;
+    vertical-align: middle;
+    color:#888b8e;
+    border-left:1px solid #f7f7f7;
+}
+.TabbedPanelsTab:first-child{
+    border-left:0px;
+}
+.TabbedPanels{
+    background: transparent !important;
+}
+
+#TabbedPanels1 .TabbedPanelsTab{
+    width:200px;
+}
+
+.TabbedPanelsTabGroup{
+    width:auto !important;
+}
+.TabbedPanelsContentGroup
+{
+    border-top: 0px;
+}
+.configurate-template{
+    display: table;
+    width:100%;
+    margin-bottom: 15px;
+}
+.configurate-template > div{
+    display: table-cell;
+    vertical-align: middle;
+    border-bottom: 2px solid #fff;
+}
+.configurate-template:last-child > div{
+    border-bottom: 0px ;
+}
+
+.configurate-template > div:first-child{
+    width:230px;
+    padding-left: 10px;
+}
+.configurate-template > div:nth-child(2) > div{
+    display: table-row;
+}
+.configurate-template > div:nth-child(2) > div > span{
+    display: table-cell;
+}
+.configurate-template > div:nth-child(2) > div > span:first-child{
+    width:100px;
+}
+.configurate-template > div:nth-child(2) > div > span:nth-child(2){
+    min-width:120px;
+}
+
+.configurate-template > div:nth-child(2) > div > span:nth-child(2) > *{
+    margin-bottom: 20px;
+    vertical-align: top;
+}
+.thumbnail-container{
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    /*border: 1px solid gray;*/
+    vertical-align: middle;
+}
+.thumbnail-container img{
+    max-width: 80px;
+    max-height: 80px;
+}
+.noUiSlider.horizontal{
+  display: table-cell !important;
+  width: 145px !important;
+  float: left !important;
+  height: 30px !important;
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  background: rgb(211, 218, 221)!important;
+  border: none !important;
+  padding: 0px 10px !important;
+  border-radius: 3px 0px 0px 3px !important;
+}
+
+.noUi-base{
+    background: #5893ff !important;
+  height: 5px !important;
+  top: 40% !important;
+}
+
+.noUi-handle.noUi-handle-lower{
+    background: #5893ff !important;
+  height: 16px !important;
+  width: 16px !important;
+  border: 4px solid #d3dadd !important;
+  border-radius: 50% !important;
+}
+.noUi-handle:after, .noUi-handle:before{
+    display: none !important;
+}
+
+.noUi-value-container{
+display: table-cell !important;
+    width: 55px !important;
+    height: 30px !important;
+  box-shadow: none !important;
+    margin: 0px !important;
+  margin-left: -2px !important;
+  border: 1px solid rgb(211, 218, 221);
+}
+
+.noUi-origin{
+    background:#fff;
+    border-radius: 0px;
+}
+
+input[type=text].wvas-color-picker{
+  border:none;
+  background: #fff !important;
+  box-shadow: none !important;
+  border-radius: 3px;
+   display: inline-block;
+   width:200px !important;
+   height: 30px;
+}
+
+.configurate-template > div:first-child > div{
+    margin-top: 5px;
+}
+.spacing-padding input,.spacing-border input,.spacing-margin input{
+    display: inline-block;
+    width: 75px;
+    max-width: 75px;
+    background-size: 20%;
+    background-repeat: no-repeat;
+    background-position: 2px center;
+    padding-left: 20px;
+}
+.spacing-padding input.spacing-top,.spacing-border input.spacing-top,.spacing-margin input.spacing-top{
+  background-image: url(../images/Up.png);
+}
+.spacing-padding input.spacing-right,.spacing-border input.spacing-right,.spacing-margin input.spacing-right{
+  background-image: url(../images/Right.png);
+}
+.spacing-padding input.spacing-bottom,.spacing-border input.spacing-bottom,.spacing-margin input.spacing-bottom{
+  background-image: url(../images/Down.png);
+}
+.spacing-padding input.spacing-left,.spacing-border input.spacing-left,.spacing-margin input.spacing-left{
+  background-image: url(../images/Left.png);
+}
+.mg-top-10
+{
+    margin-top: 10px !important;
+}
+
+.wvas_table .check-column{
+    vertical-align: middle;
+    padding-top: 0;
+    padding-bottom: 0;
+}

@@ -1,5 +1,7 @@
 <?php global $post, $product, $woocommerce; ?>
 
+<?php do_action($this->slug.'-before-rating'); ?>
+
 <?php
 if ( get_option( 'woocommerce_enable_review_rating' ) === 'no' )
 	return;
@@ -19,3 +21,5 @@ if ( $count > 0 ) : ?>
 	</div>
 
 <?php endif; ?>
+
+<?php do_action($this->slug.'-after-rating'); ?>

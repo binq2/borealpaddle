@@ -1,0 +1,375 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WPD\n"
+"POT-Creation-Date: 2015-05-21 11:14+0100\n"
+"PO-Revision-Date: 2015-05-21 11:14+0100\n"
+"Last-Translator: ORION TEAM <support@orionorigin.com>\n"
+"Language-Team: ORION <support@orionorigin.com>\n"
+"Language: French\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../admin/class-wvas-admin.php:125
+msgid "Woo Visual Attributes Swatches attributes update required"
+msgstr ""
+
+#: ../admin/class-wvas-admin.php:127
+msgid ""
+"Hello! <br/> Thank you again for updating this plugin. This new version "
+"comes with a lot of changes and amazing features which are unfortunately "
+"incompatible with the previous versions. This means you'll have to redefine "
+"your variable products attributes otherwise, the plugin won't be able to "
+"work properly. <br/> \n"
+"                                        - If you don't want to use our new "
+"features and stick with the previous version, please remove this new version "
+"and reinstall the old one. <br/> \n"
+"                                        - If you want to use our new "
+"features, you can easily redefine your attributes per product or using our "
+"bulk attributes definition feature available <a href="
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:17
+#: ../admin/class-wvas-configuration.php:27
+msgid "Configurations"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:18
+msgid "Template"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:19
+#: ../admin/class-wvas-configuration.php:20
+#: ../admin/class-wvas-configuration.php:22
+msgid "New config"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:21
+msgid "Edit config"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:23
+msgid "View"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:24
+msgid "Search configs"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:25
+msgid "No config found"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:26
+msgid "No config in the trash"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:97
+msgid "Configuration"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:154
+msgid "Container"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:155
+msgid "Attribute"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:162
+#: ../admin/class-wvas-configuration.php:186
+#: ../admin/class-wvas-configuration.php:417
+msgid "Normal"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:163
+#: ../admin/class-wvas-configuration.php:187
+msgid "Hover"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:188
+msgid "Selected"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:251
+msgid "Background"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:254
+#: ../admin/class-wvas-configuration.php:326
+#: ../admin/class-wvas-configuration.php:398
+#: ../admin/class-wvas-configuration.php:448
+#: ../admin/class-wvas-configuration.php:474
+msgid "Enable"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:260
+#: ../admin/class-wvas-configuration.php:331
+msgid "Color"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:266
+msgid "Image"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:270
+#: ../admin/class-wvas-product.php:188 ../admin/class-wvas-product.php:190
+#: ../admin/class-wvas-product.php:233
+msgid "Set"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:271
+#: ../admin/class-wvas-product.php:188 ../admin/class-wvas-product.php:232
+msgid "Remove"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:276
+msgid "Repeat"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:282
+msgid "Position"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:289
+msgid "Top Left"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:290
+msgid "Top Right"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:291
+msgid "center"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:292
+msgid "Bottom Left"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:293
+msgid "Bottom Right"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:301
+msgid "Size"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:308
+#: ../admin/class-wvas-configuration.php:530
+msgid "Initial"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:309
+msgid "Contain"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:310
+msgid "Cover"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:323
+msgid "Text"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:337
+msgid "Alignment"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:344
+msgid "Left"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:345
+msgid "Center"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:346
+msgid "Right"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:354
+msgid "Decoration"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:361
+#: ../admin/class-wvas-configuration.php:379
+#: ../admin/class-wvas-configuration.php:524
+msgid "None"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:362
+msgid "Underline"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:363
+msgid "Barred"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:364
+msgid "Strikethrough"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:372
+msgid "Transormation"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:380
+msgid "Capitalize"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:381
+msgid "Uppercase"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:382
+msgid "Lowercase"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:395
+msgid "Font"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:403
+msgid "Family"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:410
+msgid "Style"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:418
+msgid "Bold"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:419
+msgid "Italic"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:427
+msgid "Size (px)"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:434
+msgid "Weight"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:445
+msgid "Dimensions"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:453
+msgid "Width (px)"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:460
+msgid "Height (px)"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:471
+msgid "Spacing"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:479
+msgid "Padding (px)"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:488
+msgid "Margin (px)"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:497
+msgid "Border (px)"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:508
+msgid "Border color"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:514
+msgid "Border style"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:521
+msgid "Solid"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:522
+msgid "Dotted"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:523
+msgid "Dashed"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:525
+msgid "Hidden"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:526
+msgid "Groove"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:527
+msgid "Ridge"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:528
+msgid "Inset"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:529
+msgid "Outset"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:531
+msgid "Inherit"
+msgstr ""
+
+#: ../admin/class-wvas-configuration.php:539
+msgid "Border radius (px)"
+msgstr ""
+
+#: ../admin/class-wvas-product.php:38
+msgid "Saved"
+msgstr ""
+
+#: ../admin/class-wvas-product.php:84
+msgid "Visual attributes"
+msgstr ""
+
+#: ../admin/class-wvas-product.php:140
+msgid "Names"
+msgstr ""
+
+#: ../admin/class-wvas-product.php:141
+msgid "Attributes"
+msgstr ""
+
+#: ../admin/class-wvas-product.php:142
+msgid "Skin"
+msgstr ""
+
+#: ../admin/class-wvas-product.php:199
+msgid "No attribute values found."
+msgstr ""
+
+#: ../admin/class-wvas-product.php:278
+msgid "Enable visual attributes"
+msgstr ""
+
+#: ../admin/class-wvas-product.php:287
+msgid "VA bulk definitions"
+msgstr ""
+
+#: ../admin/class-wvas-product.php:297
+msgid "<h2>Visual attributes bulk definition</h2>"
+msgstr ""
+
+#: ../admin/class-wvas-product.php:302
+msgid "Apply"
+msgstr ""

@@ -1,0 +1,47 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+ /*
+    Front-end styles
+*/
+
+.wvas_item{
+    display: inline-block;
+    border: 1px solid #D2D2D2;
+   /* margin: 5px;*/
+    border-radius: 4px;
+    height: 45px;
+    width: 50px;
+    max-width: 100%;
+}
+
+.wvas_variations td.label{
+    vertical-align: middle;
+}
+
+/*.wvas_variations tr td.value > *{
+    margin-bottom: 5px;
+}*/
+
+
+table.wvas_variations{
+    width: 100%;
+    border: none;
+}
+
+.wvas_item_container > div{
+    display: inline-block;
+}
+
+.wvas_variations tr td{
+    /*text-align: center;*/
+    border: none;
+    min-width: 90px;
+}
+
+.wvas_variations tr{
+    width: 100%;
+    display: block;
+}
+

@@ -1,0 +1,54 @@
+
+.skin-6-container td{
+    /*text-align: center;*/
+    margin: 10px auto;
+}
+.variations_data_selected.wvas_item_selected_container{
+    display: none;
+
+}
+.skin-6-container td.value .variations_data_selected.wvas_item_selected_container{
+    display: block;
+    height: 40px;
+    border: 1px lightgray solid;
+    margin:10px 0px;
+    text-align: left;
+}
+
+.skin-6-container td.value .variations_data_selected.wvas_item_selected_container span.wvas_item_selected{
+    margin: 0 5px;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+    border: 1px solid #D2D2D2;
+}
+
+.skin-6-container td.value .variations_data_selected.wvas_item_selected_container span.wvas_item_selected_label{
+     display: inline-block;
+     vertical-align: middle;
+}
+
+.skin-6-container td.value .variations_data.wvas_item_container{
+   display: none;
+}
+
+.skin-6-container .wvas_show_items_ico{
+   background: url(../images/sprite.png) -246px -132px no-repeat;
+    height: 100%;
+    width: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+}
+
+.skin-6-container .value{
+    min-height: 50px;
+}
+
+.skin-6-child, .skin-6-container .wvas_item_selected{
+    background-size:contain;
+    background-repeat: no-repeat; 
+    background-position: center;
+}

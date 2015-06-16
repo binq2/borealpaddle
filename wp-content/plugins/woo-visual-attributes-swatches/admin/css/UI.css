@@ -1,0 +1,207 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 25 mars 2015, 17:51:16
+    Author     : HL
+*/
+
+.TabbedPanels
+{
+    background: white;
+    /*padding: 10px;*/
+}
+
+.TabbedPanelsTabGroup{
+    margin-bottom: 0px;
+    table-layout: fixed;
+    width: 100%;
+    display: table;
+    /*padding: 10px;*/
+    padding: 10px 10px 0;
+
+}
+
+.TabbedPanelsContentGroup
+{
+    /*background: #F1F5F8;*/
+    border-top: 1px solid #ededed;
+}
+
+.TabbedPanelsTab{
+    list-style:none;
+    display: table-cell;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    color: #9cb2c0;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.TabbedPanelsTabSelected{
+    color: #12aaeb;
+    border-bottom: 3px solid #12aaeb;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+.TabbedPanelsContent{
+    width: 100%;
+    padding-bottom: 20px;
+}
+.TabbedPanelsContent > .wpc-grid{
+    max-width: 100%;
+}
+.TabbedPanelsContent > .wpc-grid > div{
+    /*text-align: center;*/
+}
+
+/*Accordion*/
+.Accordion {
+    border-left: solid 1px gray;
+    border-right: solid 1px black;
+    border-bottom: solid 1px gray;
+    overflow: hidden;
+}
+
+.AccordionPanel {
+    margin: 0px;
+    padding: 0px;
+}
+
+.AccordionPanelTab {
+    background-color: #CCCCCC;
+    border-top: solid 1px black;
+    border-bottom: solid 1px gray;
+    margin: 0px;
+    padding: 2px;
+    cursor: pointer;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+}
+
+.AccordionPanelContent {
+    overflow: auto;
+    margin: 0px;
+    padding: 0px;
+    height: 200px;
+}
+
+.AccordionPanelOpen .AccordionPanelTab {
+    background-color: #EEEEEE;
+}
+
+.AccordionPanelTabHover {
+    color: #555555;
+}
+.AccordionPanelOpen .AccordionPanelTabHover {
+    color: #555555;
+}
+
+.AccordionFocused .AccordionPanelTab {
+    background-color: #3399FF;
+}
+
+.AccordionFocused .AccordionPanelOpen .AccordionPanelTab {
+    background-color: #4F71B9;
+    color: white;
+}
+
+.Accordion{
+    border-radius: 5px;
+    border: 1px solid #d0d0d0;
+    outline: none;
+}
+.Accordion .AccordionPanelTab{
+    display: block;
+    padding:10px;
+    font-size: 14px;
+    font-weight: bold;
+    color:#4f71b9;
+    background-color: #fff;
+    /*background-position: 10px center;*/
+    background-size: 22px;
+    background-repeat: no-repeat;
+    cursor:pointer;
+    border-top: solid 1px transparent;
+    border-bottom: solid 1px #d0d0d0;
+}
+.Accordion .AccordionPanelTab:hover{
+    background-color: #4f71b9;
+    color:#fff;
+}
+.Accordion > .AccordionPanel.AccordionPanelClosed:last-child > .AccordionPanelTab,
+.Accordion > .AccordionPanel:last-child > .AccordionPanelContent
+{
+    border-bottom:none;
+}
+.Accordion .AccordionPanelContent{
+    padding:10px;
+    height: auto;
+    overflow: hidden;
+    border-bottom: 1px solid #d0d0d0;
+}
+
+/*Minimal*/
+.Accordion.minimal
+{
+    border-radius: 0;
+}
+.Accordion.minimal .AccordionPanelTab
+{
+    padding: 5px;
+    color: #444;
+    font-weight: normal;
+    font-size: 14px;
+    position: relative;
+}
+.Accordion.minimal .AccordionPanelTab:before, .Accordion.minimal .AccordionPanelTab:after
+{
+    content: '';
+    position: absolute;
+    background-color: #4f71b9;
+}
+
+.Accordion.minimal .AccordionPanelTab.AccordionPanelTabHover:before, .Accordion.minimal .AccordionPanelTab.AccordionPanelTabHover:after
+{
+    background-color: white;
+}
+
+.Accordion.minimal .AccordionPanelTab:before {
+  right: 10px;
+  margin-left: -1px;
+  top: 7px;
+  width: 2px;
+  height: 15px;
+  
+}
+
+.Accordion.minimal .AccordionPanelOpen .AccordionPanelTab:before
+{
+    display: none;
+}
+
+.Accordion.minimal .AccordionPanelTab:after {
+  top: 15px;
+  right: 4px;
+  margin-top: -1px;
+  width: 15px;
+  height: 2px;
+}
+/* Rules for Printing */
+
+@media print {
+
+    .Accordion {
+        overflow: visible !important;
+    }
+
+    .AccordionPanelContent {
+        display: block !important;
+        overflow: visible !important;
+        height: auto !important;
+    }
+}
