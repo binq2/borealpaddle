@@ -503,7 +503,7 @@ add_shortcode( 'product_attributes', 'product_attributes' );
 
 			woocommerce_product_loop_start();
 			
-			//print_r($product_attributes);
+			print_r($product_attributes);
 
 			foreach ( $product_attributes as $attribute ) {
 
