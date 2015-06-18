@@ -445,7 +445,7 @@ add_shortcode( 'product_attributes', 'product_attributes' );
 	 */
 	function product_attributes( $atts ) {
 		global $woocommerce_loop;
-
+echo "we are here";
 		$atts = shortcode_atts( array(
 			'number'     => null,
 			'orderby'    => 'name',
