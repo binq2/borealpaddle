@@ -435,89 +435,91 @@ function cj_show_attribute_links() {
 }
 
 
-add_shortcode( 'product_attributes', 'product_attributes' );
+
 
 /**
-	 * List all (or limited) product atributes
-	 *
-	 * @param array $atts
-	 * @return string
-	 */
-	function product_attributes( $atts ) {
-		global $woocommerce_loop;
-echo "we are here";
-		$atts = shortcode_atts( array(
-			'number'     => null,
-			'orderby'    => 'name',
-			'order'      => 'ASC',
-			'columns'    => '4',
-			'hide_empty' => 0,
-			'attribute'     => '',
-			'ids'        => ''
-		), $atts );
+ * List all (or limited) product atributes
+ *
+ * @param array $atts
+ * @return string
+ */
+function product_attributes( $atts ) {
+	global $woocommerce_loop;
 
-		if ( isset( $atts['ids'] ) ) {
-			$ids = explode( ',', $atts['ids'] );
-			$ids = array_map( 'trim', $ids );
-		} else {
-			$ids = array();
-		}
+	$atts = shortcode_atts( array(
+		'number'     => null,
+		'orderby'    => 'name',
+		'order'      => 'ASC',
+		'columns'    => '4',
+		'hide_empty' => 0,
+		'attribute'     => '',
+		'ids'        => ''
+	), $atts );
 
-		$hide_empty = ( $atts['hide_empty'] == true || $atts['hide_empty'] == 1 ) ? 1 : 0;
-
-		// get terms and workaround WP bug with parents/pad counts
-		$args = array(
-			'orderby'    => $atts['orderby'],
-			'order'      => $atts['order'],
-			'hide_empty' => $hide_empty,
-			'include'    => $ids,
-			'number'     => $atts['number'],
-			'pad_counts' => true
-		);
-					
-
-		$product_attributes = get_terms( 'pa_'.$atts['attribute'], $args );
-		
-
-		if ( $hide_empty ) {
-			foreach ( $product_attributes as $key => $attribute ) {
-				if ( $attribute->count == 0 ) {
-					unset( $product_attributes[ $key ] );
-				}
-			}
-		}
-
-		if ( $atts['number'] ) {
-			$product_attributes = array_slice( $product_attributes, 0, $atts['number'] );
-		}
-
-		$columns = absint( $atts['columns'] );
-		$woocommerce_loop['columns'] = $columns;
-
-		ob_start();
-
-		// Reset loop/columns globals when starting a new loop
-		$woocommerce_loop['loop'] = $woocommerce_loop['column'] = '';
-
-		if ( $product_attributes ) {
-
-			woocommerce_product_loop_start();
-			
-			//print_r($product_attributes);
-
-			foreach ( $product_attributes as $attribute ) {
-
-				wc_get_template( 'content-product_attribute.php', array(
-					'attribute' => $attribute
-				) );
-
-			}
-
-			woocommerce_product_loop_end();
-
-		}
-
-		woocommerce_reset_loop();
-
-		return '<div class="woocommerce columns-' . $columns . '">' . ob_get_clean() . '</div>';
+	if ( isset( $atts['ids'] ) ) {
+		$ids = explode( ',', $atts['ids'] );
+		$ids = array_map( 'trim', $ids );
+	} else {
+		$ids = array();
 	}
+
+	$hide_empty = ( $atts['hide_empty'] == true || $atts['hide_empty'] == 1 ) ? 1 : 0;
+
+	// get terms and workaround WP bug with parents/pad counts
+	$args = array(
+		'orderby'    => $atts['orderby'],
+		'order'      => $atts['order'],
+		'hide_empty' => $hide_empty,
+		'include'    => $ids,
+		'number'     => $atts['number'],
+		'pad_counts' => true
+	);
+				
+
+	$product_attributes = get_terms( 'pa_'.$atts['attribute'], $args );
+	
+
+	if ( $hide_empty ) {
+		foreach ( $product_attributes as $key => $attribute ) {
+			if ( $attribute->count == 0 ) {
+				unset( $product_attributes[ $key ] );
+			}
+		}
+	}
+
+	if ( $atts['number'] ) {
+		$product_attributes = array_slice( $product_attributes, 0, $atts['number'] );
+	}
+
+	$columns = absint( $atts['columns'] );
+	$woocommerce_loop['columns'] = $columns;
+
+	ob_start();
+
+	// Reset loop/columns globals when starting a new loop
+	$woocommerce_loop['loop'] = $woocommerce_loop['column'] = '';
+
+	if ( $product_attributes ) {
+
+		woocommerce_product_loop_start();
+		
+		//print_r($product_attributes);
+
+		foreach ( $product_attributes as $attribute ) {
+
+			wc_get_template( 'content-product_attribute.php', array(
+				'attribute' => $attribute
+			) );
+
+		}
+
+		woocommerce_product_loop_end();
+
+	}
+
+	woocommerce_reset_loop();
+
+	return '<div class="woocommerce columns-' . $columns . '">' . ob_get_clean() . '</div>';
+}
+	
+add_shortcode( 'product_attributes', 'product_attributes' );
