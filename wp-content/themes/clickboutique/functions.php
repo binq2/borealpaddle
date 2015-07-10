@@ -371,4 +371,19 @@ function remove_protected_text($text){
 	return $text;
 }
 add_filter('protected_title_format','remove_protected_text');
-?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

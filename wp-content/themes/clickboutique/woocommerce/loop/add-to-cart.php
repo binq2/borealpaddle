@@ -57,9 +57,6 @@ $mode = get_option('catalog_mode');
 
 		echo apply_filters( 'woocommerce_loop_add_to_cart_link', sprintf('<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" class="%s button product_type_%s">%s</a>', esc_url( $link['url'] ), esc_attr( $product->id ), esc_attr( $product->get_sku() ), esc_attr( $link['class'] ), esc_attr( $product->product_type ), $link['label'] ), $product, $link );
 
-
-
-
 	?>
 
 <?php endif; ?>

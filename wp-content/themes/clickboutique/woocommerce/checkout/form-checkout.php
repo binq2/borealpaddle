@@ -92,7 +92,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
 
 </form>
 
-</div><!-- Pane contents ends -->
+<?php if ($steps_checkout) { echo "</div><!-- Pane contents ends -->"; }; ?>
 
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
 
