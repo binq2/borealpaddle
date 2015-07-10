@@ -195,10 +195,7 @@ add_filter('woocommerce_product_gallery_attachment_ids', 'remove_featured_image'
 function remove_featured_image($ids, $product) {
 	$featured_image = null;
 	if(!empty($product->children['post']))
-		$i = $product->children['post']->ID;
-		$featured_image = get_post_thumbnail_id($i);
-		//echo "Featured Image ID =".$featured_image;
-		//print_r($ids);
+		$featured_image = get_post_thumbnail_id($product->children['post']->ID);
 	if (($key = array_search($featured_image, $ids)) !== false) {
 	    unset($ids[$key]);
 	}
